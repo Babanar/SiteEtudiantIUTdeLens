@@ -1,0 +1,99 @@
+.entete{
+	background-image:url("img/iut.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center top;
+	text-align:center;
+	
+}
+
+.entete .logo{
+	padding:0px;
+	padding-top:20px;
+	padding-bottom:40px;
+}
+
+.entete .titre{
+
+	
+	
+}
+.entete .titre h1{
+	line-height:70px;
+	background-color:rgba(0,0,0,0.6);
+	border-radius:10px;
+	color:white;
+}
+
+.entete .logo img{
+	width:100%;
+}
+
+#navbar{
+	text-align:center;
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color:#A4E338;
+
+}
+
+#navbar .btn{
+	width:100%;
+	text-align:center;
+	border-color:white;
+	border-width:2px;
+	border-style:solid;
+	font-weight:bold;
+}
+
+#ligne_entete{
+
+	margin-top:10px;
+	border:#A4E338 solid 0px;
+	border-radius:10px 10px 0px 0px;
+}
+
+#TC_BUTTON{
+	background-color:#A4E338;
+}
+#GEA_BUTTON{
+	background-color:#FBBD0B;
+}
+#MMI_BUTTON{
+	background-color:#E41370;
+}
+#INFO_BUTTON{
+	background-color:#00AC9A;
+}
+#SANTE_BUTTON{
+	background-color:#AE45AE;
+}
+#PROF_BUTTON{
+	background-color:#EA6B13;
+}
+
+hr{
+	margin-top:20px;
+	margin-bottom:10px;
+}
+
+#entete_recherche div{
+	padding-right:0px;
+}
+
+#entete_recherche input{
+	padding:0px;
+	padding-left:5px;
+}
+
+#entete_inscription button{
+	background-color:rgba(0,0,0,0.3);
+}
+
+.input-xs {
+    height: 22px;
+    padding: 5px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}

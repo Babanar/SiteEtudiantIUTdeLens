@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head>
+<body id="body">
+
+<div class="container">
+  <div class="row" >
+		<div class="col-md-offset-1 col-md-10 hidden-sm entete" id="ligne_entete">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-1 logo">
+					<img src="img/logo_iut.png"/>
+				</div>
+				<div class="col-md-8 titre">
+					<h1> J'ai étudié à l'IUT de Lens </h1>
+				</div>
+				<div class="col-md-1 logo">
+					<img src="img/logo_iut.png"/>
+				</div>
+			</div>
+		</div>
+  </div>
+  <div class="row ">
+	
+    <div class="col-md-offset-1 col-md-10" id="navbar">
+		<div class="row" >
+			<div class="col-md-2">
+				<button type="button" class="btn" id="TC_BUTTON">  
+					TC
+				</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" class="btn" id="GEA_BUTTON">  
+					GEA
+				</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" class="btn" id="MMI_BUTTON">  
+					MMI
+				</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" class="btn" id="INFO_BUTTON">  
+					INFO
+				</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" class="btn" id="SANTE_BUTTON">  
+					SANTE
+				</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" class="btn" id="PROF_BUTTON">  
+					PROF
+				</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="row" id="entete_recherche">
+						
+						<div class="col-md-7">
+							<input type="text" class="form-control input-small" placeholder="Mots clés">
+						</div>
+						<div class="col-md-5">
+							<button type="submit" class="btn btn-default btn-sm">Rechercher</button>
+						</div>
+				</div>
+			</div>
+			<div class="col-md-offset-4 col-md-4">
+				<div class="row" id="entete_inscription">
+						
+						<div class="col-md-6">
+							<button type="submit" class="btn btn-info btn-sm">Connexion</button>
+						</div>
+						<div class="col-md-6">
+							<button type="submit" class="btn btn-info btn-sm">Inscription</button>
+						</div>
+				</div>
+			</div>
+		</div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script>
+
+	var timeAnimation=300; 	
+	
+	function transition_navbar(color){
+            if(color===$("#navbar").css("background-color"))
+                return;
+            
+			$("#navbar").animate({
+						backgroundColor:"#FFFFFF"
+					}, timeAnimation,function(){
+								$("#navbar").animate({
+									backgroundColor:color
+									}, timeAnimation);
+							}
+			)
+			$("#ligne_entete").animate({
+						borderColor:"#FFFFFF"
+					}, timeAnimation,function(){
+								$("#ligne_entete").animate({
+									borderColor:color
+									}, timeAnimation);
+							}
+			)	
+	}
+
+	$("#navbar .btn").click(
+		function(e){
+                        transition_navbar(window.getComputedStyle(e.target).getPropertyValue('background-color'));
+		}	
+	);
+
+
+</script>
+
+</html>
