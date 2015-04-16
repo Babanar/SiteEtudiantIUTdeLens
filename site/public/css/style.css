@@ -1,5 +1,5 @@
 .entete{
-	background-image:url("img/iut.jpg");
+	background-image:url("../img/iut.jpg");
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-position:center top;
@@ -26,7 +26,8 @@
 }
 
 .entete .logo img{
-	width:100%;
+	max-width:80%;
+        max-height:80%;
 }
 
 #navbar{
@@ -96,4 +97,55 @@ hr{
     font-size: 12px;
     line-height: 1.5;
     border-radius: 3px;
+}
+
+#entete_connexion{
+    border:1px solid white;
+    border-top: none;
+    border-right: none;
+    margin-bottom: 20px;
+    padding-top:20px;
+    padding-bottom: 20px;
+    display: none;
+}
+
+#entete_profil{
+    display:none;
+    line-height: 34px;
+    background-color:rgba(0,0,0,0.3);
+    border:1px solid white;
+    border-right: none;
+    color:white;
+    
+}
+.page{
+}
+
+.page_main{
+    border-left:2px solid black;
+}
+
+.page_secondaire{
+    border-right:2px solid black; 
+}
+
+
+#footer {
+        text-align:center;
+        padding-top:20px;
+        padding-bottom:20px;
+        background-color:#A4E338;
+        margin-bottom:10px;
+        border:#A4E338 solid 0px;
+        border-radius:0px 0px 10px 10px;
+        font-weight:bold;
+}
+ 
+#footer a{
+        color:black;
+}
+
+#mainpage{
+    border:10px solid #A4E338;
+
 }
