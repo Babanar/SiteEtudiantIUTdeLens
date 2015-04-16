@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
   <link href="<?php echo URL; ?>css/style.css" rel="stylesheet">
 
 </head>
@@ -17,13 +16,13 @@
 		<div class="col-md-offset-1 col-md-10 entete " id="ligne_entete">
 			<div class="row">
 				<div class="col-md-2 logo">
-					<img src="img/logo_iut.png"/>
+					<img src="<?php echo URL; ?>img/logo_iut.png"/>
 				</div>
 				<div class="col-md-8 titre">
 					<h1> J'ai étudié à l'IUT de Lens </h1>
 				</div>
 				<div class="col-md-2 logo">
-					<img src="img/logo_projet.png"/>
+					<img src="<?php echo URL; ?>img/logo_projet.png"/>
 				</div>
 			</div>
 		</div>
@@ -32,7 +31,7 @@
   <div class="row "> 
     <div class="col-md-offset-1 col-md-10" id="navbar">
 		<div class="row" id="navbar_btn">
-			<div class="col-md-offset-1 col-md-2">
+			<div class="col-md-2">
 				<button type="button" class="btn" id="TC_BUTTON">  
 					TC
 				</button>
@@ -55,6 +54,12 @@
 			<div class="col-md-2">
 				<button type="button" class="btn" id="PROF_BUTTON">  
 					PROF
+				</button>
+			</div>
+                    
+			<div class="col-md-2">
+				<button type="button" class="btn" id="ENTREPRISE_BUTTON">  
+					Entreprise
 				</button>
 			</div>
 		</div>

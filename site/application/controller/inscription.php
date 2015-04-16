@@ -8,7 +8,7 @@
  * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
  *
  */
-class Home extends Controller
+class Inscription extends Controller
 {
     /**
      * PAGE: index
@@ -18,9 +18,10 @@ class Home extends Controller
     {
         // load views
         require APP . 'view/_templates/header.php';
-        require APP . 'view/home/index.php';
+        require APP . 'view/inscription/index.php';
         require APP . 'view/_templates/footer.php';
     }
-
-
+    public function ajaxIndex(){
+        require APP . 'view/inscription/index.php';
+    }
 }

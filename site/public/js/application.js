@@ -1,4 +1,5 @@
-
+$(function()
+{
 	var timeAnimation=300; 	
 	
 	function transition_navbar(color){
@@ -45,6 +46,12 @@
 		}	
 	);
        
+       $("#btn_inscription").click(
+               function(){
+                   window.history.pushState({"html":"","pageTitle":"Inscription"},"", url+"inscription");
+               }
+        );
+       
         $(function()
             {
                 var hidden = true;
@@ -66,4 +73,6 @@
             }       
         );
 
+}
 
+);
