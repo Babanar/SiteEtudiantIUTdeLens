@@ -17,11 +17,13 @@ class Inscription extends Controller
     public function index()
     {
         // load views
-        require APP . 'view/_templates/header.php';
+        $ajax = filter_input(INPUT_GET,"ajax",FILTER_VALIDATE_BOOLEAN 	);
+        if (!$ajax) {
+            require APP . 'view/_templates/header.php';
+        }
         require APP . 'view/inscription/index.php';
-        require APP . 'view/_templates/footer.php';
-    }
-    public function ajaxIndex(){
-        require APP . 'view/inscription/index.php';
+        if (!$ajax) {
+            require APP . 'view/_templates/footer.php';
+        }
     }
 }

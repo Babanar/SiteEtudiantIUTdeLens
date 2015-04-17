@@ -45,10 +45,27 @@ $(function()
                         transition_navbar(window.getComputedStyle(e.target).getPropertyValue('background-color'));
 		}	
 	);
-       
-       $("#btn_inscription").click(
-               function(){
-                   window.history.pushState({"html":"","pageTitle":"Inscription"},"", url+"inscription");
+
+        $(".mainpage-link").click(
+               function(e){
+                   targetUrl=url+e.target.getAttribute("href");
+                   $.ajax({
+                        url : targetUrl,
+                        type : 'GET',
+                        data:'ajax=1',
+                        dataType : 'html',
+                        success : function(code_html, statut){ 
+                            $("#mainpage").hide(timeAnimation,function(){
+                                $("#mainpage").html(code_html);
+                                $("#mainpage").show(timeAnimation);
+                            });
+
+                             window.history.pushState({"html":code_html,"pageTitle":"Inscription"},"", targetUrl);
+      
+                        }
+                     });
+                  
+                   
                }
         );
        

@@ -1,4 +1,5 @@
         <!-- fermeture de la div principale -->
+            </div>
         </div>
     </div>
         <div class="row" >
@@ -6,7 +7,7 @@
             <div class="row">
                     <hr>
                     Copyright 2015 - <a href="#">Charte</a> - <a href="#">Contact</a>
-                    <hr>
+                   
         </div>
  
 

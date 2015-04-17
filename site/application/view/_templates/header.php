@@ -100,7 +100,8 @@
                                                         </button>
 						</div>
 						<div class="col-md-5">
-							<button type="submit" class="btn btn-info btn-sm" id="btn_inscription">
+							<button type="submit" class="btn btn-info btn-sm mainpage-link" id="btn_inscription" 
+                                                                href="inscription/index">
                                                             Inscription
                                                         </button>
 						</div>
@@ -119,4 +120,5 @@
   </div>
     <!-- ouverture de la div principale -->
   <div class="row">
-    <div class="col-md-offset-1 col-md-10" id="mainpage">
+    <div class="col-md-offset-1 col-md-10" id="mainblock">
+         <div class="row" id="mainpage">
