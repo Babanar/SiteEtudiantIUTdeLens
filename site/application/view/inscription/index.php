@@ -6,18 +6,18 @@
   
   <div class="row">
     <div class="form-group">
-      <label for="Nom" class="col-md-5 control-label">Nom de famille : </label>
+      <label for="Nom" class="col-md-5 control-label">Nom de famille<span id="req">*</span> : </label>
       <div class="col-md-7">
-        <input type="text" class="form-control" id="Nom">
+        <input type="text" class="form-control" id="Nom" required>
       </div>
     </div>
   </div>
   
   <div class="row">
     <div class="form-group">
-      <label for="text" class="col-md-5 control-label">Prénom : </label>
+      <label for="text" class="col-md-5 control-label">Prénom<span id="req">*</span> : </label>
       <div class="col-md-7">
-        <input type="text" class="form-control" id="Prénom">
+        <input type="text" class="form-control" id="Prénom" required>
       </div>
     </div>
   </div>
@@ -25,9 +25,9 @@
   
   <div class="row">
     <div class="form-group">
-    <label for="Pays" class="col-md-5 control-label">Pays : </label>
+    <label for="Pays" class="col-md-5 control-label">Pays<span id="req">*</span> : </label>
       <div class="col-md-7">
-        <select id="Pays" class="form-control" >
+        <select id="Pays" class="form-control" required>
           <option>France</option>
         </select>
       </div>
@@ -36,18 +36,18 @@
   
   <div class="row">
     <div class="form-group">
-      <label for="Ville" class="col-md-5 control-label">Ville : </label>
+      <label for="Ville" class="col-md-5 control-label">Ville<span id="req">*</span> : </label>
       <div class="col-md-7">
-        <input type="text" class="form-control" id="Ville">
+        <input type="text" class="form-control" id="Ville" required>
       </div>
     </div>
   </div>
   
   <div class="row">
     <div class="form-group">
-      <label for="Email" class="col-md-5 control-label">E-mail : </label>
+      <label for="Email" class="col-md-5 control-label">E-mail<span id="req">*</span> : </label>
       <div class="col-md-7">
-        <input type="email" class="form-control" id="Email">
+        <input type="email" class="form-control" id="Email" required>
       </div>
     </div>
   </div>
@@ -55,38 +55,38 @@
   
   <div class="row">
     <div class="form-group">
-      <label for="naisssance" class="col-md-2 control-label">Date de naisssance : </label>
-      <div class="col-md-10">
-        <input type="date" class="form-control" id="naisssance">
-      </div>
-    </div>
-  </div>
-  
-  
-  
-  <div class="row">
-    <div class="form-group">
-      <label for="profact" class="col-md-2 control-label">Profession ou études actuelles : </label>
-      <div class="col-md-10">
-        <input type="text" class="form-control" id="profact">
-      </div>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="form-group">
-      <label for="profant" class="col-md-5 control-label">Profession ou études antérieures : </label>
+      <label for="naisssance" class="col-md-5 control-label">Date de naisssance<span id="req">*</span> : </label>
       <div class="col-md-7">
-        <input type="text" class="form-control" id="profant">
+        <input type="date" class="form-control" id="naisssance" required>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="row">
+    <div class="form-group">
+      <label for="profact" class="col-md-5 control-label">Profession ou études actuelles<span id="req">*</span> : </label>
+      <div class="col-md-7">
+        <input type="text" class="form-control" id="profact" required>
       </div>
     </div>
   </div>
   
   <div class="row">
     <div class="form-group">
-    <label for="Formation" class="col-md-2 control-label">Études à l'IUT : </label>
-      <div class="col-md-10">
-        <select id="Formation" class="form-control" >
+      <label for="profant" class="col-md-5 control-label">Profession ou études antérieures<span id="req">*</span> : </label>
+      <div class="col-md-7">
+        <input type="text" class="form-control" id="profant" required>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="form-group">
+    <label for="Formation" class="col-md-5 control-label">Études à l'IUT<span id="req">*</span> : </label>
+      <div class="col-md-7">
+        <select id="Formation" class="form-control" required>
           <option>TC</option>
           <option>GEA</option>
           <option>MMI</option>
@@ -98,27 +98,33 @@
   
   <div class="row">
     <div class="form-group">
-      <label for="photo" class="col-md-2 control-label">Photo de profil : </label>
-      <div class="col-md-10">
-        <input type="file" class="file" id="Photo">
+      <label for="photo" class="col-md-5 control-label">Photo de profil<span id="req">*</span> : </label>
+      <div class="col-md-7">
+        <input type="file" class="file" id="Photo" required>
       </div>
     </div>
   </div>
   
   <div class="row">
-    <div class="form-group">
-      <div class="col-md-10">
-        <input type="checkbox" class="checkbox" id="accept"> j’accepte les règles de protection de mes données
-      </div>
-    </div>
+  <div class="form-group">
+  <div class="col-md-12">
+    <label class="control-label">
+	<div class="col-md-offset-5 checkbox">
+        <input type="checkbox" id="accept" required>J’accepte les <a href="#">règles de protection de mes données</a><span id="req">*</span>
+	</div>
+	</label>
+	</div>
+	</div>
   </div>
   
   
-  
+<p><span id="req">*</span>Ces champs sont obligatoires</p>
+
   
   
   <div class="form-group">
-    <button class="pull-right btn btn-default">Envoyer</button>
+    <button class="col-md-offset-5 col-md-7 btn btn-default" id="inscription_btn">Inscription</button>
   </div>
 </form>
 </div>
+

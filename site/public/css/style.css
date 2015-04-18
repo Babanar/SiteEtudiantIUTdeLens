@@ -153,3 +153,11 @@ hr{
     border:10px solid #A4E338;
     
 }
+
+p {
+font-weight:bold;
+}
+
+#req{
+color:red;
+}
