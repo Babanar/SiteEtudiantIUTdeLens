@@ -23,6 +23,7 @@
     <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <!-- our JavaScript -->
+    <script src="<?php echo URL; ?>js/standard.js"></script>
     <script src="<?php echo URL; ?>js/application.js"></script>
 </body>
 </html>

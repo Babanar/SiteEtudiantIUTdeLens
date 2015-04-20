@@ -80,10 +80,10 @@
 			<div class="col-md-offset-2 col-md-6">
                                 <div class="row" id="entete_connexion">
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control input-small" placeholder="Adresse mail">
+                                        <input type="mail" class="form-control input-small" placeholder="Adresse mail" id="mail_connexion">
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="password" class="form-control input-small" placeholder="Mot de passe">
+                                        <input type="password" class="form-control input-small" placeholder="Mot de passe" id="mdp_connexion">
                                     </div>
                                     <div class="checkbox col-md-6">
                                         <label>

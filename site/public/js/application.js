@@ -28,11 +28,11 @@ $(function()
 						}
             );
             
-            $("#mainpage").animate({
+            $("#mainblock").animate({
 				borderColor:"#FFFFFF"
                 	}, timeAnimation,function(){
                                                 //Transition vers la couleur
-						$("#mainpage").animate({
+						$("#mainblock").animate({
 							borderColor:color
 							}, timeAnimation);
 						}
@@ -51,7 +51,7 @@ $(function()
                    targetUrl=url+e.target.getAttribute("href");
                    $.ajax({
                         url : targetUrl,
-                        type : 'GET',
+                        type : 'POST',
                         data:'ajax=1',
                         dataType : 'html',
                         success : function(code_html, statut){ 
@@ -79,9 +79,24 @@ $(function()
                             $("#entete_connexion").show(timeAnimation);
                         
                             else{
-                            $("#entete_connexion").hide(timeAnimation);
-                            $("#entete_inscription").hide(timeAnimation);
-                            $("#entete_profil").show(timeAnimation);                            
+                                var salt = Math.random();
+                                var mdp = sha1(sha1($("#mdp_connexion").val()+$("#mail_connexion").val())+salt);
+                                $("#entete_connexion").hide(timeAnimation);
+                                $("#entete_inscription").hide(timeAnimation);
+                                $("#entete_profil").show(timeAnimation);     
+                                $.post(
+                                    url+"inscription/test", 
+                                    {
+                                        salt:salt,
+                                        mail:$("#mail_connexion").val(),
+                                        mdp:mdp
+                                    },
+                                    function(cs){
+                                        
+                                    },
+                                    'text'
+                                );
+
                             }
                         
                             hidden = !hidden;
