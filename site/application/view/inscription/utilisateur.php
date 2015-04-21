@@ -1,7 +1,7 @@
 <div>
   <form class="form-horizontal col-md-8 col-md-offset-2">
   <div class="form-group">
-    <legend>Inscription</legend>
+    <legend>Inscription Etudiant et Personnel</legend>
   </div>
   
   <div class="col-md-offset-2">
@@ -186,6 +186,66 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="col-md-offset-2">
+	  <div class="form-group">
+		<legend>Etudes</legend>
+	  </div>
+	</div>
+
+	
+	<div class="row">
+		<div class="form-group">
+			<div class="col-md-5">
+					<label for="etudes" class="control-label">Formations suivies à l'IUT<span id="req">*</span> : </label>
+			</div>
+				<div class="col-md-7">
+					<div class="col-md-offset-1">
+						<div class="checkbox">
+								<input type="checkbox" id="accept">TC
+						</div>
+						
+						<div class="checkbox">
+								<input type="checkbox" id="accept">GEA
+						
+						</div>
+						
+						<div class="checkbox">
+								<input type="checkbox" id="accept">MMI
+						</div>
+						
+						<div class="checkbox">
+								<input type="checkbox" id="accept">INFO
+						</div>
+						
+						<div class="checkbox">
+								<input type="checkbox" id="accept">PROF
+						</div>
+					</div>				
+				</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group">
+			<div class="col-md-5">
+					<label for="Entree" class="control-label">Année d'entrée à l'IUT<span id="req">*</span> : </label>
+			</div>
+			<div class="col-md-7">
+				<input type="text" class="form-control" id="Entree" required>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="form-group">
+			<div class="col-md-5">
+					<label for="Sortie" class="control-label">Année de sortie de l'IUT<span id="req">*</span> : </label>
+			</div>
+			<div class="col-md-7">
+				<input type="text" class="form-control" id="Sortie" required>
+			</div>
+		</div>
+	</div>
   
 	<div class="row">
 		<div class="form-group">
@@ -210,3 +270,9 @@
 </form>
 </div>
 
+
+
+  
+  
+  
+  

@@ -3,7 +3,7 @@
         <button type="submit" class="btn btn-lg"
                 href="inscription/utilisateur"
                 onclick="onClickMainPageLink(this)">
-            Etudiant
+            Etudiant/Personnel
         </button>
     </div>
     <div class="col-md-3 colone_button">
