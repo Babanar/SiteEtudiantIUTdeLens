@@ -170,6 +170,7 @@ color:red;
      
 }
 
+
 .colone_button{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -177,8 +178,9 @@ color:red;
 }
 
 
-.colone_button .btn{
-    background-color: red;
-    
-    color:white;
+.colone_button .btn {
+
+	background-color:rgba(0,0,0,0.5);
+	color:white;
+
 }

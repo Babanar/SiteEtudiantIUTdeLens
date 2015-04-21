@@ -58,19 +58,6 @@
 	<div class="row">
 		<div class="form-group">
 			<div class="col-md-5">
-				<div class="col-md-offset-5">
-					<label for="secteurAct" class="control-label">Secteur d'activité<span id="req">*</span> : </label>
-				</div>
-			</div>
-			<div class="col-md-7">
-				<input type="text" class="form-control" id="secteurAct" required>
-			</div>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="form-group">
-			<div class="col-md-5">
 				<div class="col-md-offset-3">
 					<label for="Siret" class="control-label">Numéro de SIRET/SIREN<span id="req">*</span> : </label>
 				</div>
@@ -84,12 +71,27 @@
 	<div class="row">
 		<div class="form-group">
 			<div class="col-md-5">
-				<div class="col-md-offset-9">
-					<label for="Pays" class="control-label">Pays<span id="req">*</span> : </label>
+				<div class="col-md-offset-5">
+					<label for="secteurAct" class="control-label">Secteur d'activité : </label>
 				</div>
 			</div>
 			<div class="col-md-7">
-				<select id="Pays" class="form-control" required>
+				<input type="text" class="form-control" id="secteurAct">
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<div class="row">
+		<div class="form-group">
+			<div class="col-md-5">
+				<div class="col-md-offset-9">
+					<label for="Pays" class="control-label">Pays : </label>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<select id="Pays" class="form-control">
 					<option>France</option>
 				</select>
 			</div>
@@ -100,11 +102,11 @@
 		<div class="form-group">
 			<div class="col-md-5">
 				<div class="col-md-offset-9">
-					<label for="Ville" class="control-label">Ville<span id="req">*</span> : </label>
+					<label for="Ville" class="control-label">Ville : </label>
 				</div>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Ville" required>
+				<input type="text" class="form-control" id="Ville">
 			</div>
 		</div>
 	</div>
@@ -113,11 +115,11 @@
 		<div class="form-group">
 			<div class="col-md-5">
 				<div class="col-md-offset-7">
-					<label for="CP" class="control-label">Code Postal<span id="req">*</span> : </label>
+					<label for="CP" class="control-label">Code Postal : </label>
 				</div>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Ville" required>
+				<input type="text" class="form-control" id="CP">
 			</div>
 		</div>
 	</div>
@@ -125,7 +127,7 @@
 	<div class="row"> 
 		<div class="form-group">
 			<div class="col-md-5">
-				<div class="col-md-offset-7">
+				<div class="col-md-offset-8">
 					<label for="Adresse" class="control-label">Adresse : </label>
 				</div>
 			</div>
@@ -140,7 +142,7 @@
 	<div class="row"> 
 		<div class="form-group">
 			<div class="col-md-5">
-				<div class="col-md-offset-7">
+				<div class="col-md-offset-8">
 					<label for="Tel" class="control-label">Téléphone : </label>
 				</div>
 			</div>
@@ -151,17 +153,17 @@
 	</div>
 	
 	<div class="row">
-    <div class="form-group">
-		<div class="col-md-5">
-			<div class="col-md-offset-6">
-				<label for="photo" class="control-label">Photo de profil<span id="req">*</span> : </label>
+		<div class="form-group">
+			<div class="col-md-5">
+				<div class="col-md-offset-6">
+					<label for="photo" class="control-label">Photo de profil : </label>
+				</div>
+			</div>
+			<div class="col-md-7">
+					<input type="file" class="file" id="Photo">
 			</div>
 		</div>
-			<div class="col-md-7">
-				<input type="file" class="file" id="Photo" required>
-			</div>
-    </div>
-  </div>
+	</div>
 	
 	<div class="row">
   <div class="form-group">
