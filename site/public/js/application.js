@@ -1,6 +1,28 @@
+    
+	var timeAnimation=300; 	             
+        function onClickMainPageLink(e){
+                   targetUrl=url+e.getAttribute("href");
+                   $.ajax({
+                        url : targetUrl,
+                        type : 'POST',
+                        data:'ajax=1',
+                        dataType : 'html',
+                        success : function(code_html, statut){ 
+                            $("#mainpage").hide(timeAnimation,function(){
+                                $("#mainpage").html(code_html);
+                                $("#mainpage").show(timeAnimation);
+                            });
+
+                             window.history.pushState({"html":code_html,"pageTitle":"Inscription"},"", targetUrl);
+      
+                        }
+                     });
+                  
+                               
+        }
+
 $(function()
 {
-	var timeAnimation=300; 	
 	
 	function transition_navbar(color){
             //Si déjà de la bonne couleur on ne fait rien.
@@ -46,27 +68,13 @@ $(function()
 		}	
 	);
 
-        $(".mainpage-link").click(
-               function(e){
-                   targetUrl=url+e.target.getAttribute("href");
-                   $.ajax({
-                        url : targetUrl,
-                        type : 'POST',
-                        data:'ajax=1',
-                        dataType : 'html',
-                        success : function(code_html, statut){ 
-                            $("#mainpage").hide(timeAnimation,function(){
-                                $("#mainpage").html(code_html);
-                                $("#mainpage").show(timeAnimation);
-                            });
 
-                             window.history.pushState({"html":code_html,"pageTitle":"Inscription"},"", targetUrl);
-      
-                        }
-                     });
-                  
-                   
-               }
+        $(".mainpage-link").click(
+                function(e){
+                    
+                  onClickMainPageLink(e.target);  
+                }
+               
         );
        
         $(function()
