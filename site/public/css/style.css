@@ -106,16 +106,17 @@ hr{
     margin-bottom: 20px;
     padding-top:20px;
     padding-bottom: 20px;
-    display: none;
+    display:none;
+
 }
 
 #entete_profil{
-    display:none;
     line-height: 34px;
     background-color:rgba(0,0,0,0.3);
     border:1px solid white;
     border-right: none;
     color:white;
+    height:34px;
     
 }
 .page{
@@ -182,5 +183,44 @@ color:red;
 
 	background-color:rgba(0,0,0,0.5);
 	color:white;
+
+}
+.profile_icone{
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+    height:20px;
+    margin-top:7px;
+    text-align:center;
+    line-height:20px;
+    font-size:18px;
+    
+    
+}
+
+.text_icone{
+
+    text-shadow:0 0 3px red;
+    color:white;
+    font-weight: bold;
+}
+
+#icone_msg{
+    background-image:url("../img/icone_msg.png");  
+
+}
+
+#icone_forum{
+    background-image:url("../img/icone_forum.png");  
+
+}
+
+#icone_disconnect{
+    background-image:url("../img/icone_disconnect.png");  
+
+}
+
+#icone_notif{
+    background-image:url("../img/icone_notif.png");  
 
 }

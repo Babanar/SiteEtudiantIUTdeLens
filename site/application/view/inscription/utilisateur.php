@@ -1,5 +1,5 @@
 <div>
-  <form class="form-horizontal col-md-8 col-md-offset-2">
+  <form class="form-horizontal col-md-8 col-md-offset-2" id="form_inscription">
   <div class="form-group">
     <legend>Inscription Etudiant et Personnel</legend>
   </div>
@@ -18,7 +18,7 @@
 				</div>
 			</div>
 			<div class="col-md-7">
-				<input type="email" class="form-control" id="Email" required>
+				<input type="email" class="form-control" id="Email" >
 			</div>
 		</div>
 	</div>
@@ -31,7 +31,7 @@
 				</div>
 			</div>
 			<div class="col-md-7">
-				<input type="password" class="form-control" id="Password" required>
+				<input type="password" class="form-control" id="Password" >
 			</div>
 		</div>
 	</div>
@@ -50,7 +50,7 @@
 				</div>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Nom" required>
+				<input type="text" class="form-control" id="Nom" >
 			</div>
 		</div>
 	</div>
@@ -63,7 +63,7 @@
 				</div>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Prénom" required>
+				<input type="text" class="form-control" id="Prénom" >
 			</div>
 		</div>
 	</div>
@@ -76,7 +76,7 @@
 				</div>
 			</div>
 			<div class="col-md-7">
-				<input type="date" class="form-control" id="naisssance" required>
+				<input type="date" class="form-control" id="naisssance" >
 			</div>
 		</div>
 	</div>
@@ -117,7 +117,7 @@
 				</div>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="CP" required>
+				<input type="text" class="form-control" id="CP" >
 			</div>
 		</div>
 	</div>
@@ -231,7 +231,7 @@
 					<label for="Entree" class="control-label">Année d'entrée à l'IUT<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Entree" required>
+				<input type="text" class="form-control" id="Entree" >
 			</div>
 		</div>
 	</div>
@@ -242,7 +242,7 @@
 					<label for="Sortie" class="control-label">Année de sortie de l'IUT<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Sortie" required>
+				<input type="text" class="form-control" id="Sortie" >
 			</div>
 		</div>
 	</div>
@@ -252,7 +252,7 @@
 			<div class="col-md-8 col-md-offset-2">
 				<label class="control-label">
 					<div class="checkbox">
-						<input type="checkbox" id="accept" required>J’accepte les <a href="#">règles de protection de mes données</a><span id="req">*</span>
+						<input type="checkbox" id="accept" >J’accepte les <a href="#">règles de protection de mes données</a><span id="req">*</span>
 					</div>
 				</label>
 			</div>
@@ -272,7 +272,17 @@
 
 
 
-  
+<script>
+    $("#from_inscription").submit(function(e)
+{
+    alert("ok");
+    var postData = $(this).serializeArray();
+    var formURL = $(this).attr("action");
+    Console.log(postData);
+    return false;
+});
+    
+</script>
   
   
   

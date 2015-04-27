@@ -15,14 +15,41 @@ class Super_Util extends Table {
         $this->mdp_hash = $mdp_hash;
         $this->salt_seed = $salt_seed;
         $this->id=$id;
+       
+        $this->exterieur = false;
     }
 
+    private function loadExterieur(){
+        if($this->exterieur!=false)
+            return;
+        if($this->boolEntreprise){
+            $tmp=new EntreprisesSQL();
+        }else{
+            $tmp=new UtilisateursSQL();
+        }
+        $this->exterieur=$tmp->findById($this->idExt);
+    }
     
     public function getEntreprise(){
-
+        if (!$this->boolEntreprise) {
+            return false;
+        }
+        $this->loadExterieur();
+        return $this->exterieur;
     }
        
     public function getUtilisateur(){
+        
+        if ($this->boolEntreprise) {
+            return false;
+        }
+        $this->loadExterieur();
+        return $this->exterieur;
+    }
+    
+    public function getCallNamePresentation(){
+        $this->loadExterieur();
+        return $this->exterieur->getCallNamePresentation();
 
     }
 }
