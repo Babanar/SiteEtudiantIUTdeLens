@@ -6,7 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link href="<?php echo URL; ?>css/style.css" rel="stylesheet">
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  
 
+  
+  
 </head>
 <body id="body">
 
