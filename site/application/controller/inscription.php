@@ -16,62 +16,16 @@ class Inscription extends Controller
      */
     public function index()
     {
-        // load views
-        $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
-        if (!$ajax) {
-            require APP . 'view/_templates/header.php';
-        }
-        require APP . 'view/inscription/index.php';
-        if (!$ajax) {
-            require APP . 'view/_templates/footer.php';
-        }
+        $this->view->render('inscription/index.php');
     }
     public function entreprise()
     {
-        // load views
-        $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
-        if (!$ajax) {
-            require APP . 'view/_templates/header.php';
-        }
-        require APP . 'view/inscription/entreprise.php';
-        if (!$ajax) {
-            require APP . 'view/_templates/footer.php';
-        }
+        $this->view->render('inscription/entreprise.php');
     }
     public function utilisateur()
     {
         // load views
-        $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
-        if (!$ajax) {
-            require APP . 'view/_templates/header.php';
-        }
-        require APP . 'view/inscription/utilisateur.php';
-        if (!$ajax) {
-            require APP . 'view/_templates/footer.php';
-        }
+        $this->view->render('inscription/utilisateur.php');
     }
     
-    public function test(){
-        $salt=filter_input(INPUT_POST,"salt");
-        $mdp=filter_input(INPUT_POST,"mdp");
-        $mail=filter_input(INPUT_POST,"mail",FILTER_VALIDATE_EMAIL);
-        
-        $superUtilSql= new Super_UtilSQL();
-        $utils = $superUtilSql->findByMail($mail)->execute();
-        if(count($utils)<1){
-            //NO USER FOR THIS MAIL
-        }
-        else{
-            $utils = $utils[0];
-            $mdp_hash = $utils->mdp_hash;
-            if(sha1($mdp_hash.(string)$salt)==$mdp){
-                //OK
-            }
-            else{
-                //BAD PASSWORD
-
-            }
-        }
-            
-    }
 }

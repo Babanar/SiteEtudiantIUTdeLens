@@ -1,5 +1,5 @@
 <div>
-  <form class="form-horizontal col-md-8 col-md-offset-2">
+  <form class="form-horizontal col-md-8 col-md-offset-2" id="form_inscription">
   <div class="form-group">
     <legend>Inscription Etudiant et Personnel</legend>
   </div>
@@ -40,7 +40,6 @@
 					<h4> Erreur !</h4>
 					Le mot de passe doit contenir au moins 8 caractères
 				</div>
-			
 			</div>
 		</div>
 	</div>
@@ -93,13 +92,13 @@
 				</div>
 			</div>
 			<div class="col-md-7">
-			<div class='input-group date'>
+				<div class='input-group date'>
                     <input type='date' class="form-control" id='datepicker' />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
-				</div>
+			</div>
 		</div>
 	
 	</div>
@@ -149,6 +148,7 @@
 					<h4> Erreur !</h4>
 					Le code postal peut contenir uniquement 5 chiffres
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -279,6 +279,7 @@
 					<h4> Erreur !</h4>
 					L'année d'entrée n'est pas valide, est supérieure à l'année de sortie ou est inférieure à 1945
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -326,7 +327,6 @@
 </div>
 
 
-  
   
   
   

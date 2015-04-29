@@ -33,10 +33,19 @@ require APP . '/config/autoload.php';
 // If you want to load pdoDebug via Composer, then have a look here: https://github.com/panique/pdo-debug
 require APP . '/libs/helper.php';
 
+
+require APP . '/core/Session.php';
 // load application class
 require APP . '/core/application.php';
+
 require APP . '/core/controller.php';
 
+
+require APP . '/core/View.php';
+require APP . '/core/Redirect.php';
+require APP . '/core/User.php';
+
 // start the application
+
 $app = new Application();
 

@@ -69,7 +69,7 @@ $(function()
 	);
 
 
-        $(".mainpage-link").click(
+        $('body').on('click', '.mainpage-link',
                 function(e){
                     
                   onClickMainPageLink(e.target);  
@@ -81,7 +81,7 @@ $(function()
             {
                 var hidden = true;
                 
-                    $("#connexion").click(
+                    $('#header_user').on('click', '#connexion',
                         function(){
                             if(hidden)
                             $("#entete_connexion").show(timeAnimation);
@@ -93,13 +93,20 @@ $(function()
                                 $("#entete_inscription").hide(timeAnimation);
                                 $("#entete_profil").show(timeAnimation);     
                                 $.post(
-                                    url+"inscription/test", 
+                                    url+"connexion/connect", 
                                     {
                                         salt:salt,
                                         mail:$("#mail_connexion").val(),
-                                        mdp:mdp
+                                        mdp:mdp,
+                                        ajax:true
                                     },
                                     function(cs){
+                                            $("#header_user").hide(timeAnimation,function(){
+                                                $("#header_user").html(cs);
+                                                $("#entete_connexion").show(0);
+                                                $("#header_user").show(timeAnimation);
+                                            });                                        
+                                        
                                         
                                     },
                                     'text'
