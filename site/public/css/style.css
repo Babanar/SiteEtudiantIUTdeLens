@@ -198,6 +198,14 @@ color:red;
     
 }
 
+.profile_icone:hover{
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    cursor: pointer;
+}
+
+
+
 .text_icone{
 
     text-shadow:0 0 3px red;
@@ -222,5 +230,9 @@ color:red;
 
 #icone_notif{
     background-image:url("../img/icone_notif.png");  
+}
 
+#index_message{
+    
+    margin:20px;
 }

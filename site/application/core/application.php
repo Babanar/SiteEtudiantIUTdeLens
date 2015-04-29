@@ -52,11 +52,15 @@ class Application
                     $this->url_controller->index();
                 }
                 else {
-                    header('location: ' . URL . 'error');
+                    require APP . 'controller/error.php';
+                    $this->urlController=new Error();
+                    $this->urlController->index();
                 }
             }
         } else {
-            header('location: ' . URL . 'error');
+            require APP . 'controller/error.php';
+            $this->urlController=new Error();
+            $this->urlController->index();
         }
     }
 
