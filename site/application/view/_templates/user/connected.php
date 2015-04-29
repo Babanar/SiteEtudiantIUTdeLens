@@ -6,8 +6,8 @@
     <div class="col-md-4">
         <?php echo Session::get('callName'); ?>   
     </div>
-     <div class="col-md-2 profile_icone" id="icone_msg">
-         <span class="text_icone">
+     <div class="col-md-2 profile_icone mainpage-link" id="icone_msg" href="message/">
+         <span class="text_icone" href="message/">
              20
          </span>
      </div>
