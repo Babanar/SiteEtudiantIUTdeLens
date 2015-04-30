@@ -19,6 +19,13 @@ class Message extends Controller
         // load views
         $this->view->render('message/index.php');
     }
+	public function conversation()
+    {
+        // load views
+        $this->view->render('message/conversation.php');
+    }
+	
+	
 
 
 }

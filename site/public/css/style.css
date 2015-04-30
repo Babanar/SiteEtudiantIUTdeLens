@@ -236,3 +236,25 @@ color:red;
     
     margin:20px;
 }
+
+#photo
+{
+	border-radius:25px;
+	border: 2px solid black;
+	padding : 50px;
+}
+
+#conv_view
+{
+	border-radius:25px;
+	border: 2px solid black;
+	padding : 50px;
+}
+
+#newmsg_btn
+{
+	border-radius:25px;
+	border: 2px solid black;
+	padding : 50px;
+}
+
