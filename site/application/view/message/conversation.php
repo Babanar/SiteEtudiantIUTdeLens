@@ -1,17 +1,17 @@
 <div id="index_message">
     <div class="row">
       <h3>
-        Auteurs
+        Louis Behague, Mathieu Blanquin
       </h3>
       <hr>
     </div>
 
 
 	<div class="row">
-	<div class="col-md-offset-3 col-md-6">
-			<div id="conv_view">
+	<div class="row">
+	<div class="col-md-offset-3 col-md-6" id="conv_view">
 				CONVERSATION
-			</div>
+		</div>
 		</div>
 		
 		<div class="row">

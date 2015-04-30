@@ -246,15 +246,12 @@ color:red;
 
 #conv_view
 {
-	border-radius:25px;
+	
 	border: 2px solid black;
 	padding : 50px;
 }
 
-#newmsg_btn
+#send_btn
 {
-	border-radius:25px;
-	border: 2px solid black;
-	padding : 50px;
+padding:20px;
 }
-
