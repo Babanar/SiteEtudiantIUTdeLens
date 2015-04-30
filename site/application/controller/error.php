@@ -19,4 +19,8 @@ class Error extends Controller
         $this->view->render('error/index.php');
         
     }
+    
+   public function needLogin(){
+        $this->view->render('_templates/user/needLogin.php');
+    }
 }

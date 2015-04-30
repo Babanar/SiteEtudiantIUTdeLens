@@ -27,6 +27,8 @@ class Connexion extends Controller
             
     }
     
+ 
+    
     public function disconnect(){
         session_destroy();
         Redirect::home();

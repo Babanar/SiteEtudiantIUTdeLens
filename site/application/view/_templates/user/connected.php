@@ -21,7 +21,7 @@
              2
          </span>
      </div>
-     <div class="col-md-2 profile_icone" id="icone_disconnect"></div>
+     <a class="col-md-2 profile_icone" id="icone_disconnect" href="<?php echo URL ?>/connexion/disconnect"></a>
     
 </div>
         

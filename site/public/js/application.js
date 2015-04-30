@@ -1,5 +1,5 @@
     
-	var timeAnimation=300; 	             
+	var timeAnimation=500; 	             
         function onClickMainPageLink(e){
                    targetUrl=url+e.getAttribute("href");
                    $.ajax({
