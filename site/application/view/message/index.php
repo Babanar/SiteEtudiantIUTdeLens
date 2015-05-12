@@ -10,12 +10,15 @@
 			<div class="row">
 				<div class="col-md-2">
 					<div id="photoconv">	
-						<img src="../public/img/logo_iut.png">
+						<img src="../public/img/iut.jpg" id="photoconv">
 					</div>
 				</div>			
-				<div class="col-md-4"><h3 id="titre">Bienvenue</h3></div>
+				<div class="row">
+				<div class="col-md-4"><h3 id="titre">Bienvenue !</h3></div>
 				<div class="col-md-4"><div id="datetime">11/05/2015 08:39</div></div>
-				<div id="message">Bienvenue sur le forum !</div>
+				</div>
+				
+				<div id="message">aaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzzzzzzzzzzzzzzzzzzzzeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrtttttttttttttttttttttyyyyyyyyyyyyyyyyyyyyyyyyyyyyy</div>
 			</div>
 			
 			<hr>
