@@ -12,10 +12,8 @@
   
   <div class="row">
 		<div class="form-group" id="emailGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-9">
+			<div class="col-md-5 text-right">
 					<label for="Email" class="control-label">E-mail<span id="req">*</span> : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="email" class="form-control" id="Email">
@@ -29,10 +27,8 @@
 	
 	<div class="row">
 		<div class="form-group" id="pwdGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-6">
+			<div class="col-md-5 text-right">
 					<label for="Password" class="control-label">Mot de passe<span id="req">*</span> : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="password" class="form-control" id="Password">
@@ -53,10 +49,8 @@
 
   <div class="row">
 		<div class="form-group" id="entrNomGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-5">
+			<div class="col-md-5 text-right">
 					<label for="Nomentr" class="control-label">Nom de l'entreprise<span id="req">*</span> : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="Nomentre">
@@ -70,10 +64,8 @@
 	
 	<div class="row">
 		<div class="form-group" id="SiretGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-3">
+			<div class="col-md-5 text-right">
 					<label for="Siret" class="control-label">Numéro de SIRET/SIREN<span id="req">*</span> : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="number_format" class="form-control" id="Siret">
@@ -87,10 +79,8 @@
 	
 	<div class="row">
 		<div class="form-group">
-			<div class="col-md-5">
-				<div class="col-md-offset-5">
+			<div class="col-md-5 text-right">
 					<label for="secteurAct" class="control-label">Secteur d'activité : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="secteurAct">
@@ -102,10 +92,8 @@
 	
 	<div class="row">
 		<div class="form-group">
-			<div class="col-md-5">
-				<div class="col-md-offset-9">
+			<div class="col-md-5 text-right">
 					<label for="Pays" class="control-label">Pays : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<select id="Pays" class="form-control">
@@ -117,10 +105,8 @@
   
 	<div class="row"> 
 		<div class="form-group " id="cityGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-9">
+			<div class="col-md-5 text-right">
 					<label for="Ville" class="control-label">Ville : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="Ville">
@@ -134,10 +120,8 @@
   
   <div class="row"> 
 		<div class="form-group" id="CPGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-7">
+			<div class="col-md-5 text-right">
 					<label for="CP" class="control-label">Code Postal : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="CP">
@@ -151,10 +135,8 @@
 	
 	<div class="row"> 
 		<div class="form-group">
-			<div class="col-md-5">
-				<div class="col-md-offset-8">
+			<div class="col-md-5 text-right">
 					<label for="Adresse" class="control-label">Adresse : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="Adresse">
@@ -166,10 +148,8 @@
 	
 	<div class="row"> 
 		<div class="form-group" id="TelGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-8">
+			<div class="col-md-5 text-right">
 					<label for="Tel" class="control-label">Téléphone : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="phone" class="form-control" id="Tel">
@@ -183,10 +163,8 @@
 	
 	<div class="row">
 		<div class="form-group">
-			<div class="col-md-5">
-				<div class="col-md-offset-6">
+			<div class="col-md-5 text-right">
 					<label for="photo" class="control-label">Photo de profil : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 					<input type="file" class="file" id="Photo">
@@ -195,16 +173,16 @@
 	</div>
 	
 	<div class="row">
-  <div class="form-group">
-  <div class="col-md-8 col-md-offset-2">
-    <label class="control-label">
-	<div class="checkbox">
-        <input type="checkbox" id="accept" required>J’accepte les <a href="#">règles de protection de mes données</a><span id="req">*</span>
+		<div class="form-group" id="reglesGroup">
+			<div class="col-md-7 col-md-offset-5">
+				<label class="control-label">
+					<div class="checkbox">
+						<input type="checkbox" id="accept">J’accepte les <a href="#">règles de protection de mes données</a><span id="req">*</span>
+					</div>
+				</label>
+			</div>
+		</div>
 	</div>
-	</label>
-	</div>
-	</div>
-  </div>
   
   
 <p><span id="req">*</span>Ces champs sont obligatoires</p>
