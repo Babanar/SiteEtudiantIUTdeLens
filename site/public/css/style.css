@@ -246,10 +246,9 @@ color:red;
 
 #photoconv
 {
-	border: 2px solid black;
-	padding:10px;
+max-height:100%;
+max-width:200px;
 }
-
 
 #conv_view
 {
@@ -263,6 +262,13 @@ color:red;
 {
 padding-top:25px;
 padding-bottom:10px;
+}
+
+#msgarea
+{
+resize:none;
+padding-right:2px;
+padding-left:2px;
 }
 
 #send_btn
