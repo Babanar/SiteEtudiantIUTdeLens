@@ -1,5 +1,5 @@
 <div>
-  <form class="form-horizontal col-md-8 col-md-offset-2" id="form_inscription">
+  <form class="form-horizontal col-md-8 col-md-offset-2" id="form_inscription_utilisateur">
   <div class="form-group">
     <legend>Inscription Etudiant et Personnel</legend>
   </div>
@@ -12,10 +12,8 @@
   
   <div class="row">
 		<div class="form-group" id="emailGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-9">
+			<div class="col-md-5 text-right">
 					<label for="Email" class="control-label">E-mail<span id="req">*</span> : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="email" class="form-control" id="Email">
@@ -29,10 +27,9 @@
 	
 	<div class="row">
 		<div class="form-group" id="pwdGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-6">
+			<div class="col-md-5 text-right">
 					<label for="Password" class="control-label">Mot de passe<span id="req">*</span> : </label>
-				</div>
+
 			</div>
 			<div class="col-md-7">
 				<input type="password" class="form-control" id="Password">
@@ -52,10 +49,8 @@
   
 	<div class="row">
 		<div class="form-group" id="surnameGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-6">
+			<div class="col-md-5 text-right">
 					<label for="Nom" class="control-label">Nom de famille<span id="req">*</span> : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="Nom">
@@ -69,10 +64,8 @@
   
 	<div class="row">
 		<div class="form-group" id="nameGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-8">
+			<div class="col-md-5 text-right">
 					<label for="Prénom" class="control-label">Prénom<span id="req">*</span> : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="Prenom">
