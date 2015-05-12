@@ -240,7 +240,7 @@ color:red;
 
 #index_message{
     
-    margin:20px;
+
 }
 
 #photo
@@ -250,7 +250,7 @@ color:red;
 	padding : 50px;
 }
 
-#photoconv
+.photoconv
 {
 max-height:133px;
 max-width:100%;
@@ -280,6 +280,56 @@ padding-left:2px;
 #send_btn
 {
 padding:20px;
+}
+
+.entetemsg
+{
+height;50px;
+line-height:50px;
+}
+
+.entetemsg h3
+{
+margin:0px;
+line-height:50px;
+}
+
+.titremsg
+{
+color:#00796C;
+}
+
+.titreMPage
+{
+color:#B7540F;
+}
+
+.auteursmsg
+{
+color:#00796C;
+}
+
+#newmsg_btn
+{
+margin-bottom:2px;
+}
+
+
+.datemsg
+{
+color:#C89709;
+}
+
+.contenumsg
+{
+color:#B10F57;
+}
+
+
+#index_message hr 
+{
+background-color:white;
+height:2px;
 }
 
 form label{
