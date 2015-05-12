@@ -3,7 +3,7 @@
         </div>
     </div>
         <div class="row" >
-            <div class="col-md-offset-1 col-md-10 hidden-sm" id="footer">
+            <div class="col-md-12 hidden-sm" id="footer">
             <div class="row">
                     <hr>
                     Copyright 2015 - <a href="#">Charte</a> - <a href="#">Contact</a>

@@ -14,13 +14,24 @@ class Message extends Controller
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
      */
+    
+    public function __construct(){
+        parent::__construct();
+        if(!User::isLoggedIn()){
+            $this->view->render('error/needLogin.php');
+        }
+    }
     public function index()
     {
+        if(!User::isLoggedIn())
+            return;
         // load views
         $this->view->render('message/index.php');
     }
 	public function conversation()
     {
+        if(!User::isLoggedIn())
+            return;
         // load views
         $this->view->render('message/conversation.php');
     }

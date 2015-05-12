@@ -7,7 +7,7 @@ class Redirect
 	 */
 	public static function home()
 	{
-		header("location: " . URL_DOMAIN);
+		header("location: " . URL);
 	}
 	/**
 	 * To the defined page
@@ -16,6 +16,8 @@ class Redirect
 	 */
 	public static function to($path)
 	{
-		header("location: " . URL_DOMAIN . $path);
+		header("location: " . URL . $path);
 	}
+        
+
 }

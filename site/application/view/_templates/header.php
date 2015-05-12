@@ -18,7 +18,7 @@
 <div class="container">
    <!-- Entête de présentation -->
   <div class="row" >
-		<div class="col-md-offset-1 col-md-10 entete " id="ligne_entete">
+		<div class=" col-md-12 entete " id="ligne_entete">
 			<div class="row">
 				<div class="col-md-2 logo">
 					<img src="<?php echo URL; ?>img/logo_iut.png"/>
@@ -34,7 +34,7 @@
   </div>
    <!-- Entête de navigation -->
   <div class="row "> 
-    <div class="col-md-offset-1 col-md-10" id="navbar">
+    <div class=" col-md-12" id="navbar">
 		<div class="row" id="navbar_btn">
 			<div class="col-md-2">
 				<button type="button" class="btn" id="TC_BUTTON">  
@@ -104,5 +104,5 @@
   </div>
     <!-- ouverture de la div principale -->
   <div class="row">
-    <div class="col-md-offset-1 col-md-10" id="mainblock">
+    <div class="col-md-12" id="mainblock">
          <div class="row" id="mainpage">

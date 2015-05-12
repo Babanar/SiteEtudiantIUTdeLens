@@ -7,6 +7,14 @@
 	
 }
 
+body{
+    background-color: #F0F0F0;
+}
+
+.container{
+    width:95%;
+}
+
 .entete .logo{
 	padding:0px;
 	padding-top:20px;
@@ -49,9 +57,7 @@
 
 #ligne_entete{
 
-	margin-top:10px;
 	border:#A4E338 solid 0px;
-	border-radius:10px 10px 0px 0px;
 }
 
 #TC_BUTTON{
@@ -147,12 +153,12 @@ hr{
 }
 
 #mainpage{
-
+   border-radius: 10px; 
 
 }
 #mainblock{
     border:10px solid #A4E338;
-    
+       
 }
 
 p {
@@ -274,4 +280,8 @@ padding-left:2px;
 #send_btn
 {
 padding:20px;
+}
+
+form label{
+    text-align:right;
 }

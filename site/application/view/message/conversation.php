@@ -8,6 +8,7 @@
 
 
 	<div class="row">
+
 		<div class="row">
 			<div class="col-md-offset-3 col-md-6" id="conv_view">
 				
@@ -41,6 +42,7 @@
 		<div class="row">
 			<textarea class="col-md-offset-3 col-md-6" cols="50" id="msgarea"></textarea>
 				<button type="submit" class="col-md-1 btn btn-default" id="send_btn">ENVOYER</button>
+
 		</div>
 	</div>
 </div>
