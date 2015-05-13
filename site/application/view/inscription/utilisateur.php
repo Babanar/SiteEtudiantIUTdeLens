@@ -16,7 +16,7 @@
 					<label for="Email" class="control-label">E-mail<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="email" class="form-control" id="Email">
+				<input type="email" class="form-control" id="email">
 			</div>
 		</div>
 	</div>
@@ -28,7 +28,7 @@
 
 			</div>
 			<div class="col-md-7">
-				<input type="password" class="form-control" id="Password">
+				<input type="password" class="form-control" id="password">
 			</div>
 		</div>
 	</div>
@@ -45,7 +45,7 @@
 					<label for="Nom" class="control-label">Nom de famille<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Nom">
+				<input type="text" class="form-control" id="nom">
 			</div>
 		</div>
 	</div>
@@ -56,7 +56,7 @@
 					<label for="Prénom" class="control-label">Prénom<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Prenom">
+				<input type="text" class="form-control" id="prenom">
 			</div>
 		</div>
 	</div>
@@ -68,7 +68,7 @@
 			</div>
 			<div class="col-md-7">
 				<div class='input-group date'>
-                    <input type='date' class="form-control" id='Birthdate' />
+                    <input type='date' class="form-control" id='birthdate' />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -135,7 +135,7 @@
 						</div>
 						
 						<div class="checkbox">
-								<input type="checkbox" id="ProfCheck">PROF
+								<input type="checkbox" id="profCheck">PROF
 						</div>				
 				</div>
 		</div>
@@ -146,7 +146,7 @@
 					<label for="Entree" class="control-label">Année d'entrée à l'IUT<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Entree">
+				<input type="text" class="form-control" id="entree">
 			</div>
 		</div>
 	</div>
@@ -157,7 +157,7 @@
 					<label for="Sortie" class="control-label">Année de sortie de l'IUT<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Sortie">
+				<input type="text" class="form-control" id="sortie">
 			</div>
 		</div>
 	</div>

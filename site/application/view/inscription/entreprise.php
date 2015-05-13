@@ -1,5 +1,5 @@
 <div>
-  <form class="form-horizontal col-md-8 col-md-offset-2">
+    <form class="form-horizontal col-md-8 col-md-offset-2" id="form_inscription_entreprise">
   <div class="form-group">
     <legend>Inscription entreprise</legend>
   </div>
@@ -16,7 +16,7 @@
 					<label for="Email" class="control-label">E-mail<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="email" class="form-control" id="Email">
+				<input type="email" class="form-control" id="email">
 				<div class="alert alert-block alert-danger" id="emailalert" style="display:none">
 					<h4> Erreur !</h4>
 					Veuillez entrer une adresse email valide.
@@ -31,7 +31,7 @@
 					<label for="Password" class="control-label">Mot de passe<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="password" class="form-control" id="Password">
+				<input type="password" class="form-control" id="password">
 				<div class="alert alert-block alert-danger" id="pwdalert" style="display:none">
 					<h4> Erreur !</h4>
 					Le mot de passe doit contenir au moins 8 caractères
@@ -53,7 +53,7 @@
 					<label for="Nomentr" class="control-label">Nom de l'entreprise<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Nomentre">
+				<input type="text" class="form-control" id="nomentre">
 				<div class="alert alert-block alert-danger" id="NomentrAlert" style="display:none">
 					<h4> Erreur !</h4>
 					Le nom de l'entreprise est OBLIGATOIRE
@@ -68,7 +68,7 @@
 					<label for="Siret" class="control-label">Numéro de SIRET/SIREN<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="number_format" class="form-control" id="Siret">
+				<input type="number_format" class="form-control" id="siret">
 				<div class="alert alert-block alert-danger" id="siretalert" style="display:none">
 					<h4> Erreur !</h4>
 					Le numéro de SiRET/SIREN doit OBLIGATOIREMENT contenir 14 chiffres
@@ -96,7 +96,7 @@
 					<label for="Pays" class="control-label">Pays : </label>
 			</div>
 			<div class="col-md-7">
-				<select id="Pays" class="form-control">
+				<select id="pays" class="form-control">
 					<option>France</option>
 				</select>
 			</div>
@@ -109,7 +109,7 @@
 					<label for="Ville" class="control-label">Ville : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Ville">
+				<input type="text" class="form-control" id="ville">
 				<div class="alert alert-block alert-danger" id="cityalert" style="display:none">
 					<h4> Erreur !</h4>
 					Le nom de ville ne peut pas contenir de chiffres
@@ -152,7 +152,7 @@
 					<label for="Tel" class="control-label">Téléphone : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="phone" class="form-control" id="Tel">
+				<input type="phone" class="form-control" id="tel">
 				<div class="alert alert-block alert-danger" id="Telalert" style="display:none">
 					<h4> Erreur !</h4>
 					Le numéro de téléphone peut contenir uniquement 10 chiffres
