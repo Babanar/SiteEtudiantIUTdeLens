@@ -273,13 +273,16 @@ padding-bottom:10px;
 #msgarea
 {
 resize:none;
-padding-right:2px;
-padding-left:2px;
 }
 
 #send_btn
 {
 padding:20px;
+}
+
+#newmsg_btn
+{
+margin-bottom:2px;
 }
 
 .entetemsg
@@ -296,7 +299,7 @@ line-height:50px;
 
 .titremsg
 {
-color:#00796C;
+color:#B25F0F;
 }
 
 .titreMPage
@@ -306,14 +309,8 @@ color:#B7540F;
 
 .auteursmsg
 {
-color:#00796C;
+color:#B25F0F; 
 }
-
-#newmsg_btn
-{
-margin-bottom:2px;
-}
-
 
 .datemsg
 {
@@ -322,7 +319,13 @@ color:#C89709;
 
 .contenumsg
 {
-color:#B10F57;
+color:black;
+}
+
+#contenuarea
+{
+height:100%;
+width:100%;
 }
 
 

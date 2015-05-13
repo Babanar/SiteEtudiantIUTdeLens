@@ -162,17 +162,6 @@
 	</div>
 	
 	<div class="row">
-		<div class="form-group">
-			<div class="col-md-5 text-right">
-					<label for="photo" class="control-label">Photo de profil : </label>
-			</div>
-			<div class="col-md-7">
-					<input type="file" class="file" id="Photo">
-			</div>
-		</div>
-	</div>
-	
-	<div class="row">
 		<div class="form-group" id="reglesGroup">
 			<div class="col-md-7 col-md-offset-5">
 				<label class="control-label">

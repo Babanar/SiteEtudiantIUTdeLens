@@ -35,6 +35,13 @@ class Message extends Controller
         // load views
         $this->view->render('message/conversation.php');
     }
+	public function newconv()
+    {
+        if(!User::isLoggedIn())
+            return;
+        // load views
+        $this->view->render('message/newconv.php');
+    }
 	
 	
 

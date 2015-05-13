@@ -28,11 +28,11 @@
 					<div class="row">
 						<div class="col-md-offset-1">
 							<div id="photoconv" class="col-md-2">	
-							Photo
+							<img src="../public/img/iut.jpg" class="photoconv">
 							</div>
-							<div class="col-md-4" id="auteur">Vous</div>
-							<div class="col-md-4 col-md-offset-2" id="datetime">11/05/2015 08:45</div>
-							<div class="col-md-offset-3" id="message" >Ouais je sais, Keur</div>
+							<div class="col-md-4 auteursmsg">Mathieu Blanquin</div>
+							<div class="col-md-4 col-md-offset-2 datemsg text-right">11/05/2015 08:45</div>
+							<div class="col-md-offset-3 contenumsg">Ouais, je sais, Keur</div>
 						</div>	
 					</div>
 				

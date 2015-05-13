@@ -81,66 +81,6 @@
 	<div class="row">
 		<div class="form-group">
 			<div class="col-md-5 text-right">
-					<label for="Pays" class="control-label">Pays : </label>
-			</div>
-			<div class="col-md-7">
-				<select id="Pays" class="form-control">
-					<option>France</option>
-				</select>
-			</div>
-		</div>
-	</div>
-  
-	<div class="row"> 
-		<div class="form-group " id="cityGroup">
-			<div class="col-md-5 text-right">
-					<label for="Ville" class="control-label">Ville : </label>
-			</div>
-			<div class="col-md-7">
-				<input type="text" class="form-control" id="Ville">
-			</div>
-		</div>
-	</div>
-  
-  <div class="row"> 
-		<div class="form-group" id="CPGroup">
-			<div class="col-md-5 text-right">
-					<label for="CP" class="control-label">Code Postal : </label>
-			</div>
-			<div class="col-md-7">
-				<input type="text" class="form-control" id="CP">
-
-			</div>
-		</div>
-	</div>
-	
-	<div class="row"> 
-		<div class="form-group">
-			<div class="col-md-5 text-right">
-					<label for="Adresse" class="control-label">Adresse : </label>
-			</div>
-			<div class="col-md-7">
-				<input type="text" class="form-control" id="Adresse">
-				<input type="text" class="form-control" id="compAddr1">
-				<input type="text" class="form-control" id="compAddr2">
-			</div>
-		</div>
-	</div>
-	
-	<div class="row"> 
-		<div class="form-group" id="TelGroup">
-			<div class="col-md-5 text-right">
-					<label for="Tel" class="control-label">Téléphone : </label>
-			</div>
-			<div class="col-md-7">
-				<input type="phone" class="form-control" id="Tel">
-			</div>
-		</div>
-	</div>
-  
-	<div class="row">
-		<div class="form-group">
-			<div class="col-md-5 text-right">
 					<label for="profact" class="control-label">Profession ou études actuelles : </label>
 			</div>
 			<div class="col-md-7">
@@ -156,17 +96,6 @@
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="profant">
-			</div>
-		</div>
-	</div>
-  
-	<div class="row">
-		<div class="form-group">
-			<div class="col-md-5 text-right">
-					<label for="photo" class="control-label">Photo de profil : </label>
-			</div>
-			<div class="col-md-7">
-				<input type="file" class="file" id="Photo">
 			</div>
 		</div>
 	</div>
