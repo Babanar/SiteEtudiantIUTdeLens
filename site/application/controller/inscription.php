@@ -28,4 +28,10 @@ class Inscription extends Controller
         $this->view->render('inscription/utilisateur.php');
     }
     
+    public function profil()
+    {
+        // load views
+        $this->view->render('inscription/profil_utilisateur.php');
+    }
+    
 }
