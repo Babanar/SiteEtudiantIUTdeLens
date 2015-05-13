@@ -123,12 +123,20 @@ $(function()
 
 );
 
-//Formulaires d'inscription
-$(function(){
-    $(document).on('submit','form_inscription_utilisateur',function(){
-        alert("ok");
-    });
-  });
-			
 
+$("#form_inscription_utilisateur").bind('submit',function(e){
+        $.post(
+            'inscription/validation', 
+            {
+                login : $("#username").val(),  
+                password : $("#password").val()
+            },
 
+            function(data){ 
+                //Ca je m'en occupes :)
+            },
+
+            'text'
+        );
+    return false;
+});
