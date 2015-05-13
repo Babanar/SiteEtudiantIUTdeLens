@@ -1,5 +1,5 @@
 <div>
-  <form class="form-horizontal col-md-8 col-md-offset-2" id="form_inscription_utilisateur">
+    <form class="form-horizontal col-md-8 col-md-offset-2" id="form_inscription_utilisateur" >
   <div class="form-group">
     <legend>Inscription Etudiant et Personnel</legend>
   </div>
@@ -68,7 +68,7 @@
 			</div>
 			<div class="col-md-7">
 				<div class='input-group date'>
-                    <input type='date' class="form-control" id='datepicker' />
+                    <input type='date' class="form-control" id='Birthdate' />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
