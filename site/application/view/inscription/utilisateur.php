@@ -17,10 +17,6 @@
 			</div>
 			<div class="col-md-7">
 				<input type="email" class="form-control" id="Email">
-				<div class="alert alert-block alert-danger" id="emailalert" style="display:none">
-					<h4> Erreur !</h4>
-					Veuillez entrer une adresse email valide.
-				</div>
 			</div>
 		</div>
 	</div>
@@ -33,10 +29,6 @@
 			</div>
 			<div class="col-md-7">
 				<input type="password" class="form-control" id="Password">
-				<div class="alert alert-block alert-danger" id="pwdalert" style="display:none">
-					<h4> Erreur !</h4>
-					Le mot de passe doit contenir au moins 8 caractères
-				</div>
 			</div>
 		</div>
 	</div>
@@ -54,10 +46,6 @@
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="Nom">
-				<div class="alert alert-block alert-danger" id="surnamealert" style="display:none">
-					<h4> Erreur !</h4>
-					Le nom de famille est OBLIGATOIRE et ne peut contenir de chiffres
-				</div>
 			</div>
 		</div>
 	</div>
@@ -69,20 +57,14 @@
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="Prenom">
-				<div class="alert alert-block alert-danger" id="namealert" style="display:none">
-					<h4> Erreur !</h4>
-					Le prénom est OBLIGATOIRE et ne peut contenir de chiffres
-				</div>
 			</div>
 		</div>
 	</div>
 	
 	<div class="row">
 		<div class="form-group">
-			<div class="col-md-5">
-				<div class="col-md-offset-4">
+			<div class="col-md-5 text-right">
 					<label for="naisssance" class="control-label">Date de naisssance<span id="req">*</span> : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<div class='input-group date'>
@@ -98,10 +80,8 @@
   
 	<div class="row">
 		<div class="form-group">
-			<div class="col-md-5">
-				<div class="col-md-offset-9">
+			<div class="col-md-5 text-right">
 					<label for="Pays" class="control-label">Pays : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<select id="Pays" class="form-control">
@@ -113,34 +93,22 @@
   
 	<div class="row"> 
 		<div class="form-group " id="cityGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-9">
+			<div class="col-md-5 text-right">
 					<label for="Ville" class="control-label">Ville : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="Ville">
-				<div class="alert alert-block alert-danger" id="cityalert" style="display:none">
-					<h4> Erreur !</h4>
-					Le nom de ville ne peut pas contenir de chiffres
-				</div>
 			</div>
 		</div>
 	</div>
   
   <div class="row"> 
 		<div class="form-group" id="CPGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-7">
+			<div class="col-md-5 text-right">
 					<label for="CP" class="control-label">Code Postal : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="CP">
-				<div class="alert alert-block alert-danger" id="CPostalalert" style="display:none">
-					<h4> Erreur !</h4>
-					Le code postal peut contenir uniquement 5 chiffres
-				</div>
 
 			</div>
 		</div>
@@ -148,10 +116,8 @@
 	
 	<div class="row"> 
 		<div class="form-group">
-			<div class="col-md-5">
-				<div class="col-md-offset-8">
+			<div class="col-md-5 text-right">
 					<label for="Adresse" class="control-label">Adresse : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="Adresse">
@@ -163,27 +129,19 @@
 	
 	<div class="row"> 
 		<div class="form-group" id="TelGroup">
-			<div class="col-md-5">
-				<div class="col-md-offset-8">
+			<div class="col-md-5 text-right">
 					<label for="Tel" class="control-label">Téléphone : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="phone" class="form-control" id="Tel">
-				<div class="alert alert-block alert-danger" id="Telalert" style="display:none">
-					<h4> Erreur !</h4>
-					Le numéro de téléphone peut contenir uniquement 10 chiffres
-				</div>
 			</div>
 		</div>
 	</div>
   
 	<div class="row">
 		<div class="form-group">
-			<div class="col-md-5">
-				<div class="col-md-offset-1">
+			<div class="col-md-5 text-right">
 					<label for="profact" class="control-label">Profession ou études actuelles : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="profact">
@@ -193,7 +151,7 @@
   
 	<div class="row">
 		<div class="form-group">
-			<div class="col-md-5">
+			<div class="col-md-5 text-right">
 					<label for="profant" class="control-label">Profession ou études antérieures : </label>
 			</div>
 			<div class="col-md-7">
@@ -204,10 +162,8 @@
   
 	<div class="row">
 		<div class="form-group">
-			<div class="col-md-5">
-				<div class="col-md-offset-6">
+			<div class="col-md-5 text-right">
 					<label for="photo" class="control-label">Photo de profil : </label>
-				</div>
 			</div>
 			<div class="col-md-7">
 				<input type="file" class="file" id="Photo">
@@ -224,11 +180,10 @@
 	
 	<div class="row">
 		<div class="form-group" id="FormationsGroup">
-			<div class="col-md-5">
+			<div class="col-md-5 text-right">
 					<label for="etudes" class="control-label">Formations suivies à l'IUT<span id="req">*</span> : </label>
 			</div>
 				<div class="col-md-7">
-					<div class="col-md-offset-1">
 						<div class="checkbox">
 								<input type="checkbox" id="TCcheck">TC
 						</div>
@@ -252,56 +207,38 @@
 						
 						<div class="checkbox">
 								<input type="checkbox" id="ProfCheck">PROF
-						</div>
-					</div>				
-				</div>
-				<div class="alert alert-block alert-danger" id="formationsAlert" style="display:none">
-					<h4> Erreur !</h4>
-					Vous devez cocher au moins une formation
+						</div>				
 				</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="form-group" id="entreeGroup">
-			<div class="col-md-5">
+			<div class="col-md-5 text-right">
 					<label for="Entree" class="control-label">Année d'entrée à l'IUT<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="Entree">
-				<div class="alert alert-block alert-danger" id="entreeAlert" style="display:none">
-					<h4> Erreur !</h4>
-					L'année d'entrée n'est pas valide, est supérieure à l'année de sortie ou est inférieure à 1945
-				</div>
-
 			</div>
 		</div>
 	</div>
 	
 	<div class="row">
 		<div class="form-group" id="sortieGroup">
-			<div class="col-md-5">
+			<div class="col-md-5 text-right">
 					<label for="Sortie" class="control-label">Année de sortie de l'IUT<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="Sortie">
-				<div class="alert alert-block alert-danger" id="sortieAlert" style="display:none">
-					<h4> Erreur !</h4>
-					L'année de sortie n'est pas valide, est inférieure à l'année de sortie ou est inférieuree à 1945
-				</div>
 			</div>
 		</div>
 	</div>
   
 	<div class="row">
 		<div class="form-group" id="reglesGroup">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-7 col-md-offset-5">
 				<label class="control-label">
 					<div class="checkbox">
 						<input type="checkbox" id="accept">J’accepte les <a href="#">règles de protection de mes données</a><span id="req">*</span>
-						<div class="alert alert-block alert-danger" style="display:none">
-					<h4> Erreur !</h4>
-					Vous devez accepter les <a href="#">règles de protection de mes données</a> pour pouvoir continuer.
-				</div>
 					</div>
 				</label>
 			</div>
