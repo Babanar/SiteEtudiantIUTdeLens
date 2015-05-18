@@ -28,11 +28,12 @@ class Inscription extends Controller
         $this->view->render('inscription/utilisateur.php');
     }
     
-    public function profil()
+    public function profil_utilisateur()
     {
         // load views
         $this->view->render('inscription/profil_utilisateur.php');
     }
+
     public function valutilisateur(){
         if(User::inscription()){
             
@@ -40,4 +41,12 @@ class Inscription extends Controller
            $this->view->render('inscription/utilisateur.php');
         }
     }
+
+    
+    public function profil_entreprise()
+    {
+        // load views
+        $this->view->render('inscription/profil_entreprise.php');
+    }
+    
 }

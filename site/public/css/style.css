@@ -252,9 +252,13 @@ color:red;
 
 .photoconv
 {
+height: 133px;
 max-height:133px;
 max-width:100%;
+padding-bottom: 2px;
 }
+
+
 
 #conv_view
 {
@@ -329,7 +333,13 @@ width:100%;
 }
 
 
-#index_message hr 
+#index_message hr
+{
+background-color:white;
+height:2px;
+}
+
+#index_profil hr 
 {
 background-color:white;
 height:2px;

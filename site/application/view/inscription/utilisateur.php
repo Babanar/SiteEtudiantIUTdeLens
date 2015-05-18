@@ -79,8 +79,7 @@
                     </span>
                 </div>
 			</div>
-		</div>
-	
+                </div>
 	</div>
   
 	<div class="row">
@@ -145,6 +144,7 @@
 				</div>
 		</div>
 	</div>
+        
 	<div class="row">
 		<div class="form-group" id="entreeGroup">
 			<div class="col-md-5 text-right">

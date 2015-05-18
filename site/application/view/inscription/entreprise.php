@@ -59,10 +59,6 @@
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="nomentre">
-				<div class="alert alert-block alert-danger" id="NomentrAlert" style="display:none">
-					<h4> Erreur !</h4>
-					Le nom de l'entreprise est OBLIGATOIRE
-				</div>
 			</div>
 		</div>
 	</div>
@@ -74,10 +70,6 @@
 			</div>
 			<div class="col-md-7">
 				<input type="number_format" class="form-control" id="siret">
-				<div class="alert alert-block alert-danger" id="siretalert" style="display:none">
-					<h4> Erreur !</h4>
-					Le numéro de SiRET/SIREN doit OBLIGATOIREMENT contenir 14 chiffres
-				</div>
 			</div>
 		</div>
 	</div>
@@ -115,10 +107,6 @@
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="ville">
-				<div class="alert alert-block alert-danger" id="cityalert" style="display:none">
-					<h4> Erreur !</h4>
-					Le nom de ville ne peut pas contenir de chiffres
-				</div>
 			</div>
 		</div>
 	</div>
@@ -130,10 +118,6 @@
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="CP">
-				<div class="alert alert-block alert-danger" id="CPostalalert" style="display:none">
-					<h4> Erreur !</h4>
-					Le code postal peut contenir uniquement 5 chiffres
-				</div>
 			</div>
 		</div>
 	</div>
@@ -158,10 +142,6 @@
 			</div>
 			<div class="col-md-7">
 				<input type="phone" class="form-control" id="tel">
-				<div class="alert alert-block alert-danger" id="Telalert" style="display:none">
-					<h4> Erreur !</h4>
-					Le numéro de téléphone peut contenir uniquement 10 chiffres
-				</div>
 			</div>
 		</div>
 	</div>
