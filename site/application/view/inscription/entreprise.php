@@ -54,10 +54,6 @@
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="nomentre">
-				<div class="alert alert-block alert-danger" id="NomentrAlert" style="display:none">
-					<h4> Erreur !</h4>
-					Le nom de l'entreprise est OBLIGATOIRE
-				</div>
 			</div>
 		</div>
 	</div>
@@ -69,10 +65,6 @@
 			</div>
 			<div class="col-md-7">
 				<input type="number_format" class="form-control" id="siret">
-				<div class="alert alert-block alert-danger" id="siretalert" style="display:none">
-					<h4> Erreur !</h4>
-					Le numéro de SiRET/SIREN doit OBLIGATOIREMENT contenir 14 chiffres
-				</div>
 			</div>
 		</div>
 	</div>

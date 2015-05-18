@@ -10,31 +10,29 @@
         
         <div class="col-md-10 ">
             <div id="profil">
+                
                 <div class="row">
-                    <div class="form-group" id="surnameGroup">
+		<div class="form-group" id="entrNomGroup">
 			<div class="col-md-4 text-right">
-                		<label for="Nom" class="control-label">Nom de famille : </label>
+					<label for="Nomentr" class="control-label">Nom de l'entreprise : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="nom">Grominet</p>
+                            <p id="nomentre">IUT de Lens</p>
 			</div>
                         <div class="col-md-4">
                                 <a href="#">Modifier</a>
                         </div>
-                    </div>
-                </div>
-            
-                <div class="row">
-		<div class="form-group" id="nameGroup">
+		</div>
+	</div>
+                
+	<div class="row">
+		<div class="form-group" id="SiretGroup">
 			<div class="col-md-4 text-right">
-					<label for="Prénom" class="control-label">Prénom : </label>
+					<label for="Siret" class="control-label">Numéro de SIRET/SIREN<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="prenom">Titi</p>
+                            <p id="siret">18736498276315</p>
 			</div>
-                    <div class="col-md-4">
-                                <a href="#">Modifier</a>
-                        </div>
 		</div>
 	</div>
                 
