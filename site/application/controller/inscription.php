@@ -33,5 +33,11 @@ class Inscription extends Controller
         // load views
         $this->view->render('inscription/profil_utilisateur.php');
     }
-    
+    public function valutilisateur(){
+        if(User::inscription()){
+            
+        }else{
+           $this->view->render('inscription/utilisateur.php');
+        }
+    }
 }

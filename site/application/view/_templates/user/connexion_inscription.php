@@ -1,7 +1,7 @@
                                 
     
                                 <div class="row" id="entete_connexion">
-                                    <?php $this->renderFeedback(); ?>
+                                    <?php $this->renderFeedback('connexion'); ?>
                                     <div class="col-md-6">
                                         <input type="mail" class="form-control input-small" placeholder="Adresse mail" id="mail_connexion">
                                     </div>

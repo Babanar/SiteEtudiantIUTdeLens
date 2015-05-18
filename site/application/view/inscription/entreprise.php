@@ -3,7 +3,12 @@
   <div class="form-group">
     <legend>Inscription entreprise</legend>
   </div>
-  
+  <div class="row">
+      <div class="col-md-offset-7">
+        <?php $this->renderFeedback('inscription'); ?>
+      </div>
+  </div>
+     
   <div class="col-md-offset-2">
 	  <div class="form-group">
 		<legend>Identification</legend>
