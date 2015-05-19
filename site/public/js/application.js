@@ -135,16 +135,16 @@ $(document).on("submit", "#form_inscription_utilisateur", function (e) {
                 birthdate : $("#birthdate").val(),
                 profact : $("#profact").val(),
                 profant : $("#profant").val(),
-                TCcheck : $("#TCcheck").val(),
-                GEACheck : $("#GEACheck").val(),
-                MMICheck : $("#MMICheck").val(),
-                INFOCheck : $("#INFOCheck").val(),
-                SEPIACheck : $("#SEPIACheck").val(),
-                ProfCheck : $("#profCheck").val(),
+                TCcheck : $("#TCcheck")[0].checked,
+                GEACheck : $("#GEACheck")[0].checked,
+                MMICheck : $("#MMICheck")[0].checked,
+                INFOCheck : $("#INFOCheck")[0].checked,
+                SEPIACheck : $("#SEPIACheck")[0].checked,
+                PROFCheck : $("#profCheck")[0].checked,
                 entree : $("#entree").val(),
                 sortie : $("#sortie").val(),
-                accept : $("#accept").val(),
-                entreprise: true
+                accept : $("#accept")[0].checked,
+                entreprise: false
                 
             },
 
@@ -177,7 +177,7 @@ $(document).on("submit", "#form_inscription_entreprise",function(e){
                 compAddr1 : $("#compAddr1").val(),
                 compAddr2 : $("#compAddr2").val(),
                 tel : $("#tel").val(),
-                accept : $("#accept").val(),
+                accept : $("#accept")[0].checked,
                 entreprise: true
                 
             },
