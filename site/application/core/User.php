@@ -10,7 +10,7 @@ class User{
         $superUtilSql= new Super_UtilSQL();
         $utils = $superUtilSql->findByMail($mail)->execute();
         if(count($utils)<1){
-            Session::add('feedback_negative', "Mot de passe ou email incorrect.");
+            Session::add('connexion_feedback_negative', "Mot de passe ou email incorrect.");
             return false;
         }
         else{
@@ -21,12 +21,76 @@ class User{
                 return true;
             }
             else{
-                Session::add('feedback_negative', "Mot de passe ou email incorrect.");
+                Session::add('connexion_feedback_negative', "Mot de passe ou email incorrect.");
                 return false;
             }
         }
     }
+    
+    public static function inscription(){
+        $valid = true;
         
+        //MAIL
+        if (!($email=filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL))) {
+            $valid = false;
+            Session::add('inscription_feedback_negative', "Adresse mail incorrecte.");
+        }
+        
+        //MDP
+        $password="";
+        if(isset($_POST['password'])&&strlen($_POST['password'])>8){
+            $password=sha1($_POST['password']);
+        }else{
+            $valid = false;
+            Session::add('inscription_feedback_negative', "Mot de passe trop court (8 caractères minimum)"); 
+        }
+        
+        //BOOL ENTREPRISE
+        if(is_null($entreprise=filter_input(INPUT_POST, 'entreprise', FILTER_VALIDATE_BOOLEAN,FILTER_NULL_ON_FAILURE))){
+            $valid = false;
+        }
+        
+        //ACCEPT RULES
+        if(!($accept=filter_input(INPUT_POST, 'accept', FILTER_VALIDATE_BOOLEAN))){
+            $valid = false;
+            Session::add('inscription_feedback_negative', "Vous devez accepter les règles d'utilisation."); 
+        }
+        if($valid){
+            $ext = -1;
+            if($entreprise){
+                $ext = User::inscriptionEntreprise();
+            }else{
+                $ext = User::inscriptionUtilisateur();
+            }
+            
+            if($ext>0){
+                $user = new Super_Util($ext,$entreprise,$email,$password);
+                $user->save();
+            }
+            else{
+                $valid=false;
+            }
+        }
+        
+        return $valid;
+    }
+        
+    private static function inscriptionUtilisateur(){
+        $valid = true;
+        if (!($nom=filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS))
+            || strlen($nom)<8){
+            $valid = false;
+            Session::add('inscription_feedback_negative', "Nom trop court (8 caractères minimum).");
+            echo "ok2";
+        }else{
+            echo "ok";
+        }
+        return -1;
+    }
+    private static function inscriptionEntreprise(){
+        return -1;        
+    }
+
     private static function stockUserInSession($user){
         Session::set('user_logged_in',true);
         Session::set('callName',$user->getCallNamePresentation());

@@ -30,9 +30,11 @@ class View{
         require APP . 'view/_templates/footer.php';       
     }
     
-    public function renderFeedback(){
+    public function renderFeedback($name=''){
+        $positive = Session::get($name.'_feedback_positive');
+        $negative = Session::get($name.'_feedback_negative');
          require APP . 'view/_templates/feedback.php';
-        Session::set('feedback_positive', null);
-        Session::set('feedback_negative', null);
+        Session::set($name.'_feedback_positive', null);
+        Session::set($name.'_feedback_negative', null);
     }
 }

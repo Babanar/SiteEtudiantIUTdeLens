@@ -123,32 +123,36 @@ $(function()
 
 );
 
-
-$("#form_inscription_utilisateur").bind('submit',function(e){
+$(document).on("submit", "#form_inscription_utilisateur", function (e) {
         $.post(
-            'inscription/validation', 
+            url+'inscription/valutilisateur', 
             {
+                ajax : true,
                 email : $("#email").val(),  
                 password : $("#password").val(),
                 nom : $("#nom").val(),
                 prenom : $("#prenom").val(),
                 birthdate : $("#birthdate").val(),
                 profact : $("#profact").val(),
-                profant : $("profant").val(),
-                TCcheck : $("TCcheck").val(),
-                GEACheck : $("GEACheck").val(),
-                MMICheck : $("MMICheck").val(),
-                INFOCheck : $("INFOCheck").val(),
-                SEPIACheck : $("SEPIACheck").val(),
-                ProfCheck : $("profCheck").val(),
-                entree : $("entree").val(),
-                sortie : $("sortie").val(),
-                accept : $("accept").val()
+                profant : $("#profant").val(),
+                TCcheck : $("#TCcheck").val(),
+                GEACheck : $("#GEACheck").val(),
+                MMICheck : $("#MMICheck").val(),
+                INFOCheck : $("#INFOCheck").val(),
+                SEPIACheck : $("#SEPIACheck").val(),
+                ProfCheck : $("#profCheck").val(),
+                entree : $("#entree").val(),
+                sortie : $("#sortie").val(),
+                accept : $("#accept").val(),
+                entreprise: true
                 
             },
 
             function(data){ 
-                //Ca je m'en occupes :)
+                $("#mainpage").hide(timeAnimation,function(){
+                    $("#mainpage").html(data);
+                    $("#mainpage").show(timeAnimation);
+                });
             },
 
             'text'
@@ -156,24 +160,25 @@ $("#form_inscription_utilisateur").bind('submit',function(e){
     return false;
 });
 
-
-$("#form_inscription_entreprise").bind('submit',function(e){
+$(document).on("submit", "#form_inscription_entreprise",function(e){
         $.post(
-            'inscription/validation', 
+            url+'inscription/validation', 
             {
+                ajax : true,
                 email : $("#email").val(),  
                 password : $("#password").val(),
                 nomentre : $("#nomentre").val(),
                 siret : $("#siret").val(),
                 secteurAct : $("#secteurAct").val(),
                 pays : $("#pays").val(),
-                ville : $("ville").val(),
-                CP : $("CP").val(),
-                Adresse : $("Adresse").val(),
-                compAddr1 : $("compAddr1").val(),
-                compAddr2 : $("compAddr2").val(),
-                tel : $("tel").val(),
-                accept : $("accept").val()
+                ville : $("#ville").val(),
+                CP : $("#CP").val(),
+                Adresse : $("#Adresse").val(),
+                compAddr1 : $("#compAddr1").val(),
+                compAddr2 : $("#compAddr2").val(),
+                tel : $("#tel").val(),
+                accept : $("#accept").val(),
+                entreprise: true
                 
             },
 
