@@ -159,7 +159,7 @@
 	<div class="row">
 		<div class="form-group" id="sortieGroup">
 			<div class="col-md-5 text-right">
-					<label for="Sortie" class="control-label">Année de sortie de l'IUT<span id="req">*</span> : </label>
+					<label for="Sortie" class="control-label">Année de sortie de l'IUT : </label>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="sortie">
