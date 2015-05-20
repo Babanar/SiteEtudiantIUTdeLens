@@ -379,4 +379,7 @@ form label{
     height: 100%;
 }
 
-
+#inscriptionSentMessage
+{
+    text-align: center;
+}

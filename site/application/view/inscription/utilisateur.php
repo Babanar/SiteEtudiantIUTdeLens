@@ -21,7 +21,7 @@
 					<label for="Email" class="control-label">E-mail<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" value="<?php echo (!isset($_POST['email'])?"":$_POST['email']); ?>">
 			</div>
 		</div>
 	</div>
@@ -33,7 +33,7 @@
 
 			</div>
 			<div class="col-md-7">
-				<input type="password" class="form-control" id="password">
+				<input type="password" class="form-control" id="password" value="<?php echo (!isset($_POST['password'])?"":$_POST['password']); ?>">
 			</div>
 		</div>
 	</div>
@@ -50,7 +50,7 @@
 					<label for="Nom" class="control-label">Nom de famille<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="nom">
+				<input type="text" class="form-control" id="nom" value="<?php echo (!isset($_POST['nom'])?"":$_POST['nom']); ?>">
 			</div>
 		</div>
 	</div>
@@ -61,7 +61,7 @@
 					<label for="Prénom" class="control-label">Prénom<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="prenom">
+				<input type="text" class="form-control" id="prenom" value="<?php echo (!isset($_POST['prenom'])?"":$_POST['prenom']); ?>">
 			</div>
 		</div>
 	</div>
@@ -73,7 +73,7 @@
 			</div>
 			<div class="col-md-7">
 				<div class='input-group date'>
-                    <input type='date' class="form-control" id='birthdate' />
+                    <input type='date' class="form-control" id='birthdate' value="<?php echo (!isset($_POST['birthdate'])?"":$_POST['birthdate']); ?>" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -88,7 +88,7 @@
 					<label for="profact" class="control-label">Profession ou études actuelles : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="profact">
+				<input type="text" class="form-control" id="profact" value="<?php echo (!isset($_POST['profact'])?"":$_POST['profact']); ?>">
 			</div>
 		</div>
 	</div>
@@ -99,7 +99,7 @@
 					<label for="profant" class="control-label">Profession ou études antérieures : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="profant">
+				<input type="text" class="form-control" id="profant" value="<?php echo (!isset($_POST['profant'])?"":$_POST['profant']); ?>">
 			</div>
 		</div>
 	</div>
@@ -118,7 +118,9 @@
 			</div>
 				<div class="col-md-7">
 						<div class="checkbox">
-								<input type="checkbox" id="TCcheck">TC
+								<input type="checkbox" id="TCcheck" <?php 
+                                                                echo ((!isset($_POST['TCcheck'])||!$_POST['TCcheck'])?"":" checked=\"checked\" "); 
+                                                                ?>>TC
 						</div>
 						
 						<div class="checkbox">
@@ -134,8 +136,8 @@
 								<input type="checkbox" id="INFOCheck">INFO
 						</div>			
 				</div>
-		</div>
 	</div>
+		</div>
         
         <div class="row">
 		<div class="form-group" id="entreeGroup">
@@ -170,7 +172,7 @@
 					<label for="Entree" class="control-label">Année d'entrée à l'IUT<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="entree">
+				<input type="text" class="form-control" id="entree" value="<?php echo (!isset($_POST['entree'])?"":$_POST['entree']); ?>">
 			</div>
 		</div>
 	</div>
@@ -181,7 +183,7 @@
 					<label for="Sortie" class="control-label">Année de sortie de l'IUT : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="sortie">
+				<input type="text" class="form-control" id="sortie" value="<?php echo (!isset($_POST['sortie'])?"":$_POST['sortie']); ?>" >
 			</div>
 		</div>
 	</div>

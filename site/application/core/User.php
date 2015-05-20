@@ -141,9 +141,23 @@ class User{
         }
     }
     private static function inscriptionEntreprise(){
-        return -1;        
+        $valid=true;
+        
+        if (!($nomentre=filter_input(INPUT_POST, 'nomentre', FILTER_SANITIZE_SPECIAL_CHARS))
+                || strlen($nomentre)===0){
+            $valid = false;
+            Session::add('inscription_feedback_negative', "Le nom de l'entreprise est obligatoire.");
+            
+            if (!($siret=filter_input(INPUT_POST, 'siret', FILTER_VALIDATE_INT))
+                || strlen($siret)!=14){
+            $valid = false;
+            Session::add('inscription_feedback_negative', "Le numéro se Siret est obligatoire et et composé de 14 chiffres.");
+            
+        
+            
+                }
+        }
     }
-
     private static function stockUserInSession($user){
         Session::set('user_logged_in',true);
         Session::set('callName',$user->getCallNamePresentation());

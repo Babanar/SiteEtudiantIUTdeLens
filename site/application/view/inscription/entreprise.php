@@ -21,7 +21,7 @@
 					<label for="Email" class="control-label">E-mail<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="email" class="form-control" id="email">
+				<input type="email" class="form-control" id="email" value="<?php echo (!isset($_POST['email'])?"":$_POST['email']); ?>">
 				<div class="alert alert-block alert-danger" id="emailalert" style="display:none">
 					<h4> Erreur !</h4>
 					Veuillez entrer une adresse email valide.
@@ -36,7 +36,7 @@
 					<label for="Password" class="control-label">Mot de passe<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="password" class="form-control" id="password">
+				<input type="password" class="form-control" id="password" value="<?php echo (!isset($_POST['password'])?"":$_POST['password']); ?>">
 				<div class="alert alert-block alert-danger" id="pwdalert" style="display:none">
 					<h4> Erreur !</h4>
 					Le mot de passe doit contenir au moins 8 caractères
@@ -58,7 +58,7 @@
 					<label for="Nomentr" class="control-label">Nom de l'entreprise<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="nomentre">
+				<input type="text" class="form-control" id="nomentre" value="<?php echo (!isset($_POST['nomentre'])?"":$_POST['nomentre']); ?>">
 			</div>
 		</div>
 	</div>
@@ -69,7 +69,7 @@
 					<label for="Siret" class="control-label">Numéro de SIRET/SIREN<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="number_format" class="form-control" id="siret">
+				<input type="number_format" class="form-control" id="siret" value="<?php echo (!isset($_POST['siret'])?"":$_POST['siret']); ?>">
 			</div>
 		</div>
 	</div>
@@ -80,7 +80,7 @@
 					<label for="secteurAct" class="control-label">Secteur d'activité : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="secteurAct">
+				<input type="text" class="form-control" id="secteurAct" value="<?php echo (!isset($_POST['secteurAct'])?"":$_POST['secteurAct']); ?>">
 			</div>
 		</div>
 	</div>
@@ -106,7 +106,7 @@
 					<label for="Ville" class="control-label">Ville : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="ville">
+				<input type="text" class="form-control" id="ville" value="<?php echo (!isset($_POST['ville'])?"":$_POST['ville']); ?>">
 			</div>
 		</div>
 	</div>
@@ -117,7 +117,7 @@
 					<label for="CP" class="control-label">Code Postal : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="CP">
+				<input type="text" class="form-control" id="CP" value="<?php echo (!isset($_POST['CP'])?"":$_POST['CP']); ?>">
 			</div>
 		</div>
 	</div>
@@ -128,9 +128,9 @@
 					<label for="Adresse" class="control-label">Adresse : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Adresse">
-				<input type="text" class="form-control" id="compAddr1">
-				<input type="text" class="form-control" id="compAddr2">
+				<input type="text" class="form-control" id="Adresse" value="<?php echo (!isset($_POST['Adresse'])?"":$_POST['Adresse']); ?>">
+				<input type="text" class="form-control" id="compAddr1" value="<?php echo (!isset($_POST['compAddr1'])?"":$_POST['compAddr1']); ?>">
+				<input type="text" class="form-control" id="compAddr2" value="<?php echo (!isset($_POST['compAddr2'])?"":$_POST['compAddr2']); ?>">
 			</div>
 		</div>
 	</div>
@@ -141,7 +141,7 @@
 					<label for="Tel" class="control-label">Téléphone : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="phone" class="form-control" id="tel">
+				<input type="phone" class="form-control" id="tel" value="<?php echo (!isset($_POST['tel'])?"":$_POST['tel']); ?>">
 			</div>
 		</div>
 	</div>

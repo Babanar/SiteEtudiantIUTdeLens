@@ -55,4 +55,10 @@ class Inscription extends Controller
         $this->view->render('inscription/forum.php');
     }
     
+    public function inscriptionSent()
+    {
+        // load views
+        $this->view->render('inscription/inscriptionSent.php');
+    }
+    
 }
