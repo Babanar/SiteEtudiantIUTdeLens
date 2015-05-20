@@ -36,7 +36,7 @@ class Inscription extends Controller
 
     public function valutilisateur(){
         if(User::inscription()){
-            
+            echo "inscrit";
         }else{
            $this->view->render('inscription/utilisateur.php');
         }

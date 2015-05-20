@@ -1,7 +1,6 @@
 <?php
 
 class Utilisateurs extends Table {
-    public $idExt;
     public $nom;
     public $prenom;
     public $adresse;
@@ -20,17 +19,18 @@ class Utilisateurs extends Table {
     public $boolINFO;
     public $boolSepia;
     public $boolProf;
+    public $entree;
+    public $sortie;
     public $photo;
 
-    function __construct($idExt="", $nom="", $prenom="" ,$adresse="",
+    function __construct($nom="", $prenom="" ,$adresse="",
                             $compAddr1="", $compAddr2="",$CP="",$ville="",
                             $pays="",$tel="", $naissance="", 
                             $profession_ou_etudes_actuelle="",
                             $profession_ou_etudes_anterieure="", 
                             $boolTC="", $boolGEA="", $boolMMI="", $boolINFO="", 
-                            $boolSepia="", $boolProf="", $photo="",$id=false){
+                            $boolSepia="", $boolProf="",$entree="",$sortie="", $photo="",$id=false){
         parent::__construct();
-        $this->idExt = $idExt;
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->adresse = $adresse;
@@ -43,12 +43,14 @@ class Utilisateurs extends Table {
         $this->naissance = $naissance;
         $this->profession_ou_etudes_actuelle = $profession_ou_etudes_actuelle;
         $this->profession_ou_etudes_anterieure = $profession_ou_etudes_anterieure;
-        $this->$boolTC = $boolTC;
-        $this->$boolGEA = $boolGEA;
-        $this->$boolMMI = $boolMMI;
+        $this->boolTC = $boolTC;    
+        $this->boolGEA = $boolGEA;
+        $this->boolMMI = $boolMMI;
         $this->boolINFO = $boolINFO;
         $this->boolSepia = $boolSepia;
         $this->boolProf = $boolProf;
+        $this->entree = $entree;
+        $this->sortie = $sortie;
         $this->photo = $photo; 
         $this->id = $id;
 
