@@ -47,7 +47,7 @@ class User{
         //MDP
         $password="";
         if(isset($_POST['password'])&&strlen($_POST['password'])>8){
-            $password=sha1($_POST['password']+$email);
+            $password=sha1($_POST['password'].$email);
         }else{
             $valid = false;
             Session::add('inscription_feedback_negative', "Mot de passe trop court (8 caractères minimum)"); 
@@ -106,11 +106,17 @@ class User{
         $profant = filter_input(INPUT_POST, 'profant', FILTER_SANITIZE_SPECIAL_CHARS);
         
         $TCCheck=filter_input(INPUT_POST, 'TCCheck', FILTER_VALIDATE_BOOLEAN);
+        $TCCheck = is_null($TCCheck) ? false : $TCCheck;
         $GEACheck=filter_input(INPUT_POST, 'GEACheck', FILTER_VALIDATE_BOOLEAN);
+        $GEACheck = is_null($GEACheck) ? false : $GEACheck;
         $MMICheck=filter_input(INPUT_POST, 'MMICheck', FILTER_VALIDATE_BOOLEAN);
+        $MMICheck = is_null($MMICheck) ? false : $MMICheck;
         $INFOCheck=filter_input(INPUT_POST, 'INFOCheck', FILTER_VALIDATE_BOOLEAN);
+        $INFOCheck = is_null($INFOCheck) ? false : $INFOCheck;
         $SEPIACheck=filter_input(INPUT_POST, 'SEPIACheck', FILTER_VALIDATE_BOOLEAN);
+        $SEPIACheck = is_null($SEPIACheck) ? false : $SEPIACheck;
         $PROFCheck=filter_input(INPUT_POST, 'PROFCheck', FILTER_VALIDATE_BOOLEAN);
+        $PROFCheck = is_null($PROFCheck) ? false : $PROFCheck;
         
         if(!$TCCheck&&!$GEACheck&&!$MMICheck&&!$INFOCheck&&!$PROFCheck){
             $valid = false;
@@ -122,7 +128,17 @@ class User{
             Session::add('inscription_feedback_negative', "L'année d'entrée n'est pas au bon format (aaaa).");
         }
         $sortie=DateTime::createFromFormat('Y',$_POST['sortie']);
-        return -1;
+        if($sortie){
+            $sortie = $sortie->format("Y");
+        }
+        if ($valid) {
+            $user = new Utilisateurs($nom, $prenom, "", "", "", "", "", "", "", $birthdate->format("Y-m-d"), $profact, $profant,
+                             $TCCheck, $GEACheck, $MMICheck, $INFOCheck, $SEPIACheck, $PROFCheck,$entree->format("Y"),$sortie, "");
+            $user->save();
+            return $user->getId();
+        } else {
+            return -1;
+        }
     }
     private static function inscriptionEntreprise(){
         return -1;        
