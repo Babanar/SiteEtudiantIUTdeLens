@@ -348,3 +348,35 @@ height:2px;
 form label{
     text-align:right;
 }
+
+.message
+{
+    padding: 15px;
+    border: 1px solid black;
+    
+}
+
+.messageForum
+{
+    border: 1px solid black;
+    height: 100%;
+    text-align: center;
+}
+
+.infomsg
+{
+    padding: 15px;
+}
+
+.border
+{
+    height: 100%;
+    border-right: 1px solid black;
+}
+
+.cent
+{
+    height: 100%;
+}
+
+

@@ -132,18 +132,37 @@
 						
 						<div class="checkbox">
 								<input type="checkbox" id="INFOCheck">INFO
-						</div>
-						
-						<div class="checkbox">
-								<input type="checkbox" id="SEPIACheck">SEPIA
-						</div>
-						
-						<div class="checkbox">
-								<input type="checkbox" id="profCheck">PROF
-						</div>				
+						</div>			
 				</div>
 		</div>
 	</div>
+        
+        <div class="row">
+		<div class="form-group" id="entreeGroup">
+			<div class="col-md-5 text-right">
+					<label for="sepia" class="control-label">SEPIA : </label>
+			</div>
+			<div class="col-md-7">
+				<div class="checkbox">
+                                	<input type="checkbox" id="SEPIACheck">SEPIA
+				</div>
+			</div>
+                </div>
+        </div>
+        
+        <div class="row">
+		<div class="form-group" id="entreeGroup">
+			<div class="col-md-5 text-right">
+					<label for="prof" class="control-label">PROF : </label>
+			</div>
+			<div class="col-md-7">
+				<div class="checkbox">
+                                	<input type="checkbox" id="profCheck">PROF
+				</div>
+			</div>
+                </div>
+        </div>
+
         
 	<div class="row">
 		<div class="form-group" id="entreeGroup">

@@ -49,4 +49,10 @@ class Inscription extends Controller
         $this->view->render('inscription/profil_entreprise.php');
     }
     
+    public function forum()
+    {
+        // load views
+        $this->view->render('inscription/forum.php');
+    }
+    
 }
