@@ -221,7 +221,7 @@ class User{
     private static function stockUserInSession($user){
         Session::set('user_logged_in',true);
         Session::set('callName',$user->getCallNamePresentation());
-        Session::set('id',$user->getCallNamePresentation());
+        Session::set('id_utilisateur',$user->getId());
         Session::set('callName',$user->getCallNamePresentation());
     }
  

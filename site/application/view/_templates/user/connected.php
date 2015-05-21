@@ -1,6 +1,7 @@
 <?php
-    $userSQL_view = new UtilisateursSQL();
+    $userSQL_view = new Super_UtilSQL();
     $user_view = $userSQL_view->findById(Session::get("id_utilisateur"));
+    $nbConv = $user_view->getNbConvNonVu();
 
 ?>
     
@@ -13,7 +14,7 @@
     </div>
      <div class="col-md-2 profile_icone mainpage-link" id="icone_msg" href="message/">
          <span class="text_icone" href="message/">
-             20
+             <?php echo $nbConv?$nbConv:"";  ?>
          </span>
      </div>
      <div class="col-md-2 profile_icone" id="icone_forum">

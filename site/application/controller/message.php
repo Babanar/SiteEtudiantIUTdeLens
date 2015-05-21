@@ -25,8 +25,13 @@ class Message extends Controller
     {
         if(!User::isLoggedIn())
             return;
+        $userSQL = new Super_UtilSQL();
+        $user = $userSQL->findById(Session::get("id_utilisateur"));
+        $conversations = $user->getConversations();
         // load views
-        $this->view->render('message/index.php');
+        $this->view->render('message/index.php',array(
+            'conversations' => $conversations
+               ));
     }
 	public function conversation()
     {

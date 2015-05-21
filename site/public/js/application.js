@@ -125,7 +125,7 @@ $(function()
 
 $(document).on("submit", "#form_inscription_utilisateur", function (e) {
         $.post(
-            url+'inscription/valutilisateur', 
+            url+'inscription/validation', 
             {
                 ajax : true,
                 email : $("#email").val(),  
@@ -183,7 +183,10 @@ $(document).on("submit", "#form_inscription_entreprise",function(e){
             },
 
             function(data){ 
-                //Ca je m'en occupes :)
+                $("#mainpage").hide(timeAnimation,function(){
+                    $("#mainpage").html(data);
+                    $("#mainpage").show(timeAnimation);
+                });
             },
 
             'text'

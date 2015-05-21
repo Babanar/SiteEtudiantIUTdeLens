@@ -22,8 +22,7 @@ class Utilisateurs extends Table {
     public $entree;
     public $sortie;
     public $photo;
-    protected $conversations;
-    protected $nbConvNonVu;
+
 
     function __construct($nom="", $prenom="" ,$adresse="",
                             $compAddr1="", $compAddr2="",$CP="",$ville="",
@@ -55,29 +54,13 @@ class Utilisateurs extends Table {
         $this->sortie = $sortie;
         $this->photo = $photo; 
         $this->id = $id;
-        $this->conversation = false;
-        $this->nbConvNonVu=false;
+
 
     }
     
     public function getCallNamePresentation(){
         return $this->prenom . ' ' . $this->nom;
     }
-    
-    public function getConversations(){
-        if(!$this->conversations && $this->id!==false){
-            $utilisateurSQL = new UtilisateursSQL();
-            $this->conversations = $utilisateurSQL->getConversations($this->id);
-        }
-        return $this->conversations;
-    }
 
-    public function getNbConvNonVu(){
-        if(!$this->nbConvNonVu && $this->id!==false){
-            $utilisateurSQL = new UtilisateursSQL();
-            $this->nbConvNonVu = $utilisateurSQL->getNbConversationsNonVu($this->id);
-        }
-        return $this->nbConvNonVu;
-    }
 
 }
