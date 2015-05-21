@@ -151,7 +151,7 @@ class User{
             if (!($siret=filter_input(INPUT_POST, 'siret', FILTER_VALIDATE_INT))
                 || strlen($siret)!=14){
             $valid = false;
-            Session::add('inscription_feedback_negative', "Le numéro se Siret est obligatoire et et composé de 14 chiffres.");
+            Session::add('inscription_feedback_negative', "Le numéro se Siret est obligatoire et est composé de 14 chiffres.");
             
         
             
@@ -160,6 +160,8 @@ class User{
     }
     private static function stockUserInSession($user){
         Session::set('user_logged_in',true);
+        Session::set('callName',$user->getCallNamePresentation());
+        Session::set('id',$user->getCallNamePresentation());
         Session::set('callName',$user->getCallNamePresentation());
     }
  

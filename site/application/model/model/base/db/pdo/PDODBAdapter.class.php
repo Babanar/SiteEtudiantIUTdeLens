@@ -66,16 +66,20 @@ class  PDODBAdapter implements DBAdapter{
      * Fetch one record
      * Take a look at the mode !!!!
      */
-    function fetch($className) {
-        $this->query->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, $className);
+    function fetch($className="") {
+        if($className !==""){
+            $this->query->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, $className);
+        }
         return $this->query->fetch();
     }
     
     /**
      * Fetch all records
      */
-    function fetchAll($className) {
-        $this->query->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, $className);
+    function fetchAll($className="") {
+        if($className !==""){
+            $this->query->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, $className);
+        }
         return $this->query->fetchAll();
     }
     
