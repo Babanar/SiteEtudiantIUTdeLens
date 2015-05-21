@@ -147,16 +147,76 @@ class User{
                 || strlen($nomentre)===0){
             $valid = false;
             Session::add('inscription_feedback_negative', "Le nom de l'entreprise est obligatoire.");
+            }
             
             if (!($siret=filter_input(INPUT_POST, 'siret', FILTER_VALIDATE_INT))
                 || strlen($siret)!=14){
             $valid = false;
-            Session::add('inscription_feedback_negative', "Le numéro se Siret est obligatoire et est composé de 14 chiffres.");
+            Session::add('inscription_feedback_negative', "Le numéro de Siret est obligatoire et est composé de 14 chiffres.");
+            }
             
-        
+            if (!($secteurAct=filter_input(INPUT_POST, 'secteurAct', FILTER_SANITIZE_SPECIAL_CHARS))){
+            $valid = false;
+            Session::add('inscription_feedback_negative', "Le secteur d'activité ne peut contenir de caractères spéciaux.");
+            }
             
-                }
+            if ($pays.val()!="France"){
+            $valid = false;
+            Session::add('inscription_feedback_negative', "Le pays doit être égal à \"France\".");
+            }
+            
+            if (!($ville=filter_input(INPUT_POST, 'ville', FILTER_SANITIZE_SPECIAL_CHARS))){
+            $valid = false;
+            Session::add('inscription_feedback_negative', "Le nom de la ville ne peut contenir de caractères spéciaux.");
+            }
+           
+            if (strlen($CP)>0){
+            {
+                if (!($CP=filter_input(INPUT_POST, '$CP', FILTER_VALIDATE_INT))
+                    || strlen($CP)!=5)
+                {
+                $valid = false;
+                Session::add('inscription_feedback_negative', "Le code postal doit être composé de 5 chiffres.");
+                
+                }    
+            }
+            }
+            
+            if (!($adresse=filter_input(INPUT_POST, 'adresse', FILTER_SANITIZE_SPECIAL_CHARS))){
+            $valid = false;
+            Session::add('inscription_feedback_negative', "l'adresse ne peut contenir de caractères spéciaux.");
+            }
+            
+            if (!($compAddr1=filter_input(INPUT_POST, 'compAddr1', FILTER_SANITIZE_SPECIAL_CHARS))){
+            $valid = false;
+            Session::add('inscription_feedback_negative', "l'adresse ne peut contenir de caractères spéciaux.");
+            }
+            
+            if (!($compAddr2=filter_input(INPUT_POST, 'compAddr2', FILTER_SANITIZE_SPECIAL_CHARS))){
+            $valid = false;
+            Session::add('inscription_feedback_negative', "l'adresse ne peut contenir de caractères spéciaux.");
+            }
+            
+            if (strlen($tel)>0){
+            {
+                if (!($tel=filter_input(INPUT_POST, '$tel', FILTER_VALIDATE_INT))
+                    || strlen($tel)!=10)
+                {
+                $valid = false;
+                Session::add('inscription_feedback_negative', "Le numéro de de téléphone doit être composé de 10 chiffres.");
+                }    
+            }
+            
+             if ($valid) {
+            $user = new Entreprises($nomentre, $secteurAct, $numSiret, $adresse, $compAddr1, $compAddr2, $CP, $ville, $pays, $tel);
+            $user->save();
+            return $user->getId();
+        } else {
+            return -1;
         }
+      }
+                
+        
     }
     private static function stockUserInSession($user){
         Session::set('user_logged_in',true);
