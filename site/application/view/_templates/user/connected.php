@@ -1,4 +1,9 @@
+<?php
+    $userSQL_view = new UtilisateursSQL();
+    $user_view = $userSQL_view->findById(Session::get("id_utilisateur"));
 
+?>
+    
 
 
 <div class="row" id="entete_profil">
