@@ -34,11 +34,20 @@ class Inscription extends Controller
         $this->view->render('inscription/profil_utilisateur.php');
     }
 
-    public function valutilisateur(){
+    public function validation(){
+        if(!isset($_POST['entreprise'])){
+            $this->view->render('error/index.php');
+            return;
+        }
+        $entreprise=filter_input(INPUT_POST, 'entreprise', FILTER_VALIDATE_BOOLEAN,FILTER_NULL_ON_FAILURE);
         if(User::inscription()){
             echo "inscrit";
         }else{
-           $this->view->render('inscription/utilisateur.php');
+            if (!$entreprise) {
+                $this->view->render('inscription/utilisateur.php');
+            }else{
+                $this->view->render('inscription/entreprise.php');
+            }
         }
     }
 

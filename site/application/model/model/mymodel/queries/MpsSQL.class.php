@@ -11,6 +11,6 @@
  *
  * @author Mathieu
  */
-class mpsSQl extends Query {
+class MpsSQl extends Query {
     //put your code here
 }

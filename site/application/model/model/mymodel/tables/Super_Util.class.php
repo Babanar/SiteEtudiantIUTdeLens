@@ -5,6 +5,8 @@ class Super_Util extends Table {
     public $mail;
     public $mdp_hash;
     protected $exterieur;
+    protected $conversations;
+    protected $nbConvNonVu;
     
     function __construct($idExt="", $boolEntreprise="", $mail="", $mdp_hash="",$id=false) {
         parent::__construct();
@@ -15,6 +17,8 @@ class Super_Util extends Table {
         $this->id=$id;
        
         $this->exterieur = false;
+        $this->conversation = false;
+        $this->nbConvNonVu=false;
     }
 
     private function loadExterieur(){
@@ -49,5 +53,23 @@ class Super_Util extends Table {
         $this->loadExterieur();
         return $this->exterieur->getCallNamePresentation();
 
+    }
+    
+    
+        
+    public function getConversations(){
+        if(!$this->conversations && $this->id!==false){
+            $utilisateurSQL = new Super_UtilSQL();
+            $this->conversations = $utilisateurSQL->getConversations($this->id);
+        }
+        return $this->conversations;
+    }
+
+    public function getNbConvNonVu(){
+        if(!$this->nbConvNonVu && $this->id!==false){
+            $utilisateurSQL = new Super_UtilSQL();
+            $this->nbConvNonVu = $utilisateurSQL->getNbConvNonVu($this->id);
+        }
+        return $this->nbConvNonVu;
     }
 }

@@ -164,7 +164,7 @@
   
   
   <div class="form-group">
-    <button class="col-md-offset-5 col-md-7 btn btn-default" id="inscription_btn">Inscription</button>
+    <button type="submit" class="col-md-offset-5 col-md-7 btn btn-default" id="inscription_btn">Inscription</button>
   </div>
 </form>
 </div>

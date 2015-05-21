@@ -12,7 +12,7 @@
  *
  * @author Mathieu
  */
-class mps extends Table {
+class Mps extends Table {
     public $idConversation;
     public $idExpediteur;
     public $message;
