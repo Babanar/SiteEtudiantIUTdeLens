@@ -28,7 +28,7 @@ class Entreprises extends Table {
                                 $pays="", $tel="", $id=false){
         parent::__construct();
         $this->nom = $nom;
-        $this->$secteurAct=$secteurAct;
+        $this->secteurAct=$secteurAct;
         $this->numSiret=$numSiret;
         $this->adresse = $adresse;
         $this->compAddr1 = $compAddr1;
