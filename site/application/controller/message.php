@@ -33,12 +33,20 @@ class Message extends Controller
             'conversations' => $conversations
                ));
     }
-	public function conversation()
+	public function conversation($id=false)
     {
         if(!User::isLoggedIn())
             return;
+        
+
         // load views
-        $this->view->render('message/conversation.php');
+        $convSQL = new ConversationSQL();
+        $conversation = $convSQL->findById($id);
+        if(!$conversation || !$id){
+            $this->view->render('error/index.php');
+        }else{  
+            $this->view->render('message/conversation.php',array("conversation"=>$conversation));
+        }
     }
 	public function newconv()
     {

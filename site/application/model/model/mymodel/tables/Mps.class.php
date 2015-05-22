@@ -26,4 +26,9 @@ class Mps extends Table {
         $this->message=$message;
         $this->date=$date;
     }
+    
+    function getDate(){
+        $date_tmp = DateTime::createFromFormat("Y-m-d H:i:s", $this->date);
+        return $date_tmp->format("d-m-Y H:i:s");
+    }
 }

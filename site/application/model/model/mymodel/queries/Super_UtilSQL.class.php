@@ -9,6 +9,7 @@
                 $conversationsSQL = new ConversationSQL();
                 $conversations[]=$conversationsSQL->findById($c['idConversation']);
             }
+            usort($conversations,"cmp_Conversation");
             return $conversations;
         }
         public function getNbConvNonVu($id_etudiant){

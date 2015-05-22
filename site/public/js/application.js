@@ -70,8 +70,12 @@ $(function()
 
         $('body').on('click', '.mainpage-link',
                 function(e){
-                    
-                  onClickMainPageLink(e.target);  
+                   var target = e.target;
+                   while(!target.classList.contains("mainpage-link")){
+                       console.log("ok");
+                       target=$(target).parent()[0];
+                   }
+                  onClickMainPageLink(target);  
                 }
                
         );

@@ -15,20 +15,20 @@
 			foreach($this->conversations as $conv){
                     ?>
                         
-			<div class="row">
+			<div class="row mainpage-link" href="<?php echo "/message/conversation/".$conv->getId(); ?>  ">
 				<div class="col-md-2">
 					<div class="photodiv">	
-						<img src="../public/img/iut.jpg" class="photoconv">
+						<img src="<?php echo URL; ?>/public/img/iut.jpg" class="photoconv">
 					</div>
 				</div>	
 				<div class="col-md-10">
 				<div class="row entetemsg">
 				<div class="col-md-8"><h3 class="titremsg"><?php echo $conv->titre ?></h3></div>
-				<div class="col-md-4"><div class="datemsg text-right">11/05/2015 08:39</div></div>
+				<div class="col-md-4"><div class="datemsg text-right"><?php echo $conv->getLastDate() ?></div></div>
 				</div>
 				
 				<div class="row">
-				<div class="contenumsg">aaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzzzzzzzzzzzzzzzzzzzzeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrtttttttttttttttttttttyyyyyyyyyyyyyyyyyyyyyyyyyyyyy</div>
+				<div class="contenumsg"><?php echo $conv->getLastMessage() ?></div>
 				</div>
 				</div>
 			</div>
