@@ -1,4 +1,4 @@
-<div id="index_message" class="col-md-10 col-md-offset-1">
+<div id="index_forum" class="col-md-10 col-md-offset-1">
 <div class="row">
 
     <div class="row">
@@ -46,10 +46,12 @@
                         <h3 class="nbMsg">42 messages au total</h3>
                     </div>
             </div>
-        
-        <div class="row">
-		<button type="submit" class="btn btn-default col-md-offset-4 col-md-4" id="newtopic_btn">Nouvelle conversation</button>
-	</div>
-    </div>
+
+            <div class="row">
+                    <button type="submit" class="btn btn-default col-md-offset-4 col-md-4" id="newtopic_btn">Nouvelle conversation</button>
+            </div>
+        </div>
     
-</div>
+    </div>
+</div> 
+</div> 

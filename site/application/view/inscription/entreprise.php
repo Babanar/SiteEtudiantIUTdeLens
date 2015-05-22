@@ -128,7 +128,7 @@
 					<label for="Adresse" class="control-label">Adresse : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="Adresse" value="<?php echo (!isset($_POST['Adresse'])?"":$_POST['Adresse']); ?>">
+				<input type="text" class="form-control" id="adresse" value="<?php echo (!isset($_POST['adresse'])?"":$_POST['adresse']); ?>">
 				<input type="text" class="form-control" id="compAddr1" value="<?php echo (!isset($_POST['compAddr1'])?"":$_POST['compAddr1']); ?>">
 				<input type="text" class="form-control" id="compAddr2" value="<?php echo (!isset($_POST['compAddr2'])?"":$_POST['compAddr2']); ?>">
 			</div>
@@ -164,7 +164,8 @@
   
   
   <div class="form-group">
-    <button type="submit" class="col-md-offset-5 col-md-7 btn btn-default" id="inscription_btn">Inscription</button>
+      <button type="submit" class="col-md-offset-5 col-md-7 btn btn-default" id="inscription_btn">Inscription</button>
+
   </div>
 </form>
 </div>

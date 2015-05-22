@@ -13,7 +13,7 @@
  */
 class Entreprises extends Table {
     public $nom;
-    public $secteur;
+    public $secteurAct;
     public $numSiret;
     public $adresse;
     public $compAddr1;
@@ -23,12 +23,12 @@ class Entreprises extends Table {
     public $pays;
     public $tel;
     
-    public function __construct($nom="",$secteur="",$numSiret="",$adresse="",
+    public function __construct($nom="",$secteurAct="",$numSiret="",$adresse="",
                                 $compAddr1="",$compAddr2="",$CP="",$ville="", 
                                 $pays="", $tel="", $id=false){
         parent::__construct();
         $this->nom = $nom;
-        $this->secteur=$secteur;
+        $this->secteurAct=$secteurAct;
         $this->numSiret=$numSiret;
         $this->adresse = $adresse;
         $this->compAddr1 = $compAddr1;
