@@ -1,57 +1,44 @@
-<div id="index_forum" class="col-md-10 col-md-offset-1">
+<div id="index_forum_info" class="col-md-10 col-md-offset-1">
 <div class="row">
 
     <div class="row">
       <h3>
-        <span class="titreMPage">Forum</span>
+        <span class="forumInfoPage">Forum Info</span>
       </h3>
       <hr>
     </div>
-    
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1" id="forum_view">
 
-            <div class="row messageForum">
-                    <div class="col-md-3 border">
-                        <h3 class="newMsg cent">Nouveaux messages !</h3>
-                    </div>
-
-                    <div class="col-md-3 border">
-                        <h3 class="titretopic">Bienvenue !</h3>
-                    </div>
-                    <div class="col-md-3 border">
-                        <div class="row"><h3 class="dernierMSG">Bonjour à tous !!!</h3></div>
-                        <div class="row"><p class="TdernierMSG"> par Mathieu Blanquin mardi 19 avril à 15:OO</p></div>
-                    </div>
-                    <div class="col-md-3">
-                        <h3 class="nbMsg">42 messages au total</h3>
-                    </div>
-            </div>
-            
-            <hr>
-            
-            <div class="row messageForum">
-                    <div class="col-md-3 border">
-                        <h3 class="newMsg cent">Nouveaux messages !</h3>
-                    </div>
-
-                    <div class="col-md-3 border">
-                        <h3 class="titretopic">Bienvenue !</h3>
-                    </div>
-                    <div class="col-md-3 border">
-                        <div class="row"><h3 class="dernierMSG">Bonjour à tous !!!</h3></div>
-                        <div class="row"><p class="TdernierMSG"> par Mathieu Blanquin mardi 19 avril à 15:OO</p></div>
-                    </div>
-                    <div class="col-md-3">
-                        <h3 class="nbMsg">42 messages au total</h3>
-                    </div>
-            </div>
-
+<div class="row">
+        <div class="col-md-10 col-md-offset-1 forumcat_view">
+        
             <div class="row">
-                    <button type="submit" class="btn btn-default col-md-offset-4 col-md-4" id="newtopic_btn">Nouvelle conversation</button>
+            <h3>
+                <span class="stagesCatTitre">Stages</span>
+            </h3>
+            <hr>
+            </div>
+            
+            <div class="row">
+                    <div class="col-md-10 col-md-offset-1 messageForum">
+                    
+                        <div class="col-md-2">
+                                
+                        </div> 
+                        
+                        <div class="col-md-10">
+                            <div class="row titretopic"><h3 class="col-md-3">Bienvenue !</h3><p class="col-md-3 nbMsg">42 messages au total</p>
+                            <div class="row"><p class="lastMSG">Bonjour à tous, bienvenue sur le forum. Blablablabla</p></div>
+                            <div  class="row"><p class="InfoMSG">Par Mathieu Blanquin le vendredi 22 mai à 13:48</p></div>
+                        </div>
+                    </div>
+            </div>
             </div>
         </div>
+            
+
+
+</div>
     
-    </div>
-</div> 
-</div> 
+</div>
+</div>
+

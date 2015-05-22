@@ -17,4 +17,14 @@ class forum extends Controller{
     {
          $this->view->render('forum/index.php');
     }
+    
+    public function newConv()
+    {
+         $this->view->render('forum/newConv.php');
+    }
+    
+    public function conversation()
+    {
+         $this->view->render('forum/conversation.php');
+    }
 }
