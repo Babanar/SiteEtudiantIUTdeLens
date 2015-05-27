@@ -387,8 +387,8 @@ form label{
 .messageForum
 {
     border: 1px solid black;
-    height: 100%;
-    text-align: center;
+
+    texZt-align: center;
 }
 
 .infomsg
@@ -411,6 +411,7 @@ form label{
 {
     text-align: center;
 }
+
 #titre_conversation{
     line-height:40px;
     height:40px;
@@ -438,4 +439,90 @@ form label{
 }
 #send_btn_conversation{
     height:100%;
+}
+
+#newConv_forum .row
+{
+    margin:15px;
+}
+
+#forumcat_view
+{
+    border: 1px solid black;
+    padding: 15px;
+    background-color:white;
+    margin-bottom: 15px;    
+}
+
+#forumconv_view
+{
+        
+}
+
+#index_forum_info hr
+{
+    background-color:#00AC9A;
+    height: 1px;
+    
+}
+
+.titretopic
+{
+    text-align: center;
+}
+
+.messageForum
+{
+    background-color: #00AC9A;
+}
+
+.ico_no_new_msg
+{
+    height: 34px;
+    margin-top: 50%;
+    margin-bottom: 50%;
+}
+
+.messageForum .nbMsg
+{
+    text-align: center;
+    padding-left: 15px;
+}
+
+.infosAuteur
+{
+    border-right: 1px solid black;
+    padding-right: 15px;
+}
+
+.infosAuteur
+{
+    font-size: 10px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.photoAuteur
+{
+    height: 133px;
+    width:100%;
+}
+
+.datetimemsg
+{
+    text-align: right;
+
+
+}
+
+
+#reponsediv
+{
+    padding: 15px;
+}
+
+.contenumsgforum
+{
+    padding-left: 15px;
+
 }

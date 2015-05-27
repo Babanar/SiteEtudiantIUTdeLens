@@ -9,6 +9,20 @@
     </div>
     
     <div class="row">
+        <div class="form-group" id="catégorieTopic">
+            <div class="col-md-3 text-right">
+                <label for="catégorieTopic" class="control-label">Catégorie<span id="req">*</span> : </label>
+            </div>
+            <div class="col-md-6">
+		<select id="catégorie" class="form-control">
+                    <option>Général</option>
+                    <option>Stages</option>
+		</select>
+            </div>
+	</div>
+    </div>
+    
+    <div class="row">
         <div class="form-group" id="sujetTopic">
             <div class="col-md-3 text-right">
                 <label for="sujetTopic" class="control-label">Sujet<span id="req">*</span> : </label>
