@@ -437,7 +437,7 @@ form label{
     padding-right: 15px;
 }
 
-.infosComplementaires
+.infosAuteur
 {
     font-size: 10px;
     text-align: left;
@@ -453,4 +453,17 @@ form label{
 .datetimemsg
 {
     text-align: right;
+
+
+}
+
+
+#reponsediv
+{
+    padding: 15px;
+}
+
+.contenumsgforum
+{
+    padding-left: 15px;
 }
