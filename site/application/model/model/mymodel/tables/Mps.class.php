@@ -17,6 +17,7 @@ class Mps extends Table {
     public $idExpediteur;
     public $message;
     public $date;
+    protected $expediteur;
     
     function __construct($idConversation="", $idExpediteur="", $message="", $date="") {
      
@@ -24,11 +25,20 @@ class Mps extends Table {
         $this->idConversation=$idConversation;
         $this->idExpediteur=$idExpediteur;
         $this->message=$message;
-        $this->date=$date;
+        $this->date=$date==""?date("Y-m-d H:i:s"):$date;
+        $this->expediteur=false;
     }
     
     function getDate(){
         $date_tmp = DateTime::createFromFormat("Y-m-d H:i:s", $this->date);
         return $date_tmp->format("d-m-Y H:i:s");
+    }
+    
+    function getExpediteur(){
+        if(!$this->expediteur){
+            $userSQL = new Super_UtilSQL();
+            $this->expediteur = $userSQL->findById($this->idExpediteur);
+        }
+        return $this->expediteur;
     }
 }

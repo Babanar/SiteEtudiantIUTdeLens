@@ -10,6 +10,9 @@
  * @license http://opensource.org/licenses/MIT MIT License
  */
 
+
+date_default_timezone_set('Europe/Paris');
+
 // TODO get rid of this and work with namespaces + composer's autoloader
 
 // set a constant that holds the project's folder path, like "/var/www/".
@@ -44,6 +47,7 @@ require APP . '/core/controller.php';
 require APP . '/core/View.php';
 require APP . '/core/Redirect.php';
 require APP . '/core/User.php';
+require APP . '/core/Mail.php';
 
 // start the application
 

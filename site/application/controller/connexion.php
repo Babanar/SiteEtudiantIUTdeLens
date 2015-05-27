@@ -27,7 +27,17 @@ class Connexion extends Controller
             
     }
     
- 
+    public function updateProfil(){
+        $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
+        if (!$ajax) {
+            Redirect::home();
+        } 
+        if(User::isLoggedIn()){
+            $this->view->render('_templates/user/connected.php');
+        }else{
+            $this->view->render('_templates/user/connexion_inscription.php');
+        }
+    } 
     
     public function disconnect(){
         session_destroy();

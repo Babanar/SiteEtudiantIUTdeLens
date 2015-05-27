@@ -252,17 +252,34 @@ color:red;
 
 .photoconv
 {
-height: 133px;
-max-height:133px;
+
+max-height:100px;
 max-width:100%;
 padding-bottom: 2px;
 }
 
+.conversation_contenu_msg{
+    padding-left: 20px;
+    padding-top:10px;
+    font-size:12px;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;  
+}
 
+.conversation_msgblock{
+    min-height:90px;
+}
 
 #conv_view
 {
-	border: 1px solid black;
+        max-height:1000px;
+        overflow: scroll;
+        overflow-x: hidden;
+        background-color:white;
 	padding-top:10px;
 	padding-bottom:10px;
 	
@@ -276,12 +293,16 @@ padding-bottom:10px;
 
 #msgarea
 {
-resize:none;
+    height:100px;
+}
+
+#write_msg{
+    margin: 20px;
 }
 
 #send_btn
 {
-padding:20px;
+    height:100px;
 }
 
 #newmsg_btn
@@ -323,7 +344,14 @@ color:#C89709;
 
 .contenumsg
 {
-color:black;
+    color:black;
+    font-size:12px;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;  
 }
 
 #contenuarea
@@ -382,4 +410,32 @@ form label{
 #inscriptionSentMessage
 {
     text-align: center;
+}
+#titre_conversation{
+    line-height:40px;
+    height:40px;
+    margin:auto;
+    font-size:20px;
+}
+#participants_conversation{
+    line-height:40px;
+    font-size:13px;
+    color:#E7540F;
+}
+.participant_conversation{
+    color:#B7540F;
+}
+
+.conversation_link{
+    cursor:pointer;
+}
+#write_msg{
+    height:100px;
+}
+#msgarea_conversation{
+    resize: none;
+    height:100%;
+}
+#send_btn_conversation{
+    height:100%;
 }

@@ -15,8 +15,8 @@ function cmp_Conversation($a,$b){
 class Conversation extends Table {
     public $titre;
     public $dateCreation;
-    protected $mtitre;
     public $titreessages;
+    protected $participants;
 
     function __construct($titre="",$dateCreation="",$id=false){
         parent::__construct();
@@ -24,6 +24,7 @@ class Conversation extends Table {
         $this->dateCreation = $dateCreation;
         $this->id = $id;
         $this->messages = false;
+        $this->participants;
 
     }
     
@@ -60,6 +61,39 @@ class Conversation extends Table {
             
         }
         return $msg->message;      
+    }
+    
+            
+    public function getParticipants(){
+        if(!$this->participants && $this->id!==false){
+            $conversationSQL = new ConversationSQL();
+            $this->participants = $conversationSQL->getParticipants($this->id);
+        }
+        return $this->participants;
+    }
+    public function notifyParticipants(){
+        $participants = $this->getParticipants();
+        $convSQL = new ConversationSQL();
+        foreach($participants as $p){
+            $convSQL->setAsSeen($p->getId(), $this->id, false);
+        }
+        $this->setAsSeen();
+    }
+    public function setAsSeen($id_conv=false){
+        if(!$id_conv){
+            $id_conv=Session::get('id_utilisateur');
+        }
+            $conversationSQL = new ConversationSQL();
+            $conversationSQL->setAsSeen($id_conv, $this->id);       
+    }
+    
+    public function isSeen($id_conv=false){
+        if(!$id_conv){
+            $id_conv=Session::get('id_utilisateur');
+        }             
+        $conversationSQL = new ConversationSQL();
+        $conversationSQL->setAsSeen($id_conv, $this->id);
+
     }
     
 }

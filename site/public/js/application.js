@@ -18,7 +18,7 @@
                         }
                      });
                   
-                               
+                updateProfil();               
         }
 
 $(function()
@@ -72,7 +72,6 @@ $(function()
                 function(e){
                    var target = e.target;
                    while(!target.classList.contains("mainpage-link")){
-                       console.log("ok");
                        target=$(target).parent()[0];
                    }
                   onClickMainPageLink(target);  
@@ -197,3 +196,49 @@ $(document).on("submit", "#form_inscription_entreprise",function(e){
         );
     return false;
 });
+
+function putBottom(e){
+    alert("k");
+    e.scrollTop = e.scrollHeight;
+}
+
+    function updateProfil(){
+        if(document.getElementById("entete_profil")!==null){
+             $.post(
+                url+"connexion/updateProfil", 
+                {
+                    ajax:true
+                },
+                function(cs){
+                    $("#header_user").html(cs); 
+                    console.log("update");
+                },
+                'text'
+            );
+        }
+    }
+    var interval = setInterval(updateProfil,6000);
+    
+$('body').on('click', '#send_btn_conversation',
+                function(){
+                    var urltmp = document.location.href;
+                    urltmp = urltmp.split('/');
+                    urltmp = urltmp[urltmp.length -1];
+                    $.post(
+                       url+"message/sendmsg", 
+                       {
+                           ajax:true,
+                           text:$("#msgarea_conversation").val(),
+                           conversation:urltmp
+                       },
+                       function(cs){
+                                $("#mainpage").html(cs);
+                                var scroll = document.getElementById('conv_view');
+                                scroll.scrollTop = scroll.scrollHeight;
+                       },
+                       'text'
+                   );
+                }
+);
+
+        

@@ -72,8 +72,9 @@ class User{
             }
             
             if($ext>0){
-                $user = new Super_Util($ext,$entreprise,$email,$password);
+                $user = new Super_Util($ext,$entreprise,$email,$password, false,md5(uniqid(mt_rand())));
                 $user->save();
+                Mail::confirmInscription($user->getId());
             }
             else{
                 $valid=false;
@@ -95,7 +96,8 @@ class User{
             $valid = false;
             Session::add('inscription_feedback_negative', "Le prénom est obligatoire.");
         }
-        if (!($birthdate=DateTime::createFromFormat('d/m/Y',$_POST['birthdate']))){
+        if (!($birthdate=DateTime::createFromFormat('d/m/Y',$_POST['birthdate']))
+            && !($birthdate=DateTime::createFromFormat('Y-m-d',$_POST['birthdate']))){
             $valid = false;
             Session::add('inscription_feedback_negative', "La date de naissance n'est pas au bon format (jj/mm/aaaa).");
         }
@@ -140,6 +142,25 @@ class User{
             return -1;
         }
     }
+    
+    public static function isInConversation($id){
+        if(!User::isLoggedIn()||!$id)
+            return false;
+        $conversationSQL = new ConversationSQL();
+        $conversation = $conversationSQL->findById($id);
+        $list_participant = $conversation->getParticipants();
+        $id_list = array();
+        foreach($list_participant as $p){
+            $id_list[]=$p->getId();
+        }
+        if(!$conversation){
+            return false;
+        }
+        return in_array(Session::get("id_utilisateur"),$id_list);
+        
+        
+    }
+    
     private static function inscriptionEntreprise(){
         $valid=true;
         
@@ -229,9 +250,8 @@ class User{
     
     private static function stockUserInSession($user){
         Session::set('user_logged_in',true);
-        Session::set('callName',$user->getCallNamePresentation());
+        Session::set('callName',$user->getCallName());
         Session::set('id_utilisateur',$user->getId());
-        Session::set('callName',$user->getCallNamePresentation());
     }
  
     public static function isLoggedIn()

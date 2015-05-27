@@ -42,10 +42,12 @@ class Message extends Controller
         // load views
         $convSQL = new ConversationSQL();
         $conversation = $convSQL->findById($id);
-        if(!$conversation || !$id){
+        if(!$conversation || !$id || !User::isInConversation($id)){
             $this->view->render('error/index.php');
         }else{  
-            $this->view->render('message/conversation.php',array("conversation"=>$conversation));
+                $conversation->setAsSeen();
+                $this->view->render('message/conversation.php',array("conversation"=>$conversation));
+            
         }
     }
 	public function newconv()
@@ -56,6 +58,25 @@ class Message extends Controller
         $this->view->render('message/newconv.php');
     }
 	
+    public function sendmsg(){
+        $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
+        if (!$ajax) {
+            
+            $this->view->render('error/index.php');
+        }
+        $text = filter_input(INPUT_POST, 'text', FILTER_SANITIZE_SPECIAL_CHARS);
+        $id_conv = filter_input(INPUT_POST, 'conversation', FILTER_SANITIZE_NUMBER_INT);
+        if(!User::isInConversation($id_conv)){
+            $this->view->render('error/index.php');
+       }else{
+            $mp = new Mps($id_conv,Session::get('id_utilisateur'),$text);
+            $mp->save();
+            $convSQL = new ConversationSQL();
+            $conversation = $convSQL->findById($id_conv);
+            $conversation->notifyParticipants();
+            $this->view->render('message/conversation.php',array("conversation"=>$conversation));
+        }
+    }
 	
 
 
