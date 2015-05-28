@@ -2,7 +2,7 @@
     <div class="row">
         <div class="row">
             <h3>
-                Profil
+                Votre Profil
             </h3>
             <hr>
         </div>

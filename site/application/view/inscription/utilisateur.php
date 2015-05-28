@@ -73,7 +73,7 @@
 			</div>
 			<div class="col-md-7">
 				<div class='input-group date'>
-                    <input type='date' class="form-control" id='birthdate' value="<?php echo (!isset($_POST['birthdate'])?"":$_POST['birthdate']); ?>" />
+                                    <input type='date' class="form-control" id='birthdate' placeholder="jj/mm/aaaa" value="<?php echo (!isset($_POST['birthdate'])?"":$_POST['birthdate']); ?>" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>

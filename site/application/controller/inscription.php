@@ -27,12 +27,6 @@ class Inscription extends Controller
         // load views
         $this->view->render('inscription/utilisateur.php');
     }
-    
-    public function profil_utilisateur()
-    {
-        // load views
-        $this->view->render('inscription/profil_utilisateur.php');
-    }
 
     public function validation(){
         if(!isset($_POST['entreprise'])){
@@ -51,12 +45,6 @@ class Inscription extends Controller
         }
     }
 
-    
-    public function profil_entreprise()
-    {
-        // load views
-        $this->view->render('inscription/profil_entreprise.php');
-    }
     
     public function forum()
     {

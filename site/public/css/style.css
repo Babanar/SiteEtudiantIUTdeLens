@@ -446,17 +446,12 @@ form label{
     margin:15px;
 }
 
-#forumcat_view
+.forumcat_view
 {
     border: 1px solid black;
     padding: 15px;
     background-color:white;
     margin-bottom: 15px;    
-}
-
-#forumconv_view
-{
-        
 }
 
 #index_forum_info hr
@@ -525,4 +520,20 @@ form label{
 {
     padding-left: 15px;
 
+}
+
+#profil_view
+{
+    border: 2px solid black;
+}
+
+#coordonnes
+{
+    border: 2px solid black;
+}
+
+.contactMP
+{
+    height: 100%;
+    margin-top: 50%; 
 }

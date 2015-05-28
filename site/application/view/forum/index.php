@@ -9,7 +9,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-10 col-md-offset-1" id="forumcat_view">
+        <div class="col-md-10 col-md-offset-1 forumcat_view" >
         
             <div class="row">
             <h3>
@@ -28,7 +28,7 @@
                         
                         <div class="col-md-10">
                             <div class="row titretopic"><h3>Bienvenue !</h3></div>
-                            <div class="row"><p class="lastMSG">Bonjour à tous, bienvenue sur le forum. Blablablabla</p></div>
+                            <div class="row"><p class="lastMSG">Bonjour à tous, bienvenue sur le forum. BlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablabla</p></div>
                             <div  class="row"><p class="InfoMSG">Par Mathieu Blanquin le vendredi 22 mai à 13:48</p></div>
                         </div>
                     </div>

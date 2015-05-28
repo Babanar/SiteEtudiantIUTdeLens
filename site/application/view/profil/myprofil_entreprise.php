@@ -2,7 +2,7 @@
     <div class="row">
         <div class="row">
             <h3>
-                Profil
+                 Votre Profil
             </h3>
             <hr>
         </div>
@@ -28,7 +28,7 @@
 	<div class="row">
 		<div class="form-group" id="SiretGroup">
 			<div class="col-md-4 text-right">
-					<label for="Siret" class="control-label">Numéro de SIRET/SIREN<span id="req">*</span> : </label>
+					<label for="Siret" class="control-label">Numéro de SIRET/SIREN : </label>
 			</div>
 			<div class="col-md-4">
                             <p id="siret">18736498276315</p>
