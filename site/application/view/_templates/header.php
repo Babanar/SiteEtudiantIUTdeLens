@@ -34,37 +34,27 @@
   </div>
    <!-- Entête de navigation -->
   <div class="row "> 
-    <div class=" col-md-12" id="navbar">
+    <div class=" col-md-12 departement_color" id="navbar">
 		<div class="row" id="navbar_btn">
 			<div class="col-md-2">
-				<button type="button" class="btn" id="TC_BUTTON">  
-					TC
+				<button type="button" class="btn" id="TC_COLOR">TC</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" class="btn" id="GEA_COLOR">GEA</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" class="btn" id="MMI_COLOR">MMI
 				</button>
 			</div>
 			<div class="col-md-2">
-				<button type="button" class="btn" id="GEA_BUTTON">  
-					GEA
-				</button>
+				<button type="button" class="btn" id="INFO_COLOR">INFO</button>
 			</div>
 			<div class="col-md-2">
-				<button type="button" class="btn" id="MMI_BUTTON">  
-					MMI
-				</button>
-			</div>
-			<div class="col-md-2">
-				<button type="button" class="btn" id="INFO_BUTTON">  
-					INFO
-				</button>
-			</div>
-			<div class="col-md-2">
-				<button type="button" class="btn" id="PROF_BUTTON">  
-					PROF
-				</button>
+				<button type="button" class="btn" id="PROF_COLOR">PROF</button>
 			</div>
                     
 			<div class="col-md-2">
-				<button type="button" class="btn" id="ENTREPRISE_BUTTON">  
-					Entreprise
+				<button type="button" class="btn" id="ENTREPRISE_COLOR">Entreprise
 				</button>
 			</div>
 		</div>
@@ -104,5 +94,5 @@
   </div>
     <!-- ouverture de la div principale -->
   <div class="row">
-    <div class="col-md-12" id="mainblock">
+    <div class="col-md-12 departement_color_border" id="mainblock" >
          <div class="row" id="mainpage">

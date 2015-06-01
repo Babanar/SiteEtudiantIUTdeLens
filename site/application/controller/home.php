@@ -20,5 +20,32 @@ class Home extends Controller
         $this->view->render('home/index.php');
     }
 
+    public function departement($dep="",$page=0){
+        $dep = strtolower($dep);
+        if(!in_array($dep,array("info","gea","mmi","tc","prof","entreprise"))){
+            $this->view->render('error/index.php');
+        }else{
+            $newsSQL = new NewsSQL();
+            $request = "findBy".ucfirst($dep);
+            $news = $newsSQL->$request(true)->orderBy("date_post desc")->limit($page*10,($page+1)*10)->execute();
+            
+            $evenementSQL = new EvenementSQL();
+            $request = "findBy".ucfirst($dep);
+            $event = $evenementSQL->$request(true)->orderBy("dateEvenement desc")->limit(0,10)->execute();
+            
+            $this->view->render('home/departement.php',array("dep"=>$dep,"news" => $news,"event"=>$event));
+        }
+    }
+    public function changeColor(){
+        $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
+        if (!$ajax) {
+            
+            $this->view->render('error/index.php');
+        }
+        if(isset($_POST['color_departement'])
+                &&!is_null($_POST['color_departement'])){
+            Session::set("color_departement",$_POST['color_departement']);
+        }
+    }
 
 }

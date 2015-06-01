@@ -1,69 +1,75 @@
     
 	var timeAnimation=500; 	             
         function onClickMainPageLink(e){
-                   targetUrl=url+e.getAttribute("href");
-                   $.ajax({
-                        url : targetUrl,
-                        type : 'POST',
-                        data:'ajax=1',
-                        dataType : 'html',
-                        success : function(code_html, statut){ 
-                            $("#mainpage").hide(timeAnimation,function(){
-                                $("#mainpage").html(code_html);
-                                $("#mainpage").show(timeAnimation);
-                            });
+               targetUrl=url+e.getAttribute("href");
+               goToUrl(targetUrl);
 
-                             window.history.pushState({"html":code_html,"pageTitle":"Inscription"},"", targetUrl);
-      
-                        }
-                     });
-                  
                 updateProfil();               
+        }
+
+        function goToUrl(targetUrl){
+            $.ajax({
+                url : targetUrl,
+                type : 'POST',
+                data:'ajax=1',
+                dataType : 'html',
+                success : function(code_html, statut){ 
+                    $("#mainpage").hide(timeAnimation,function(){
+                        $("#mainpage").html(code_html);
+                        $("#mainpage").show(timeAnimation);
+                    });
+
+                     window.history.pushState({"html":code_html,"pageTitle":"Inscription"},"", targetUrl);
+
+                }
+             });
         }
 
 $(function()
 {
 	
-	function transition_navbar(color){
-            //Si déjà de la bonne couleur on ne fait rien.
-            if(color===$("#navbar").css("background-color"))    
-                return;
-            
-            $("#navbar").animate({
-				backgroundColor:"#FFFFFF"
-                	}, timeAnimation,function(){
-                                                //Transition vers la couleur
-						$("#navbar").animate({
-							backgroundColor:color
-							}, timeAnimation);
-						}
-            );
-            
-            $("#footer").animate({
-				backgroundColor:"#FFFFFF"
-                	}, timeAnimation,function(){
-                                                //Transition vers la couleur
-						$("#footer").animate({
-							backgroundColor:color
-							}, timeAnimation);
-						}
-            );
-            
-            $("#mainblock").animate({
-				borderColor:"#FFFFFF"
-                	}, timeAnimation,function(){
-                                                //Transition vers la couleur
-						$("#mainblock").animate({
-							borderColor:color
-							}, timeAnimation);
-						}
-            );
-
-	}   
 
 	$("#navbar_btn .btn").click(
 		function(e){
-                        transition_navbar(window.getComputedStyle(e.target).getPropertyValue('background-color'));
+                       goToUrl(url+"/home/departement/"+$(e.target).html());
+                       color_departement=window.getComputedStyle(e.target).getPropertyValue('background-color');
+                        if($("#navbar").css("background-color")===color_departement)
+                            return;
+                        var classElem = document.getElementsByClassName("departement_color");
+                        $(classElem).each(function(){
+
+                                    $(this).animate({
+                                                        backgroundColor:"#FFFFFF"
+                                                }, timeAnimation,function(){
+                                                                        $(this).animate({
+                                                                                backgroundColor:color_departement
+                                                                                }, timeAnimation);
+                                                                        }
+                                    );
+                        });
+                        var classElem = document.getElementsByClassName("departement_color_border");
+                        $(classElem).each(function(){
+
+                                    $(this).animate({
+                                                        borderColor:"#FFFFFF"
+                                                }, timeAnimation,function(){
+                                                                        $(this).animate({
+                                                                                borderColor:color_departement
+                                                                                }, timeAnimation);
+                                                                        }
+                                    );
+                        });
+                        $.post(
+                            url+"home/changeColor", 
+                            {
+                                ajax:true,
+                                color_departement:color_departement
+                            },
+                            function(cs){
+                                console.log(cs);
+                            },
+                            'text'
+                        );
 		}	
 	);
 
@@ -242,3 +248,98 @@ $('body').on('click', '#send_btn_conversation',
 );
 
         
+    
+$(document).on("submit", "#form_new_conversation", 
+                function(){
+                    $.post(
+                       url+"message/sendconv", 
+                       {
+                           ajax:true,
+                           membres_conv:$("#membres_conv").val(),
+                           objet_conv:$("#objet_conv").val()
+                       },
+                       function(cs){
+                                $("#mainpage").html(cs);
+                       },
+                       'text'
+                   );
+                   return false;
+                }
+);
+    
+$(document).on("submit", "#connexion_administrateur", 
+                function(){
+                    $.post(
+                       url+"administration/validConnexion", 
+                       {
+                           ajax:true,
+                           identifiant:$("#identifiant").val(),
+                           motdepasse:sha1($("#motdepasse").val())
+                       },
+                       function(cs){
+                                $("#mainpage").html(cs);
+                       },
+                       'text'
+                   );
+                   return false;
+                }
+);
+    
+$(document).on("submit", "#form_add_news", 
+                function(){
+                    $.post(
+                       url+"administration/news_ajouter_valider", 
+                       {
+                           ajax:true,
+                           titre:$("#titre").val(),
+                           text:$("#text").val(),
+                           tc:$("#departement-0")[0].checked,
+                           mmi:$("#departement-1")[0].checked,
+                           info:$("#departement-2")[0].checked,
+                           gea:$("#departement-3")[0].checked,
+                           prof:$("#departement-4")[0].checked,
+                           entreprise:$("#departement-5")[0].checked
+                       },
+                       function(cs){
+                                $("#mainpage").html(cs);
+                       },
+                       'text'
+                   );
+                   return false;
+                }
+);
+
+$(document).on("submit", "#form_delete_news", 
+                function(){
+                    $.post(
+                       url+"administration/news_supprimer_valider", 
+                       {
+                           ajax:true,
+                           id:$("#id_news").val()
+                       },
+                       function(cs){
+                                $("#mainpage").html(cs);
+                       },
+                       'text'
+                   );
+                   return false;
+                }
+);
+
+function initialiseDepartementColor(){
+
+    var classElem = document.getElementsByClassName("departement_color");
+    $(classElem).each(function(){
+        $(this).animate({
+                backgroundColor:color_departement
+                }, 0);
+        });
+
+    var classElem = document.getElementsByClassName("departement_color_border");
+    $(classElem).each(function(){
+        $(this).animate({
+                borderColor:color_departement
+                }, 0);
+        });
+}
+initialiseDepartementColor();

@@ -64,7 +64,7 @@ class Message extends Controller
             
             $this->view->render('error/index.php');
         }
-        $text = filter_input(INPUT_POST, 'text', FILTER_SANITIZE_SPECIAL_CHARS);
+        $text = isset($_POST['text'])?nl2br(htmlentities($_POST['text'])):"";
         $id_conv = filter_input(INPUT_POST, 'conversation', FILTER_SANITIZE_NUMBER_INT);
         if(!User::isInConversation($id_conv)){
             $this->view->render('error/index.php');
@@ -77,7 +77,24 @@ class Message extends Controller
             $this->view->render('message/conversation.php',array("conversation"=>$conversation));
         }
     }
-	
 
+    public function sendconv(){
+        $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
+        if (!$ajax) {
+            
+            $this->view->render('error/index.php');
+        }
+        $members = filter_input(INPUT_POST,"membres_conv",FILTER_SANITIZE_STRING);
+        $title = filter_input(INPUT_POST,"objet_conv",FILTER_SANITIZE_SPECIAL_CHARS);
+        $members = explode(";",$members);
+        $conv = new Conversation($title,date("Y-m-d  H:i:s"));
+        $conv->save();
+        $memberSQL = new UtilisateursSQL();
+        foreach($members as $m){
+            if($memberSQL->findById($m)!=null){
+                $conv->addParticipant($m);
+            }
+        }
+    }
 
 }

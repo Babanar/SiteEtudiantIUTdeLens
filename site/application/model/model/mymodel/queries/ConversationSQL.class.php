@@ -17,4 +17,5 @@ class ConversationSQL extends Query {
             $this->dbAdapter->prepare("UPDATE participant_conversation SET vu=?  WHERE idConversation=? AND idEtudiant=? ");
             $this->dbAdapter->execute(array($seen,$id_conv,$id_user));
         }
+
 }

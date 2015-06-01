@@ -1,4 +1,17 @@
 <?php
+
+function cmp_Conversation($a,$b){
+    $dateA = DateTime::createFromFormat("d-m-Y H:i:s", $a->getLastDate());
+    $dateB = DateTime::createFromFormat("d-m-Y H:i:s", $b->getLastDate());
+    if ($dateA < $dateB) {
+        return 1;
+    }else if($dateB < $dateA){
+        return -1;
+    }else{
+        return 0;
+    }
+}
+
     class Super_UtilSQL extends Query {
          public function getConversations($id_etudiant){
             $this->dbAdapter->prepare("SELECT * FROM participant_conversation WHERE idEtudiant=?");

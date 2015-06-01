@@ -30,6 +30,9 @@ abstract class Table {
         $this->_isNew = false;
     }
     
+    public function saveLink(){
+        $this->crudAdapter->saveLink($this);
+    }
 
     /** delete the instance from DB.
      * Ask crudAdpater to do that

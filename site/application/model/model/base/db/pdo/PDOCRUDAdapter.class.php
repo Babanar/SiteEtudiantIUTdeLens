@@ -112,6 +112,35 @@ class PDOCRUDAdapter implements CRUDAdapter {
         $this->pdodbadapter->prepare($sql);
         $this->pdodbadapter->execute(array($instance->getId()));
     }
+
+    public function saveLink($instance) {
+        $tableName = $instance->getTableName();
+        
+    
+        $sql = "INSERT INTO $tableName VALUES(";
+        
+        $vars = get_class_vars(get_class($instance));
+        $nb = count($vars);
+        
+        for($i = 0;$i<$nb;$i++)
+            $sql = $sql.($i>0?",":"")."?";
+        $sql = $sql .")";
+
+        $values = array();
+        foreach($vars as $k=>$v) {
+            echo "$k -> <br>";
+            var_dump($v);
+            echo "<br>";
+            $values[] = $instance->$k;
+        }
+        $this->pdodbadapter->prepare($sql);
+        $this->pdodbadapter->execute($values);
+    }
+
+    public function updateLink($instance) {
+        
+    }
+
 }
 
 

@@ -53,7 +53,13 @@
 
 		
 	<div class="row">
-            <button type="submit" class="btn btn-default col-md-offset-4 col-md-4" id="newmsg_btn">Nouveau message</button>
+            <button 
+                type="submit" 
+                class="mainpage-link btn btn-default col-md-offset-4 col-md-4" 
+                id="newmsg_btn"
+                href="message/newconv">
+                Nouveau message
+            </button>
 	</div>
 </div>
 </div>

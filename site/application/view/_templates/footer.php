@@ -3,7 +3,7 @@
         </div>
     </div>
         <div class="row" >
-            <div class="col-md-12 hidden-sm" id="footer">
+            <div class="col-md-12 hidden-sm departement_color" id="footer">
             <div class="row">
                     <hr>
                     Copyright 2015 - <a href="#">Charte</a> - <a href="#">Contact</a>
@@ -18,6 +18,7 @@
     <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
     <script>
         var url = "<?php echo URL; ?>";
+        var color_departement="<?php echo (!is_null(Session::get('color_departement'))?Session::get('color_departement'):"#A4E338"); ?>";
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>

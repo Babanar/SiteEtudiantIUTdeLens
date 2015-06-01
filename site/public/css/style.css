@@ -60,22 +60,22 @@ body{
 	border:#A4E338 solid 0px;
 }
 
-#TC_BUTTON{
+#TC_COLOR{
 	background-color:#A4E338;
 }
-#GEA_BUTTON{
+#GEA_COLOR{
 	background-color:#FBBD0B;
 }
-#MMI_BUTTON{
+#MMI_COLOR{
 	background-color:#E41370;
 }
-#INFO_BUTTON{
+#INFO_COLOR{
 	background-color:#00AC9A;
 }
-#SANTE_BUTTON{
-	background-color:#AE45AE;
+#ENTREPRISE_COLOR{
+	background-color:#C0C0C0;
 }
-#PROF_BUTTON{
+#PROF_COLOR{
 	background-color:#EA6B13;
 }
 
@@ -150,6 +150,10 @@ hr{
  
 #footer a{
         color:black;
+}
+
+.mainpage-link{
+    cursor:pointer;
 }
 
 #mainpage{
@@ -536,4 +540,61 @@ form label{
 {
     height: 100%;
     margin-top: 50%; 
+}
+
+.right_div_departement{
+    border-left:10px solid #A4E338;
+    padding-bottom:20px;
+    border-bottom: 10px solid #A4E338;
+    
+    border-bottom-left-radius: 50px;
+    margin-bottom: 50px;
+   
+}
+
+.news{
+    margin:50px;
+    padding: 20px;
+    border-radius:10px;
+    background-color:#DBDBDB;
+    margin-bottom: 0px;
+    margin-top:50px;
+    
+}
+
+.titre_news{
+    padding-left:30px;
+    
+}
+
+.news p{
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;  
+}
+
+.event_part{
+
+    padding-left:25px;
+    padding-right: 15px;
+    border-bottom: 5px solid #A4E338;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    
+}
+.event_part .titre{
+    margin-left:-25px;
+    padding-left:15px;
+    background-color:#A4E338;
+    margin-bottom: 10px;
+
+}
+
+.btn_panneau_administration{
+    
+    margin:10px;
+    background-color:#AAAAAA;
 }

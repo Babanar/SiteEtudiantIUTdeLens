@@ -1,21 +1,8 @@
 <?php
 
-function cmp_Conversation($a,$b){
-    $dateA = DateTime::createFromFormat("d-m-Y H:i:s", $a->getLastDate());
-    $dateB = DateTime::createFromFormat("d-m-Y H:i:s", $b->getLastDate());
-    if ($dateA < $dateB) {
-        return 1;
-    }else if($dateB < $dateA){
-        return -1;
-    }else{
-        return 0;
-    }
-}
-
 class Conversation extends Table {
     public $titre;
     public $dateCreation;
-    public $titreessages;
     protected $participants;
 
     function __construct($titre="",$dateCreation="",$id=false){
@@ -95,5 +82,9 @@ class Conversation extends Table {
         $conversationSQL->setAsSeen($id_conv, $this->id);
 
     }
-    
+        
+    public function addParticipant($id){
+        $participant = new Participant_conversation($id,$this->id,false);
+        $participant->saveLink();
+    }    
 }

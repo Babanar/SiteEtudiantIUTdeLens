@@ -11,6 +11,9 @@ interface CRUDAdapter {
      */
     function save($instance);
     
+    function saveLink($instance);
+    
+    function updateLink($instance);    
     /**
      * delete the instance from the database
      */

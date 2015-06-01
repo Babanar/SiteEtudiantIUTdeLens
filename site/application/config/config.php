@@ -2,7 +2,7 @@
 
 /**
  * Configuration
- *
+ * mdp_admin_475adkb
  * For more info about constants please @see http://php.net/manual/en/function.define.php
  */
 
@@ -50,7 +50,7 @@ define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'siteetudiant');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'auberouge128');
 define('DB_CHARSET', 'utf8');
 
 define('LIBS_PATH', 'application/libs/');
