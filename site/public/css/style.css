@@ -394,8 +394,8 @@ form label{
 .messageForum
 {
     border: 1px solid black;
-
-    texZt-align: center;
+    height:200px;
+    text-align: center;
 }
 
 .infomsg
@@ -455,22 +455,25 @@ form label{
 
 .forumcat_view
 {
-    border: 1px solid black;
+    border: 5px solid black;
     padding: 15px;
     background-color:white;
     margin-bottom: 15px;    
 }
+.forumcat_view h3{
+    padding-left:15px;
+}
 
 #index_forum_info hr
 {
-    background-color:#00AC9A;
-    height: 1px;
+    height: 2px;
     
 }
 
 .titretopic
 {
-    text-align: center;
+    text-align: left;
+    padding-left:30px;
 }
 
 .messageForum
@@ -481,8 +484,7 @@ form label{
 .ico_no_new_msg
 {
     height: 34px;
-    margin-top: 50%;
-    margin-bottom: 50%;
+    margin-top:83px;
 }
 
 .messageForum .nbMsg
@@ -600,4 +602,25 @@ form label{
     
     margin:10px;
     background-color:#AAAAAA;
+}
+
+.lastMSG{
+    height:90px;
+    line-height: 30px;
+    font-weight: normal;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;  
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
+
+.icone_forum_enveloppe{
+    height:117px;
+}
+.icone_forum_enveloppe img{
+    vertical-align: top;
 }
