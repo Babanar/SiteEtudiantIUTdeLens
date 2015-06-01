@@ -40,7 +40,7 @@
             foreach($this->event as $e){
                 $date = new DateTime($e->dateEvenement);
         ?>
-        <div class="row mainpage-link" href="actualites/article/<?php echo $e->getId(); ?>" style="cursor:pointer;">
+        <div class="row mainpage-link" href="actualites/article/<?php echo $e->id_news; ?>" style="cursor:pointer;">
             
             <b><?php echo $date->format("d/m/Y à H\hi") ?></b> - <?php echo $e->description ?>
         </div>

@@ -44,7 +44,31 @@ class Administration extends Controller
         Session::set("admin",false);
         $this->view->render('admin/connexion.php');
     }
-    
+    public function evenements_ajouter(){
+        if(!Session::get("admin")===true){
+            $this->view->render('admin/connexion.php');
+            return;
+        }
+        $newsSQL = new NewsSQL();
+        $news = $newsSQL->findAll()->orderBy("date_post desc")->execute();
+        $this->view->render('admin/event/ajouter.php',array("news"=>$news));
+    } 
+    public function evenements_supprimer(){
+        if(!Session::get("admin")===true){
+            $this->view->render('admin/connexion.php');
+            return;
+        }
+        $evenementSQL = new EvenementSQL();
+        $evenement = $evenementSQL->findAll()->orderBy("id desc")->execute();
+        $this->view->render('admin/event/supprimer.php',array("evenements"=>$evenement));
+    }   
+    public function evenements_editer(){
+        if(!Session::get("admin")===true){
+            $this->view->render('admin/connexion.php');
+            return;
+        }
+        $this->view->render('admin/event/editer.php');
+    } 
     public function news_ajouter(){
         if(!Session::get("admin")===true){
             $this->view->render('admin/connexion.php');
@@ -60,6 +84,13 @@ class Administration extends Controller
         $newsSQL = new NewsSQL();
         $news = $newsSQL->findAll()->orderBy("date_post desc")->execute();
         $this->view->render('admin/news/supprimer.php',array("news"=>$news));
+    }  
+    public function news_editer(){
+        if(!Session::get("admin")===true){
+            $this->view->render('admin/connexion.php');
+            return;
+        }
+        $this->view->render('admin/news/editer.php');
     } 
     public function news_ajouter_valider(){
 
@@ -103,5 +134,64 @@ class Administration extends Controller
         }
         $this->view->render('admin/news/valid_supprimer.php');
     }
+    
+    public function evenement_ajouter_valider(){
 
+        $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
+        $newsSQL = new NewsSQL();
+        $news = $newsSQL->findAll()->orderBy("date_post desc")->execute();
+        
+        
+        if (!$ajax) {
+            $this->view->render('error/index.php');
+        }
+        if(!Session::get("admin")===true){
+            $this->view->render('admin/connexion.php');
+            return;
+        }
+        if (!($date=DateTime::createFromFormat('d/m/Y H:i',$_POST['date']))){
+            Session::add('ajoutnews_feedback_negative'
+                ,"La date est au mauvais format. Merci de respecter ce format : jj/mm/aaaa hh:mm");
+            $this->view->render('admin/event/ajouter.php',array("news"=>$news));
+        }
+        $description = filter_input(INPUT_POST,"description",FILTER_SANITIZE_SPECIAL_CHARS 	);
+        $id = filter_input(INPUT_POST,"id",FILTER_SANITIZE_NUMBER_INT );
+        $newsSQL2 = new NewsSQL();
+        $news2 = $newsSQL2->findById($id);
+        if($news2===false){
+            Session::add('ajoutnews_feedback_negative'
+                ,"L'article associé n'existe pas, ou plus...");
+            $this->view->render('admin/event/ajouter.php',array("news"=>$news));
+        }
+        
+        $tc =  filter_input(INPUT_POST,"tc",FILTER_VALIDATE_BOOLEAN 	);
+        $gea =  filter_input(INPUT_POST,"gea",FILTER_VALIDATE_BOOLEAN 	);
+        $info =  filter_input(INPUT_POST,"info",FILTER_VALIDATE_BOOLEAN 	);
+        $mmi =  filter_input(INPUT_POST,"mmi",FILTER_VALIDATE_BOOLEAN 	);
+        $prof =  filter_input(INPUT_POST,"prof",FILTER_VALIDATE_BOOLEAN 	);
+        $entreprise =  filter_input(INPUT_POST,"entreprise",FILTER_VALIDATE_BOOLEAN 	);
+        
+        $evenement = new Evenement($date->format("Y-m-d H:i:s"),$description,$id,$info,$mmi,$gea,$tc,$prof,$entreprise);
+        $evenement->save();
+        
+        $this->view->render('admin/event/valid_ajouter.php');
+    } 
+    public function evenement_supprimer_valider(){
+
+        $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
+        if (!$ajax ) {
+            $this->view->render('error/index.php');
+        }
+        if(!Session::get("admin")===true){
+            $this->view->render('admin/connexion.php');
+            return;
+        }
+        $id = filter_input(INPUT_POST,"id",FILTER_SANITIZE_NUMBER_INT );
+        $evenementSQL = new EvenementSQL();
+        $evenement = $evenementSQL->findById($id);
+        if($evenement!==false){
+            $evenement->delete();
+        }
+        $this->view->render('admin/event/valid_supprimer.php');
+    }
 }

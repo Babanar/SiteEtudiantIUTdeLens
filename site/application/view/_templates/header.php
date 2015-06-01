@@ -63,14 +63,21 @@
                     <hr>
 			<div class="col-md-4">
 				<div class="row" id="entete_recherche">
-						
+						<!--
 						<div class="col-md-7">
 							<input type="text" class="form-control input-small" placeholder="Mots clés">
 						</div>
 						<div class="col-md-5">
 							<button type="submit" class="btn btn-default btn-sm">Rechercher</button>
 						</div>
-				</div>
+                                            -->
+				
+                                Compteur des inscrits : 
+                                <?php 
+                                    $superUtilSQL = new Super_UtilSQL();
+                                    echo $superUtilSQL->count();
+                                ?>
+                                </div>
 			</div>
 			<div class="col-md-offset-2 col-md-6" id="header_user">
 

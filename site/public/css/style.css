@@ -83,7 +83,10 @@ hr{
 	margin-top:20px;
 	margin-bottom:10px;
 }
-
+#entete_recherche{
+    line-height:35px;
+    font-size:16px;
+}
 #entete_recherche div{
 	padding-right:0px;
 }

@@ -32,5 +32,10 @@ function cmp_Conversation($a,$b){
 
             
         }    
+        
+        public function count(){
+            $tmp = $this->findAll()->execute();;
+            return sizeof($tmp);
+        }
     }
 ?>

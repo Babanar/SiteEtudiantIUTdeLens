@@ -9,7 +9,7 @@
     <div class='row'>
         <div class="col-md-8 col-md-offset-2 text-center">
             <h3>
-                News ajouté avec succés !
+                Événement supprimé avec succés !
             </h3>
         </div>
     </div>

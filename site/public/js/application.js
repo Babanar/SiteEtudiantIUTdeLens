@@ -326,6 +326,47 @@ $(document).on("submit", "#form_delete_news",
                 }
 );
 
+$(document).on("submit", "#form_add_event", 
+                function(){
+                    $.post(
+                       url+"administration/evenement_ajouter_valider", 
+                       {
+                           ajax:true,
+                           description:$("#description").val(),
+                           id:$("#id_news").val(),
+                           date:$("#date").val(),
+                           tc:$("#departement-0")[0].checked,
+                           mmi:$("#departement-1")[0].checked,
+                           info:$("#departement-2")[0].checked,
+                           gea:$("#departement-3")[0].checked,
+                           prof:$("#departement-4")[0].checked,
+                           entreprise:$("#departement-5")[0].checked
+                       },
+                       function(cs){
+                                $("#mainpage").html(cs);
+                       },
+                       'text'
+                   );
+                   return false;
+                }
+);
+
+$(document).on("submit", "#form_delete_event", 
+                function(){
+                    $.post(
+                       url+"administration/evenement_supprimer_valider", 
+                       {
+                           ajax:true,
+                           id:$("#id_event").val()
+                       },
+                       function(cs){
+                                $("#mainpage").html(cs);
+                       },
+                       'text'
+                   );
+                   return false;
+                }
+);
 function initialiseDepartementColor(){
 
     var classElem = document.getElementsByClassName("departement_color");

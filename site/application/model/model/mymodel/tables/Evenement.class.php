@@ -15,7 +15,7 @@
 class Evenement extends Table {
     public $dateEvenement;
     public $description;
-    public $idNews;
+    public $id_news;
     public $info;
     public $mmi;
     public $gea;
@@ -23,11 +23,11 @@ class Evenement extends Table {
     public $prof;
     public $entreprise;
     
-    function __construct( $dateEvenement="", $description="", $idNews="", $info="", $mmi="", $gea="", $tc="", $prof="", $entreprise="") {
+    function __construct( $dateEvenement="", $description="", $id_news="", $info="", $mmi="", $gea="", $tc="", $prof="", $entreprise="") {
        parent::__construct();
         $this->dateEvenement = $dateEvenement;
         $this->description = $description;
-        $this->idNews = $idNews;
+        $this->id_news = $id_news;
         $this->info = $info;
         $this->mmi = $mmi;
         $this->gea = $gea;
