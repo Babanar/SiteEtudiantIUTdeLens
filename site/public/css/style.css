@@ -456,6 +456,7 @@ form label{
 .forumcat_view
 {
     border: 5px solid black;
+    border-radius:10px;
     padding: 15px;
     background-color:white;
     margin-bottom: 15px;    
@@ -557,6 +558,16 @@ form label{
    
 }
 
+
+.top_div_departement{
+    border-left:10px solid #A4E338;
+    padding-bottom:20px;
+    border-bottom: 10px solid #A4E338;
+    
+    margin-bottom: 50px;
+   
+}
+
 .news{
     margin:50px;
     padding: 20px;
@@ -608,11 +619,7 @@ form label{
     height:90px;
     line-height: 30px;
     font-weight: normal;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -o-hyphens: auto;
-    hyphens: auto;
+    text-align:left;
     word-wrap: break-word;  
     overflow-y: hidden;
     text-overflow: ellipsis;
@@ -623,4 +630,22 @@ form label{
 }
 .icone_forum_enveloppe img{
     vertical-align: top;
+}
+
+.messageForumInTopic{
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;   
+}
+
+.contenumsgforum{
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;      
 }

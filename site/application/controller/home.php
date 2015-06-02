@@ -31,8 +31,7 @@ class Home extends Controller
             
             $evenementSQL = new EvenementSQL();
             $request = "findBy".ucfirst($dep);
-            $event = $evenementSQL->$request(true);
-            $event = $event->findWithCondition(" TO_DAYS(dateEvenement) >  TO_DAYS(DATE_ADD(NOW(), INTERVAL -1 DAY))");
+            $event = $evenementSQL->findWithCondition("$dep=1 AND TO_DAYS(dateEvenement) >  TO_DAYS(DATE_ADD(NOW(), INTERVAL -1 DAY))");
             $event = $event->orderBy("dateEvenement")->limit(0,10)->execute();
             $this->view->render('home/departement.php',array("dep"=>$dep,"news" => $news,"event"=>$event));
         }

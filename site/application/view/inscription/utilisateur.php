@@ -119,7 +119,7 @@
 				<div class="col-md-7">
 						<div class="checkbox">
 								<input type="checkbox" id="TCcheck" <?php 
-                                                                echo ((!isset($_POST['TCcheck'])||!$_POST['TCcheck'])?"":" checked=\"checked\" "); 
+                                                                echo filter_input(INPUT_POST,"TCcheck",FILTER_VALIDATE_BOOLEAN)?" checked=\"checked\" ":""; 
                                                                 ?>>TC
 						</div>
 						

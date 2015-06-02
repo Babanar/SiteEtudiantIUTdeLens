@@ -18,15 +18,15 @@
 <div class="container">
    <!-- Entête de présentation -->
   <div class="row" >
-		<div class=" col-md-12 entete " id="ligne_entete">
+		<div class=" col-md-12 col-sm-12 entete " id="ligne_entete">
 			<div class="row">
-				<div class="col-md-2 logo">
+				<div class="col-md-2 col-sm-1 col-md-offset-0 col-sm-offset-1 logo">
 					<img src="<?php echo URL; ?>img/logo_iut.png"/>
 				</div>
-				<div class="col-md-8 titre">
+				<div class="col-md-8 col-sm-8 titre">
 					<h1> J'ai étudié à l'IUT de Lens </h1>
 				</div>
-				<div class="col-md-2 logo">
+				<div class="col-md-2 col-sm-1 logo">
 					<img src="<?php echo URL; ?>img/logo_projet.png"/>
 				</div>
 			</div>
@@ -34,26 +34,26 @@
   </div>
    <!-- Entête de navigation -->
   <div class="row "> 
-    <div class=" col-md-12 departement_color" id="navbar">
+    <div class=" col-md-12 col-sm-12 departement_color" id="navbar">
 		<div class="row" id="navbar_btn">
-			<div class="col-md-2">
+			<div class="col-md-2 col-sm-2">
 				<button type="button" class="btn" id="TC_COLOR">TC</button>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2 col-sm-2">
 				<button type="button" class="btn" id="GEA_COLOR">GEA</button>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2 col-sm-2">
 				<button type="button" class="btn" id="MMI_COLOR">MMI
 				</button>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2 col-sm-2">
 				<button type="button" class="btn" id="INFO_COLOR">INFO</button>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2 col-sm-2">
 				<button type="button" class="btn" id="PROF_COLOR">PROF</button>
 			</div>
                     
-			<div class="col-md-2">
+			<div class="col-md-2 col-sm-2">
 				<button type="button" class="btn" id="ENTREPRISE_COLOR">Entreprise
 				</button>
 			</div>
@@ -61,7 +61,7 @@
 		
 		<div class="row">
                     <hr>
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-12">
 				<div class="row" id="entete_recherche">
 						<!--
 						<div class="col-md-7">
@@ -79,7 +79,7 @@
                                 ?>
                                 </div>
 			</div>
-			<div class="col-md-offset-2 col-md-6" id="header_user">
+			<div class="col-md-offset-2 col-md-6 col-sm-12" id="header_user">
 
                                 <?php
                                 
