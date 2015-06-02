@@ -19,6 +19,7 @@ class Message extends Controller
         parent::__construct();
         if(!User::isLoggedIn()){
             $this->view->render('error/needLogin.php');
+            exit;
         }
     }
     public function index()

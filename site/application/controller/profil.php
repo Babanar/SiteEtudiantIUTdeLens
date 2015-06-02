@@ -13,6 +13,12 @@
  */
 class profil extends Controller {
     
+    public function __construct(){
+        parent::__construct();
+        $this->view->render('error/construction.php');
+        exit;
+    }
+    
     public function index()
     {
         $this->view->render('profil/index.php');
