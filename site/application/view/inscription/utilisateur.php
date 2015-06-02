@@ -119,47 +119,57 @@
 				<div class="col-md-7">
 						<div class="checkbox">
 								<input type="checkbox" id="TCcheck" <?php 
-                                                                echo ((!isset($_POST['TCcheck'])||!$_POST['TCcheck'])?"":" checked=\"checked\" "); 
+                                                                echo filter_input(INPUT_POST,"TCcheck",FILTER_VALIDATE_BOOLEAN)?" checked=\"checked\" ":""; 
                                                                 ?>>TC
 						</div>
 						
 						<div class="checkbox">
-								<input type="checkbox" id="GEACheck">GEA
+								<input type="checkbox" id="GEACheck"<?php 
+                                                                echo filter_input(INPUT_POST,"GEACheck",FILTER_VALIDATE_BOOLEAN)?" checked=\"checked\" ":""; 
+                                                                ?>>GEA
 						
 						</div>
 						
 						<div class="checkbox">
-								<input type="checkbox" id="MMICheck">MMI
+								<input type="checkbox" id="MMICheck" <?php 
+                                                                echo filter_input(INPUT_POST,"MMICheck",FILTER_VALIDATE_BOOLEAN)?" checked=\"checked\" ":""; 
+                                                                ?>>MMI
 						</div>
 						
 						<div class="checkbox">
-								<input type="checkbox" id="INFOCheck">INFO
+								<input type="checkbox" id="INFOCheck" <?php 
+                                                                echo filter_input(INPUT_POST,"INFOCheck",FILTER_VALIDATE_BOOLEAN)?" checked=\"checked\" ":""; 
+                                                                ?>>INFO
 						</div>			
 				</div>
 	</div>
 		</div>
         
         <div class="row">
-		<div class="form-group" id="entreeGroup">
+		<div class="form-group" id="sepiaGroup">
 			<div class="col-md-5 text-right">
 					<label for="sepia" class="control-label">SEPIA : </label>
 			</div>
 			<div class="col-md-7">
 				<div class="checkbox">
-                                	<input type="checkbox" id="SEPIACheck">SEPIA
+                                	<input type="checkbox" id="SEPIACheck" <?php 
+                                                                echo filter_input(INPUT_POST,"SEPIACheck",FILTER_VALIDATE_BOOLEAN)?" checked=\"checked\" ":""; 
+                                                                ?>>SEPIA
 				</div>
 			</div>
                 </div>
         </div>
         
         <div class="row">
-		<div class="form-group" id="entreeGroup">
+		<div class="form-group" id="profGroup">
 			<div class="col-md-5 text-right">
 					<label for="prof" class="control-label">PROF : </label>
 			</div>
 			<div class="col-md-7">
 				<div class="checkbox">
-                                	<input type="checkbox" id="profCheck">PROF
+                                	<input type="checkbox" id="PROFCheck" <?php 
+                                                                echo filter_input(INPUT_POST,"PROFCheck",FILTER_VALIDATE_BOOLEAN)?" checked=\"checked\" ":""; 
+                                                                ?>>PROF
 				</div>
 			</div>
                 </div>

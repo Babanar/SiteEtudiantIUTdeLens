@@ -59,6 +59,8 @@ class Message extends Controller
     }
 	
     public function sendmsg(){
+        if(!User::isLoggedIn())
+            return;
         $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
         if (!$ajax) {
             
@@ -79,6 +81,8 @@ class Message extends Controller
     }
 
     public function sendconv(){
+        if(!User::isLoggedIn())
+            return;
         $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
         if (!$ajax) {
             
@@ -89,12 +93,14 @@ class Message extends Controller
         $members = explode(";",$members);
         $conv = new Conversation($title,date("Y-m-d  H:i:s"));
         $conv->save();
-        $memberSQL = new UtilisateursSQL();
+        $memberSQL = new Super_UtilSQL();
         foreach($members as $m){
             if($memberSQL->findById($m)!=null){
                 $conv->addParticipant($m);
             }
         }
+        $conv->addParticipant(Session::get('id_utilisateur'));
+        $this->conversation($conv->getId());
     }
 
 }

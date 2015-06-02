@@ -60,10 +60,10 @@
                 <div class="row"> 
                     <div class="form-group">
 			<div class="col-md-4 text-right">
-					<label for="Adresse" class="control-label">Adresse : </label>
+					<label for="adresse" class="control-label">Adresse : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="Adresse">14 rue des fleurs</p>
+                            <p id="adresse">14 rue des fleurs</p>
                             <p id="compAddr1">Compartiment A</p>
                             <p id="compAddr2">Appartement 12</p>
 			</div>

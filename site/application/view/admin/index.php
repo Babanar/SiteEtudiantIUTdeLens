@@ -37,6 +37,16 @@
                 <button class="btn btn-lg mainpage-link btn_panneau_administration" href="administration/evenements_editer">
                     Editer      
                 </button>
+            </div>            
+            <br>
+            <div class="row">
+                <legend> Utilisateurs  </legend>
+                <button class="btn btn-lg mainpage-link btn_panneau_administration" href="administration/evenements_ajouter">
+                    Valider un utilisateur      
+                </button>
+                <button class="btn btn-lg mainpage-link btn_panneau_administration" href="administration/evenements_supprimer">
+                    Supprimer un utilisateur     
+                </button>
             </div>
         </div>
     </div>

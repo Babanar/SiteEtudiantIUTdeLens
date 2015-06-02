@@ -129,10 +129,10 @@
             <div class="row"> 
                 <div class="form-group">
                     <div class="col-md-4 text-right">
-                        <label for="Adresse" class="control-label">Adresse : </label>
+                        <label for="adresse" class="control-label">Adresse : </label>
                     </div>
                     <div class="col-md-8">
-                        <p id="Adresse">61 rue Jean Jaurés</p>
+                        <p id="adresse">61 rue Jean Jaurés</p>
                         <p id="compAddr1"></p>
                         <p id="compAddr2"></p>
                     </div>
@@ -170,8 +170,8 @@
                             <label for="Pays" class="control-label">Pays : </label>
                         </div>
                         <div class="col-md-8">
-                            <p>France</p>
-                            <a href="https://www.google.fr/maps/place/61+Rue+Jean+Jaur%C3%A8s,+62260+Auchel/@50.5056316,2.4731509,573m/
+                            <p id="nomPays">France</p>
+                            <a id='visualiserAdresse' href="https://www.google.fr/maps/place/61+Rue+Jean+Jaur%C3%A8s,+62260+Auchel/@50.5056316,2.4731509,573m/
                                data=!3m1!1e3!4m2!3m1!1s0x47dd1a67d5bf88d1:0x8cd69992ed9e6b9f!6m1!1e1" target="_blank">Visualiser sur Google Maps</a>
                         </div>
 

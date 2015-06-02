@@ -120,7 +120,7 @@ class User{
         $PROFCheck=filter_input(INPUT_POST, 'PROFCheck', FILTER_VALIDATE_BOOLEAN);
         $PROFCheck = is_null($PROFCheck) ? false : $PROFCheck;
         
-        if(!$TCCheck&&!$GEACheck&&!$MMICheck&&!$INFOCheck&&!$PROFCheck){
+        if(!$TCCheck&&!$GEACheck&&!$MMICheck&&!$INFOCheck){
             $valid = false;
             Session::add('inscription_feedback_negative', "Vous devez choisir au moins une formation.");
         }
@@ -164,78 +164,74 @@ class User{
     private static function inscriptionEntreprise(){
         $valid=true;
         
+        
         if (!($nomentre=filter_input(INPUT_POST, 'nomentre', FILTER_SANITIZE_SPECIAL_CHARS))
                 || strlen($nomentre)===0){
             $valid = false;
             Session::add('inscription_feedback_negative', "Le nom de l'entreprise est obligatoire.");
             }
-            
-            if (!($numSiret=filter_input(INPUT_POST, '$numSiret', FILTER_VALIDATE_INT))
-                || strlen($numSiret)!=14){
+            if (!($numSiret=filter_input(INPUT_POST,'numSiret', FILTER_VALIDATE_REGEXP,array("options"=>array("regexp"=>"/^[0-9]{14}/"))))){
             $valid = false;
             Session::add('inscription_feedback_negative', "Le numéro de Siret est obligatoire et est composé de 14 chiffres.");
             }
             
-            if (isset($_POST['secteurAct']))
-            {
-                if (!($secteurAct=filter_input(INPUT_POST, 'secteurAct', FILTER_SANITIZE_SPECIAL_CHARS))){
+
+                if (!($secteurAct=filter_input(INPUT_POST, 'secteurAct', FILTER_SANITIZE_SPECIAL_CHARS))&&strlen($_POST['secteurAct'])!==0){
                 $valid = false;
                 Session::add('inscription_feedback_negative', "Le secteur d'activité ne peut contenir de caractères spéciaux.");
                 }
-            }
+         
             
             if (!($pays=$_POST['pays']=="France")){
             $valid = false;
             Session::add('inscription_feedback_negative', "Le pays doit être égal à \"France\".");
             }
             
-            if (strlen($_POST['ville'])!==0)
-            {
-                if (!($ville=filter_input(INPUT_POST, 'ville', FILTER_SANITIZE_SPECIAL_CHARS))){
+
+                if (!($ville=filter_input(INPUT_POST, 'ville', FILTER_SANITIZE_SPECIAL_CHARS))&&strlen($_POST['ville'])!==0){
                 $valid = false;
                 Session::add('inscription_feedback_negative', "Le nom de la ville ne peut contenir de caractères spéciaux.");
                 }
-            }
-           
-            if (strlen($_POST['CP'])!==0) {   
+            
                 if (!($CP=filter_input(INPUT_POST, '$CP', FILTER_VALIDATE_INT))
-                        || strlen($CP)!==5)
+                       && strlen($_POST['CP'])!==0)
+                        if(strlen($_POST['CP'])!==5)
                     {
                     $valid = false;
                     Session::add('inscription_feedback_negative', "Le code postal doit être composé de 5 chiffres.");
                     }
-            }
             
-            if (strlen($_POST['adresse'])!==0) {
-                if (!($adresse=filter_input(INPUT_POST, 'adresse', FILTER_SANITIZE_SPECIAL_CHARS))){
+
+                if (!($adresse=filter_input(INPUT_POST, 'adresse', FILTER_SANITIZE_SPECIAL_CHARS))&&strlen($_POST['adresse'])!==0){
                 $valid = false;
                 Session::add('inscription_feedback_negative', "l'adresse ne peut contenir de caractères spéciaux.");
                 }
-            }
+
             
-            if (strlen($_POST['compAddr1'])!==0) {
-                if (!($compAddr1=filter_input(INPUT_POST, 'compAddr1', FILTER_SANITIZE_SPECIAL_CHARS))){
+        
+                if (!($compAddr1=filter_input(INPUT_POST, 'compAddr1', FILTER_SANITIZE_SPECIAL_CHARS))&&strlen($_POST['compAddr1'])!==0){
                 $valid = false;
                 Session::add('inscription_feedback_negative', "l'adresse ne peut contenir de caractères spéciaux.");
                 }
-            }
             
             
-            if (strlen($_POST['compAddr2'])!==0) {
-                if (!($compAddr2=filter_input(INPUT_POST, 'compAddr2', FILTER_SANITIZE_SPECIAL_CHARS))){
+            
+         
+                if (!($compAddr2=filter_input(INPUT_POST, 'compAddr2', FILTER_SANITIZE_SPECIAL_CHARS))&&strlen($_POST['compAddr2'])!==0){
                 $valid = false;
                 Session::add('inscription_feedback_negative', "l'adresse ne peut contenir de caractères spéciaux.");
                 }
-            }
+            
                
-            if (strlen($_POST['tel'])!==0) {
+          
                 if (!($tel=filter_input(INPUT_POST, '$tel', FILTER_VALIDATE_INT))
-                   || strlen($tel)!==10)
+                   && strlen($_POST['tel'])!==0)
+                        if (strlen($_POST['tel'])!==10)
                     {
                     $valid = false;
                     Session::add('inscription_feedback_negative', "Le numéro de de téléphone doit être composé de 10 chiffres.");
                     }
-            }
+            
             
              if ($valid) {
             $user = new Entreprises($nomentre, $secteurAct, $numSiret, $adresse, $compAddr1, $compAddr2, $CP, $ville, $pays, $tel);

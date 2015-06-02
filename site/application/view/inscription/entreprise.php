@@ -66,10 +66,10 @@
 	<div class="row">
 		<div class="form-group" id="SiretGroup">
 			<div class="col-md-5 text-right">
-					<label for="Siret" class="control-label">Numéro de SIRET/SIREN<span id="req">*</span> : </label>
+					<label for="numSiret" class="control-label">Numéro de SIRET/SIREN<span id="req">*</span> : </label>
 			</div>
 			<div class="col-md-7">
-				<input type="number_format" class="form-control" id="siret" value="<?php echo (!isset($_POST['siret'])?"":$_POST['siret']); ?>">
+				<input type="number_format" class="form-control" id="numSiret" value="<?php echo (!isset($_POST['numSiret'])?"":$_POST['numSiret']); ?>">
 			</div>
 		</div>
 	</div>
@@ -125,7 +125,7 @@
 	<div class="row"> 
 		<div class="form-group">
 			<div class="col-md-5 text-right">
-					<label for="Adresse" class="control-label">Adresse : </label>
+					<label for="adresse" class="control-label">Adresse : </label>
 			</div>
 			<div class="col-md-7">
 				<input type="text" class="form-control" id="adresse" value="<?php echo (!isset($_POST['adresse'])?"":$_POST['adresse']); ?>">

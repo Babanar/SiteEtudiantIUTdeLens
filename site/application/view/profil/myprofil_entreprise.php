@@ -28,10 +28,10 @@
 	<div class="row">
 		<div class="form-group" id="SiretGroup">
 			<div class="col-md-4 text-right">
-					<label for="Siret" class="control-label">Numéro de SIRET/SIREN : </label>
+					<label for="numSiret" class="control-label">Numéro de SIRET/SIREN : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="siret">18736498276315</p>
+                            <p id="numSiret">18736498276315</p>
 			</div>
                         <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -56,10 +56,10 @@
                 <div class="row"> 
                     <div class="form-group">
 			<div class="col-md-4 text-right">
-					<label for="Adresse" class="control-label">Adresse : </label>
+					<label for="adresse" class="control-label">Adresse : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="Adresse">14 rue des fleurs</p>
+                            <p id="adresse">14 rue des fleurs</p>
                             <p id="compAddr1">Compartiment A</p>
                             <p id="compAddr2">Appartement 12</p>
 			</div>

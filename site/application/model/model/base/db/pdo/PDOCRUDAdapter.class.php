@@ -128,9 +128,6 @@ class PDOCRUDAdapter implements CRUDAdapter {
 
         $values = array();
         foreach($vars as $k=>$v) {
-            echo "$k -> <br>";
-            var_dump($v);
-            echo "<br>";
             $values[] = $instance->$k;
         }
         $this->pdodbadapter->prepare($sql);

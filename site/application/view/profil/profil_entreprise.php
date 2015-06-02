@@ -40,10 +40,10 @@
                     <div class="row">
                         <div class="form-group" id="SiretGroup">
                             <div class="col-md-5 text-right">
-                                <label for="Siret" class="control-label">Numéro de SIRET/SIREN : </label>
+                                <label for="numSiret" class="control-label">Numéro de SIRET/SIREN : </label>
                             </div>
                             <div class="col-md-7">
-                                <p id="siret">18736498276315</p>
+                                <p id="numSiret">18736498276315</p>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                                 <label for="secteurAct" class="control-label">Secteur d'activité : </label>
                             </div>
                             <div class="col-md-7">
-                                <p id="secteurAct">Aggroalimentaire</p>
+                                <p id="secteurAct">Enseignement supérieur</p>
                             </div>
                         </div>
                     </div>   
@@ -72,10 +72,10 @@
                     <div class="row"> 
                         <div class="form-group">
                             <div class="col-md-4 text-right">
-                                <label for="Adresse" class="control-label">Adresse : </label>
+                                <label for="adresse" class="control-label">Adresse : </label>
                             </div>
                             <div class="col-md-8">
-                                <p id="Adresse">Rue de l'université</p>
+                                <p id="adresse">Rue de l'université</p>
                                 <p id="compAddr1">SP 16</p>
                                 <p id="compAddr2"></p>
                             </div>
@@ -113,7 +113,7 @@
                                     <label for="Pays" class="control-label">Pays : </label>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>France</p>
+                                    <p id="nomPays">France</p>
                                     <a href="https://www.google.fr/maps/place/IUT+de+LENS/@50.438429,2.80735,674m/data=!3m2!1e3!4b1!4m2!3m1!1s0x0000000000000000:
                                                      0x2671190e96c659c0!6m1!1e1" target="_blank">Visualiser sur Google Maps</a>
                                 </div>
