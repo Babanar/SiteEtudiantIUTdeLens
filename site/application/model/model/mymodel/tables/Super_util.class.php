@@ -6,11 +6,13 @@ class Super_Util extends Table {
     public $mdp_hash;
     public $mailConfirmation;
     public $token;
+    public $adminConfirmation;
     protected $exterieur;
     protected $conversations;
     protected $nbConvNonVu;
     
-    function __construct($idExt="", $boolEntreprise="", $mail="", $mdp_hash="",$mailConfirmation = "",$token="",$id=false) {
+    function __construct($idExt="", $boolEntreprise="", $mail="", $mdp_hash=""
+            ,$mailConfirmation = "",$token="",$adminConfirmation="",$id=false) {
         parent::__construct();
         $this->idExt = $idExt;
         $this->boolEntreprise = $boolEntreprise;
@@ -19,6 +21,7 @@ class Super_Util extends Table {
         $this->id=$id;
         $this->mailConfirmation=$mailConfirmation;
         $this->token = $token;
+        $this->adminConfirmation = $adminConfirmation;
        
         $this->exterieur = false;
         $this->conversation = false;
@@ -76,4 +79,5 @@ class Super_Util extends Table {
         }
         return $this->nbConvNonVu;
     }
+    
 }

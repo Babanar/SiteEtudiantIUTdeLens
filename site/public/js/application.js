@@ -367,6 +367,22 @@ $(document).on("submit", "#form_delete_event",
                    return false;
                 }
 );
+$(document).on("submit", "#form_valid_usr", 
+                function(){
+                    $.post(
+                       url+"administration/utilisateurs_valider_valider", 
+                       {
+                           ajax:true,
+                           id_usr:$("#id_usr").val()
+                       },
+                       function(cs){
+                                $("#mainpage").html(cs);
+                       },
+                       'text'
+                   );
+                   return false;
+                }
+);
 function initialiseDepartementColor(){
 
     var classElem = document.getElementsByClassName("departement_color");

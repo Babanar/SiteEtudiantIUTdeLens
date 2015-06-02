@@ -41,7 +41,7 @@
             <br>
             <div class="row">
                 <legend> Utilisateurs  </legend>
-                <button class="btn btn-lg mainpage-link btn_panneau_administration" href="administration/evenements_ajouter">
+                <button class="btn btn-lg mainpage-link btn_panneau_administration" href="administration/utilisateurs_valider">
                     Valider un utilisateur      
                 </button>
                 <button class="btn btn-lg mainpage-link btn_panneau_administration" href="administration/evenements_supprimer">

@@ -12,7 +12,28 @@
  * @author Mathieu
  */
 class forum extends Controller{
-    
+    private $canAccess;
+    public function __construct() {
+        parent::__construct();
+        if(!User::isLoggedIn()){
+            $this->view->render('error/needLogin.php');
+            $this->canAccess=false;
+            exit;   
+        }
+        else if(!User::isConfirmed()){
+            $this->view->render('error/needConfirmation.php');
+            $this->canAccess=false;
+            exit;
+        }
+        else{
+            $this->canAccess=true;
+            //* tmp en construction
+            $this->view->render('error/construction.php');
+            exit; //*/
+        }
+        
+        
+    }
     public function index()
     {
          $this->view->render('forum/index.php');

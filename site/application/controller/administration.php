@@ -8,6 +8,8 @@
 
 class Administration extends Controller
 {
+    
+    
     public function index()
     {
         if(Session::get("admin")===true){
@@ -46,7 +48,7 @@ class Administration extends Controller
     }
     public function evenements_ajouter(){
         if(!Session::get("admin")===true){
-            $this->view->render('admin/connexion.php');
+            $this->view->render('error/index.php');
             return;
         }
         $newsSQL = new NewsSQL();
@@ -55,7 +57,7 @@ class Administration extends Controller
     } 
     public function evenements_supprimer(){
         if(!Session::get("admin")===true){
-            $this->view->render('admin/connexion.php');
+            $this->view->render('error/index.php');
             return;
         }
         $evenementSQL = new EvenementSQL();
@@ -64,21 +66,21 @@ class Administration extends Controller
     }   
     public function evenements_editer(){
         if(!Session::get("admin")===true){
-            $this->view->render('admin/connexion.php');
+            $this->view->render('error/index.php');
             return;
         }
         $this->view->render('admin/event/editer.php');
     } 
     public function news_ajouter(){
         if(!Session::get("admin")===true){
-            $this->view->render('admin/connexion.php');
+            $this->view->render('error/index.php');
             return;
         }
         $this->view->render('admin/news/ajouter.php');
     } 
     public function news_supprimer(){
         if(!Session::get("admin")===true){
-            $this->view->render('admin/connexion.php');
+            $this->view->render('error/index.php');
             return;
         }
         $newsSQL = new NewsSQL();
@@ -87,7 +89,7 @@ class Administration extends Controller
     }  
     public function news_editer(){
         if(!Session::get("admin")===true){
-            $this->view->render('admin/connexion.php');
+            $this->view->render('error/index.php');
             return;
         }
         $this->view->render('admin/news/editer.php');
@@ -95,11 +97,8 @@ class Administration extends Controller
     public function news_ajouter_valider(){
 
         $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
-        if (!$ajax) {
+        if (!$ajax || !Session::get("admin")===true) {
             $this->view->render('error/index.php');
-        }
-        if(!Session::get("admin")===true){
-            $this->view->render('admin/connexion.php');
             return;
         }
         $tc =  filter_input(INPUT_POST,"tc",FILTER_VALIDATE_BOOLEAN 	);
@@ -119,11 +118,8 @@ class Administration extends Controller
     public function news_supprimer_valider(){
 
         $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
-        if (!$ajax ) {
+        if (!$ajax || !Session::get("admin")===true) {
             $this->view->render('error/index.php');
-        }
-        if(!Session::get("admin")===true){
-            $this->view->render('admin/connexion.php');
             return;
         }
         $id = filter_input(INPUT_POST,"id",FILTER_SANITIZE_NUMBER_INT );
@@ -142,11 +138,8 @@ class Administration extends Controller
         $news = $newsSQL->findAll()->orderBy("date_post desc")->execute();
         
         
-        if (!$ajax) {
+        if (!$ajax || !Session::get("admin")===true) {
             $this->view->render('error/index.php');
-        }
-        if(!Session::get("admin")===true){
-            $this->view->render('admin/connexion.php');
             return;
         }
         if (!($date=DateTime::createFromFormat('d/m/Y H:i',$_POST['date']))){
@@ -179,13 +172,11 @@ class Administration extends Controller
     public function evenement_supprimer_valider(){
 
         $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
-        if (!$ajax ) {
+        if (!$ajax || !Session::get("admin")===true) {
             $this->view->render('error/index.php');
-        }
-        if(!Session::get("admin")===true){
-            $this->view->render('admin/connexion.php');
             return;
         }
+
         $id = filter_input(INPUT_POST,"id",FILTER_SANITIZE_NUMBER_INT );
         $evenementSQL = new EvenementSQL();
         $evenement = $evenementSQL->findById($id);
@@ -193,5 +184,39 @@ class Administration extends Controller
             $evenement->delete();
         }
         $this->view->render('admin/event/valid_supprimer.php');
+    }
+    
+    public function utilisateurs_valider(){
+        if(!Session::get("admin")===true){
+            $this->view->render('admin/connexion.php');
+            return;
+        }
+        $usrSQL = new Super_UtilSQL();
+        $usrs = $usrSQL->findByAdminConfirmation(false)->execute();
+        $this->view->render('admin/utilisateurs/validation.php',array('users'=>$usrs));
+        
+    }    
+    
+    public function utilisateurs_valider_valider(){
+        $ajax = filter_input(INPUT_POST,"ajax",FILTER_VALIDATE_BOOLEAN 	);
+        if (!$ajax || !Session::get("admin")===true) {
+            $this->view->render('error/index.php');
+            return;
+        }
+
+        $id = filter_input(INPUT_POST,"id_usr",FILTER_SANITIZE_NUMBER_INT );
+        $usrSQL = new Super_UtilSQL();
+        $usr = $usrSQL->findById($id);
+        if($usr!==false){
+            $usr->adminConfirmation = true;
+            $usr->save();
+            Session::add("uservalidation_feedback_positive"
+                    ,"Utilisateur". $usr->getCallName()." bien validé !");
+        }else{
+            Session::add("uservalidation_feedback_negative", "Utilisateur introuvable dans la base de donnée.");
+        }
+         
+        $this->utilisateurs_valider();
+        
     }
 }
