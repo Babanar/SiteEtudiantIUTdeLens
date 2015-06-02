@@ -135,7 +135,7 @@
 					<label for="photo" class="control-label">Photo de profil : </label>
 			</div>
 			<div class="col-md-4">
-				<img src="../public/img/iut.jpg" class="photoconv">
+				<img src="../public/img/iut.jpg" class="photoprofil">
 			</div>
                         <div class="col-md-4">
                             <a href="#">Modifier</a>

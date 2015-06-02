@@ -50,7 +50,7 @@ define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'siteetudiant');
 define('DB_USER', 'root');
-define('DB_PASS', 'auberouge128');
+define('DB_PASS', '');
 define('DB_CHARSET', 'utf8');
 
 define('LIBS_PATH', 'application/libs/');
