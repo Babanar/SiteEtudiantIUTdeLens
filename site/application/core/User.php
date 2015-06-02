@@ -72,7 +72,7 @@ class User{
             }
             
             if($ext>0){
-                $user = new Super_Util($ext,$entreprise,$email,$password, false,md5(uniqid(mt_rand())));
+                $user = new Super_Util($ext,$entreprise,$email,$password, false,md5(uniqid(mt_rand())),false);
                 $user->save();
                 Mail::confirmInscription($user->getId());
             }
@@ -252,6 +252,20 @@ class User{
         Session::set('user_logged_in',true);
         Session::set('callName',$user->getCallName());
         Session::set('id_utilisateur',$user->getId());
+        Session::set('isConfirmed',$user->adminConfirmation);
+    }
+    
+    private static function updateUserInSession(){
+        if(!User::isLoggedIn())
+            return false;
+        $usrSQL = new Super_UtilSQL();
+        $usr = $usrSQL->findById(Session::get('id_utilisateur'));
+        User::stockUserInSession($usr);
+        return true;
+    }
+    
+    public static function isConfirmed(){
+        return User::updateUserInSession()?Session::get('isConfirmed'):false;
     }
  
     public static function isLoggedIn()
