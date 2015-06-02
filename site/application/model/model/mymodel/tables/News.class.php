@@ -16,6 +16,7 @@ class News extends Table {
     public $date_post;
     public $titre;
     public $text;
+    public $accueil;
     public $info;
     public $mmi;
     public $gea;
@@ -23,7 +24,8 @@ class News extends Table {
     public $prof;
     public $entreprise;
     
-    function __construct( $date_post="", $titre="", $text="", $info="", $mmi="", $gea="", $tc="", $prof="", $entreprise="") {
+    function __construct( $date_post="", $titre="", $text="",$accueil="", $info="",
+            $mmi="", $gea="", $tc="", $prof="", $entreprise="") {
         parent::__construct();
         $this->date_post = $date_post;
         $this->titre = $titre;
@@ -34,6 +36,7 @@ class News extends Table {
         $this->tc = $tc;
         $this->prof = $prof;
         $this->entreprise = $entreprise;
+        $this->accueil = $accueil;
     }
 
 

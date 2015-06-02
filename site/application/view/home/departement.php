@@ -38,8 +38,8 @@
     foreach($this->news as $n){
         $date = new DateTime($n->date_post);
     ?>
-    <div class="row">
-        <div class="news">
+    <div class="row" >
+        <div class="news mainpage-link" href="actualites/article/<?php echo $n->getId() ?>">
             <div class="row">
                 <div class="col-md-8">
                     <h2 class="titre_news"><?php echo $n->titre ?></h2>

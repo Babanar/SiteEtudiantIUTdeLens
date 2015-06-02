@@ -89,18 +89,34 @@ class Message extends Controller
             $this->view->render('error/index.php');
         }
         $members = filter_input(INPUT_POST,"membres_conv",FILTER_SANITIZE_STRING);
+ 
         $title = filter_input(INPUT_POST,"objet_conv",FILTER_SANITIZE_SPECIAL_CHARS);
+        if(!$title || strlen($title)===0){
+            Session::add('newconv_feedback_negative','Vous devez indiquer un titre.');
+            $this->newconv();
+            return;
+        }
         $members = explode(";",$members);
         $conv = new Conversation($title,date("Y-m-d  H:i:s"));
         $conv->save();
         $memberSQL = new Super_UtilSQL();
+        $i=0;
         foreach($members as $m){
             if($memberSQL->findById($m)!=null){
-                $conv->addParticipant($m);
+                if($m!=Session::get('id_utilisateur')){
+                    $conv->addParticipant($m);
+                    $i+=1;
+                }
             }
         }
-        $conv->addParticipant(Session::get('id_utilisateur'));
-        $this->conversation($conv->getId());
+        if($i==0){
+            Session::add('newconv_feedback_negative','Vous devez indiquer au moins un utilisateur.');
+            $conv->delete();
+            $this->newconv();
+        }else{
+            $conv->addParticipant(Session::get('id_utilisateur'));
+            $this->conversation($conv->getId());
+        }
     }
 
 }

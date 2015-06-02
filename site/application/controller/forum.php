@@ -39,6 +39,10 @@ class forum extends Controller{
          $this->view->render('forum/index.php');
     }
     
+    public function notification(){
+        $this->view->render('error/construction.php');
+    }
+    
     public function newConv()
     {
          $this->view->render('forum/newConv.php');

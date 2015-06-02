@@ -36,6 +36,12 @@
                   <label class="col-md-4 control-label" for="departement">Visibilité :</label>
                   <div class="col-md-4">
                   <div class="checkbox">
+                    <label for="departement-6">
+                      <input name="departement" id="departement-6" value="6" type="checkbox">
+                      Accueil
+                    </label>
+                        </div>
+                  <div class="checkbox">
                     <label for="departement-0">
                       <input name="departement" id="departement-0" value="1" type="checkbox">
                       TC

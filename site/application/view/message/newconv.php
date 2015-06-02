@@ -2,7 +2,9 @@
   <div class="form-group">
     <legend>Nouvelle conversation</legend>
   </div>
-  
+  <?php
+    $this->renderFeedback('newconv');
+  ?>
   <div class="row">
 		<div class="form-group" id="Membres">
 			<div class="col-md-3 text-right">

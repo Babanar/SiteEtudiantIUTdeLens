@@ -17,14 +17,14 @@
              <?php echo $nbConv?$nbConv:"";  ?>
          </span>
      </div>
-     <div class="col-md-2 col-sm-3 profile_icone" id="icone_forum">
+     <div class="col-md-2 col-sm-3 profile_icone mainpage-link" id="icone_forum" href="forum/notification">
          <span class="text_icone">
-             99
+             
          </span>
      </div>
-     <div class="col-md-2 col-sm-3 profile_icone" id="icone_notif">
+     <div class="col-md-2 col-sm-3 profile_icone mainpage-link" id="icone_notif" href="profil/notification">
          <span class="text_icone">
-             2
+             
          </span>
      </div>
      <a class="col-md-2  col-sm-3 profile_icone" id="icone_disconnect" href="<?php echo URL ?>/connexion/disconnect"></a>

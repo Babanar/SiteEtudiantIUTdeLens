@@ -41,4 +41,8 @@ class profil extends Controller {
         // load views
         $this->view->render('profil/profil_utilisateur.php');
     }
+    
+    public function notification(){
+        $this->view->render('error/construction.php');
+    }
 }

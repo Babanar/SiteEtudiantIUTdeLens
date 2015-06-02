@@ -101,6 +101,8 @@ class Administration extends Controller
             $this->view->render('error/index.php');
             return;
         }
+        
+        $accueil =  filter_input(INPUT_POST,"accueil",FILTER_VALIDATE_BOOLEAN 	);
         $tc =  filter_input(INPUT_POST,"tc",FILTER_VALIDATE_BOOLEAN 	);
         $gea =  filter_input(INPUT_POST,"gea",FILTER_VALIDATE_BOOLEAN 	);
         $info =  filter_input(INPUT_POST,"info",FILTER_VALIDATE_BOOLEAN 	);
@@ -110,7 +112,7 @@ class Administration extends Controller
         $titre =  filter_input(INPUT_POST,"titre",FILTER_SANITIZE_SPECIAL_CHARS 	);
         $text =  isset($_POST['text'])?nl2br(htmlentities($_POST['text'])):"";
         
-        $news = new News(date('Y-m-d H:i:s'),$titre,$text,$info,$mmi,$gea,$tc,$prof,$entreprise);
+        $news = new News(date('Y-m-d H:i:s'),$titre,$text,$accueil,$info,$mmi,$gea,$tc,$prof,$entreprise);
         $news->save();
         Session::add('ajoutnews',"Ajouté avec succés !");
         $this->view->render('admin/news/valid_ajouter.php');

@@ -14,10 +14,11 @@ class Home extends Controller
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
      */
-    public function index()
+    public function index($page=0)
     {
-        // load views
-        $this->view->render('home/index.php');
+        $newsSQL = new NewsSQL();
+        $news = $newsSQL->findByAccueil(true)->orderBy("date_post desc")->limit($page*10,($page+1)*10)->execute();
+        $this->view->render('home/index.php',array("news" => $news));
     }
 
     public function departement($dep="",$page=0){
