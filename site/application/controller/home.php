@@ -48,5 +48,10 @@ class Home extends Controller
             Session::set("color_departement",$_POST['color_departement']);
         }
     }
+    
+    public function mentions_legales()
+    {
+         $this->view->render('_templates/mentions_legales.php');
+    }
 
 }

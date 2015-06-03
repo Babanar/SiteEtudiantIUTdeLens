@@ -7,7 +7,7 @@
             <div class="row">
 
                     <hr>
-                    Copyright 2015 - <a href="#">Charte</a> - <a href="#">Contact</a>
+                    Copyright 2015 - <a href="_templates/mentions_legales.php">Mentions légales</a> - <a href="#">Contact</a>
                    
         </div>
  
