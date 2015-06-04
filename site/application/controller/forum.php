@@ -26,7 +26,7 @@ class forum extends Controller{
             exit;
         }
         else{
-            $this->canAccess=true;
+            $this->canAccess=true;/*
             //* tmp en construction
             $this->view->render('error/construction.php');
             exit; //*/

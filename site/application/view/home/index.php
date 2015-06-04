@@ -1,4 +1,4 @@
-<div class="col-md-7 col-sm-12">
+<div class="col-md-12 col-sm-12">
     <?php
     foreach($this->news as $n){
         $date = new DateTime($n->date_post);

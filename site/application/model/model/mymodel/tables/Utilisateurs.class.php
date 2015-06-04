@@ -58,6 +58,68 @@ class Utilisateurs extends Table {
 
     }
     
+    public function getBirthdate(){
+        $date_tmp = DateTime::createFromFormat("Y-m-d", $this->naissance);
+        return $date_tmp->format("d/m/Y");
+    }
+    
+    public function getFormation(){
+         $first = true;
+         $tmp ="";
+        if($this->boolTC){
+            $first = false;
+            $tmp = "TC";
+        }
+        
+        if($this->boolGEA){
+
+            if(!$first){
+                $tmp = $tmp.',';
+            }
+            
+            $first = false;
+            $tmp = $tmp . "GEA";
+        }
+        if($this->boolMMI){
+
+            if(!$first){
+                $tmp = $tmp.',';
+            }
+            
+            $first = false;
+            $tmp = $tmp . "MMI";
+        }
+        if($this->boolINFO){
+
+            if(!$first){
+                $tmp = $tmp.',';
+            }
+            
+            $first = false;
+            $tmp = $tmp . "INFO";
+        }
+        if($this->boolSepia){
+
+            if(!$first){
+                $tmp = $tmp.',';
+            }
+            
+            $first = false;
+            $tmp = $tmp . "Prof";
+        }
+        if($this->boolProf){
+            if(!$first){
+                $tmp = $tmp.',';
+            }
+            $first = false;
+            
+            $tmp = $tmp . "Sepia";
+        }
+        
+        return $tmp;
+        
+    }
+    
     public function getCallNamePresentation(){
         return $this->prenom . ' ' . $this->nom;
     }

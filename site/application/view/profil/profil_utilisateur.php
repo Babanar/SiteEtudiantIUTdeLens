@@ -2,12 +2,12 @@
     <div class="row">
         <div class="row">
             <h3>
-                Profil de Mathieu Blanquin <button type="submit" class="col-md-offset-5  btn btn-default" id="MP_btn">Contacter par MP</button>
+                Profil de <?php echo $this->usr->getCallNamePresentation() ?> <button type="submit" class="col-md-offset-5  btn btn-default" id="MP_btn">Contacter par MP</button>
             </h3>
             <hr>
         </div>
 
-        <div class="col-md-6" id="profil">
+        <div class="col-md-12" id="profil">
             <div class="row">
                 <h3>
                     Profil
@@ -17,107 +17,107 @@
 
             <div class="row">
                 <div class="form-group">
-                    <div class="col-md-7 text-right">
+                    <div class="col-md-3 text-right">
                         <label for="photo" class="control-label">Photo de profil : </label>
                     </div>
-                    <div class="col-md-5">
-                        <img src="../public/img/iut.jpg" class="photoprofil">
+                    <div class="col-md-9">
+                        <img src="<?php echo URL ?>/img/iut.jpg" class="photoprofil">
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group" id="nom">
-                    <div class="col-md-7 text-right">
+                    <div class="col-md-3 text-right">
                         <label for="nom" class="control-label">Nom  : </label>
                     </div>
-                    <div class="col-md-5">
-                        <p id="nom">Blanquin</p>
+                    <div class="col-md-9">
+                        <p id="nom"><?php echo $this->usr->nom ?></p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group" id="prenom">
-                    <div class="col-md-7 text-right">
+                    <div class="col-md-3 text-right">
                         <label for="prenom" class="control-label">Prénom : </label>
                     </div>
-                    <div class="col-md-5">
-                        <p id="prenom">Mathieu</p>
+                    <div class="col-md-9">
+                        <p id="prenom"><?php echo $this->usr->prenom ?></p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group">
-                    <div class="col-md-7 text-right">
+                    <div class="col-md-3 text-right">
                         <label for="birthdate" class="control-label">Date de naissance : </label>
                     </div>
-                    <div class="col-md-5">
-                        <p id="birthdate">03/02/1994</p>
+                    <div class="col-md-9">
+                        <p id="birthdate"><?php echo $this->usr->getBirthdate() ?></p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group">
-                    <div class="col-md-7 text-right">
+                    <div class="col-md-3 text-right">
                         <label for="profact" class="control-label">Profession ou études actuelles : </label>
                     </div>
-                    <div class="col-md-5">
-                        <p id="profact">DUT Informatique</p>
+                    <div class="col-md-9">
+                        <p id="profact"><?php echo $this->usr->profession_ou_etudes_actuelle ?></p>
                     </div>
                 </div>
             </div>
             
             <div class="row">
                 <div class="form-group">
-                    <div class="col-md-7 text-right">
+                    <div class="col-md-3 text-right">
                         <label for="profant" class="control-label">Profession ou études antérieures : </label>
                     </div>
-                    <div class="col-md-5">
-                        <p id="profant">Baccalauréat Scientifique</p>
+                    <div class="col-md-9">
+                        <p id="profant"><?php echo $this->usr->profession_ou_etudes_anterieure ?></p>
                     </div>
                 </div>
             </div>
             
             <div class="row">
                 <div class="form-group">
-                    <div class="col-md-7 text-right">
-                        <label for="formations" class="control-label">formations suivies à l'IUT : </label>
+                    <div class="col-md-3 text-right">
+                        <label for="formations" class="control-label">Formations suivies à l'IUT : </label>
                     </div>
-                    <div class="col-md-5">
-                        <p id="formations">Informatique</p>
+                    <div class="col-md-9">
+                        <p id="formations"><?php echo $this->usr->getFormation() ?></p>
                     </div>
                 </div>
             </div>
             
             <div class="row">
                 <div class="form-group">
-                    <div class="col-md-7 text-right">
+                    <div class="col-md-3 text-right">
                         <label for="entree" class="control-label">Année d'entrée à l'IUT : </label>
                     </div>
-                    <div class="col-md-5">
-                        <p id="entree">2013</p>
+                    <div class="col-md-9">
+                        <p id="entree"><?php echo $this->usr->entree ?></p>
                     </div>
                 </div>
             </div>
             
             <div class="row">
                 <div class="form-group">
-                    <div class="col-md-7 text-right">
+                    <div class="col-md-3 text-right">
                         <label for="sortie" class="control-label">Année de sortie de l'IUT  : </label>
                     </div>
-                    <div class="col-md-5">
-                        <p id="sortie">2015</p>
+                    <div class="col-md-9">
+                        <p id="sortie"><?php echo $this->usr->sortie?$this->usr->sortie:"Non indiquée" ?></p>
                     </div>
                 </div>
             </div>
             
             
         </div>
-
-
+        <br>
+        <!--
         <div class="col-md-5 col-md-offset-1" id="coordonnees">
             <div class="row">
                 <h3>
@@ -201,8 +201,9 @@
                 </div>
 
             </div>
-        </div>
+        </div>-->
     </div>
+    <br>
 </div>
 
 

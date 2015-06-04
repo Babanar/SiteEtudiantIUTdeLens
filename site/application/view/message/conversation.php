@@ -34,7 +34,8 @@
                                             </div>
                                             <div class="col-md-9">
                                                 <div class="row">
-                                                    <div class="col-md-6 auteursmsg">
+                                                    <div class="col-md-6 auteursmsg mainpage-link" 
+                                                         href="profil/profil_utilisateur/<?php echo $mps[$id]->getExpediteur()->getId() ?>">
                                                         <?php echo $mps[$id]->getExpediteur()->getCallName(); ?>
                                                     </div>
                                                     <div class="col-md-6 datemsg text-right">
