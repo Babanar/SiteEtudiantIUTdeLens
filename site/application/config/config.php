@@ -3,6 +3,7 @@
 /**
  * Configuration
  * mdp_admin_475adkb
+ * 8CN5yp6AMDbBYShV
  * For more info about constants please @see http://php.net/manual/en/function.define.php
  */
 
@@ -40,7 +41,9 @@ define('URL_PUBLIC_FOLDER', 'public');
 define('URL_PROTOCOL', 'http://');
 define('URL_DOMAIN', $_SERVER['HTTP_HOST']);
 define('URL_SUB_FOLDER', str_replace(URL_PUBLIC_FOLDER, '', dirname($_SERVER['SCRIPT_NAME'])));
-define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
+
+define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER 
+        .  (constant('URL_SUB_FOLDER')[strlen(constant('URL_SUB_FOLDER'))-1]==='/'?'':'/'));
 
 /**
  * Configuration for: Database
@@ -48,9 +51,9 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
  */
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'siteetudiant');
-define('DB_USER', 'root');
-define('DB_PASS', 'auberouge128');
+define('DB_NAME', 'alumni');
+define('DB_USER', 'alumni');
+define('DB_PASS', '8CN5yp6AMDbBYShV');
 define('DB_CHARSET', 'utf8');
 
 define('LIBS_PATH', 'application/libs/');

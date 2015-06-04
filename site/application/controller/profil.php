@@ -14,9 +14,13 @@
 class profil extends Controller {
     
     public function __construct(){
-        parent::__construct();
+        parent::__construct();/*
         $this->view->render('error/construction.php');
-        exit;
+        exit; **/
+        if(!User::isLoggedIn()){
+            $this->view->render('error/needLogin.php');
+            exit;
+        }
     }
     
     public function index()
@@ -42,10 +46,17 @@ class profil extends Controller {
         $this->view->render('profil/profil_entreprise.php');
     }
     
-    public function profil_utilisateur()
+    public function profil_utilisateur($id=0)
     {
         // load views
-        $this->view->render('profil/profil_utilisateur.php');
+        $usrSQL = new UtilisateursSQL();
+        $usr = $usrSQL->findById($id);
+        if($usr!==false){
+            $this->view->render('profil/profil_utilisateur.php',array('usr'=>$usr));
+        }
+        else{
+            $this->view->render('error/index.php');
+        }
     }
     
     public function notification(){

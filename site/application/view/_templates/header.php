@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>Stage</title>
+  <title>Alumni IUT de Lens</title>
   <meta charset="utf-8">
+  <meta name="keywords" lang="fr" content="alumni, Lens, IUT,anciens, élèves">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link href="<?php echo URL; ?>css/style.css" rel="stylesheet">
@@ -63,20 +64,25 @@
                     <hr>
 			<div class="col-md-4 col-sm-12">
 				<div class="row" id="entete_recherche">
-						<!--
-						<div class="col-md-7">
-							<input type="text" class="form-control input-small" placeholder="Mots clés">
-						</div>
-						<div class="col-md-5">
-							<button type="submit" class="btn btn-default btn-sm">Rechercher</button>
-						</div>
-                                            -->
-				
-                                Compteur des inscrits : 
-                                <?php 
-                                    $superUtilSQL = new Super_UtilSQL();
-                                    echo $superUtilSQL->count();
-                                ?>
+                                    <div class="col-md-4 col-sm-4">
+                                        <button type="button" class="btn departement_color mainpage-link" href="">Accueil</button>
+                                    </div>
+                                                    <!--
+                                                    <div class="col-md-7">
+                                                            <input type="text" class="form-control input-small" placeholder="Mots clés">
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                            <button type="submit" class="btn btn-default btn-sm">Rechercher</button>
+                                                    </div>
+                                                -->
+                                    <div class="col-md-8 col-sm-8">
+
+                                        Compteur des inscrits : 
+                                        <?php 
+                                            $superUtilSQL = new Super_UtilSQL();
+                                            echo $superUtilSQL->count();
+                                        ?>
+                                    </div>
                                 </div>
 			</div>
 			<div class="col-md-offset-2 col-md-6 col-sm-12" id="header_user">
