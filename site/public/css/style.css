@@ -704,3 +704,8 @@ padding-bottom: 2px;
     height: 1px;
     background-color: black;
 }
+
+#retour_btn
+{
+    margin: 15px;
+}
