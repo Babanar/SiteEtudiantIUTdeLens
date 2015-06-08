@@ -546,26 +546,6 @@ form label{
     padding-left:15px;
 }
 
-#coordonnees
-{
-    border: 2px solid black;
-}
-
-#coordonnees h3
-{
-    padding-left: 15px;
-}
-
-#coordonnees .row p
-{
-    padding-left: 15px;
-}
-
-#coordonnees .row a
-{
-    padding-left: 15px;
-    padding-bottom: 15px;
-}
 
 #contactMP
 {

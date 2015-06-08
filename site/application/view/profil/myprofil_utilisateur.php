@@ -224,7 +224,7 @@
 					<label for="photo" class="control-label">Photo de profil : </label>
 			</div>
 			<div class="col-md-4">
-				<img src="../public/img/iut.jpg" class="photoconv">
+				<img src="<?php echo URL ?>/img/iut.jpg" class="photoconv">
 			</div>
                         <div class="col-md-4">
                             <a href="#">Modifier</a>

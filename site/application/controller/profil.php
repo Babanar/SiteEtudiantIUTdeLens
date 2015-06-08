@@ -40,10 +40,17 @@ class profil extends Controller {
         $this->view->render('profil/myprofil_utilisateur.php');
     }
     
-    public function profil_entreprise()
+    public function profil_entreprise($id=0)
     {
         // load views
-        $this->view->render('profil/profil_entreprise.php');
+        $usrSQL = new EntreprisesSQL();
+        $usr = $usrSQL->findById($id);
+        if($usr!==false){
+            $this->view->render('profil/profil_entreprise.php',array('usr'=>$usr));
+        }
+        else{
+            $this->view->render('error/index.php');
+        }
     }
     
     public function profil_utilisateur($id=0)
@@ -53,6 +60,32 @@ class profil extends Controller {
         $usr = $usrSQL->findById($id);
         if($usr!==false){
             $this->view->render('profil/profil_utilisateur.php',array('usr'=>$usr));
+        }
+        else{
+            $this->view->render('error/index.php');
+        }
+    }
+    
+     public function profil_utilisateur_coordonnees($id=0)
+    {
+        // load views
+        $usrSQL = new Super_UtilSQL();
+        $usr = $usrSQL->findById($id);
+        if($usr!==false && !$usr->boolEntreprise){
+            $this->view->render('profil/profil_utilisateur_coordonnees.php',array('usr'=>$usr));
+        }
+        else{
+            $this->view->render('error/index.php');
+        }
+    }
+    
+    public function profil_entreprise_coordonnees($id=0)
+    {
+        // load views
+        $usrSQL = new Super_UtilSQL();
+        $usr = $usrSQL->findById($id);
+        if($usr!==false && $usr->boolEntreprise){
+            $this->view->render('profil/profil_entreprise_coordonnees.php',array('usr'=>$usr));
         }
         else{
             $this->view->render('error/index.php');
