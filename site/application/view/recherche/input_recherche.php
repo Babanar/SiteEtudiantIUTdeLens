@@ -1,7 +1,13 @@
-<div class="row" style="">
-    <input type="text" class="col-md-6" style="height:30px;">
-    <div class="col-md-4 col-md-pull-5" style="z-index:4; position:relative; top:30px; background-color:rgba(255,255,255,0.7);">
-        test
+<span class="input_recherche">
+    <div class="row">
+        <input type="text" class="col-md-6 input_recherche_champs" style="height:36px;"></input>
+        <div class="col-md-6">
+            
+        <button class="btn btn-info btn-sm"> Filtres <b class="caret"></b> </button>
+        </div>
     </div>
-
-</div>
+    <div class="row">
+        <div class="col-md-6 resultat_recherche" >
+        </div>
+    </div>
+</span>

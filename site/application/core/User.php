@@ -269,4 +269,38 @@ class User{
         return (Session::get('user_logged_in') ? true : false);
     }
     
+    public static function search($requete){
+        $requete = str_replace('+', ' ', $requete);
+        $requete = str_replace(',', ' ', $requete);
+        $requete = str_replace(';', ' ', $requete);
+        $requete = str_replace('.', ' ', $requete);
+        $requete = str_replace('\'', ' ', $requete);
+        $requete = str_replace('"', ' ', $requete);
+        $mots = explode(' ',$requete);
+        
+        $usrSQL = new UtilisateursSQL();
+        $nb = count($mots);
+        $final = 0;
+        $rqt ="";
+        $param = array();
+        $usr=array();
+        if($nb>0){
+            
+            foreach($mots as $m){
+                $m=trim($m);
+                if($m!=""){
+                    $nb--;
+                    $rqt = $rqt .   (($final!=0)?' OR ':' ') . 'prenom LIKE ? OR nom LIKE ?';
+                    $param[]=$m.'%';
+                    $param[]=$m.'%';
+                    $final++;
+                }
+            }
+            if($final>0){
+                $usr =  $usrSQL->findWithCondition($rqt,$param)->limit(0,10)->execute();
+            }
+        }
+        return $usr;
+    }
+    
 }
