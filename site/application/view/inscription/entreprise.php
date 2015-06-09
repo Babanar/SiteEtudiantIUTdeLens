@@ -66,7 +66,7 @@
 	<div class="row">
 		<div class="form-group" id="SiretGroup">
 			<div class="col-md-5 text-right">
-					<label for="numSiret" class="control-label">Numéro de SIRET/SIREN<span id="req">*</span> : </label>
+					<label for="numSiret" class="control-label">Numéro de SIRET/SIREN : </label>
 			</div>
 			<div class="col-md-7">
 				<input type="number_format" class="form-control" id="numSiret" value="<?php echo (!isset($_POST['numSiret'])?"":$_POST['numSiret']); ?>">
@@ -90,11 +90,11 @@
 	<div class="row">
 		<div class="form-group">
 			<div class="col-md-5 text-right">
-					<label for="Pays" class="control-label">Pays : </label>
+					<label for="Pays" name="Pays" class="control-label">Pays : </label>
 			</div>
 			<div class="col-md-7">
 				<select id="pays" class="form-control">
-					<option>France</option>
+                                    <option value="France">France</option>
 				</select>
 			</div>
 		</div>

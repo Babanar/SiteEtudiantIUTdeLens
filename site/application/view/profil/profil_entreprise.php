@@ -55,7 +55,7 @@
                             <label for="secteurAct" class="control-label">Secteur d'activité : </label>
                         </div>
                         <div class="col-md-7">
-                            <p id="secteurAct"><?php echo $this->usr->secteurAct ? $this->usr->getEntreprise()->adresse : "Non indiqué" ?></p>
+                            <p id="secteurAct"><?php echo $this->usr->secteurAct ? $this->usr->secteurAct : "Non indiqué" ?></p>
                         </div>
                     </div>
                 </div>

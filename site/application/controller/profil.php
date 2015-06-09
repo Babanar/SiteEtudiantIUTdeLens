@@ -28,10 +28,22 @@ class profil extends Controller {
         $this->view->render('profil/index.php');
     }
     
-    public function myprofil_entreprise()
+    public function myprofil()
     {
         // load views
-        $this->view->render('profil/myprofil_entreprise.php');
+        $usrSQL = new Super_UtilSQL();
+        $usr = $usrSQL->findById(Session::get('id_utilisateur'));
+        if($usr!==false && $usr->boolEntreprise){
+            $this->view->render('profil/myprofil_entreprise.php',array('usr'=>$usr));
+        }
+        if($usr!==false && !$usr->boolEntreprise){
+            $this->view->render('profil/myprofil_utilisateur.php',array('usr'=>$usr));
+        }
+        else{
+            $this->view->render('error/index.php');
+        }
+        
+        
     }
     
     public function myprofil_utilisateur()

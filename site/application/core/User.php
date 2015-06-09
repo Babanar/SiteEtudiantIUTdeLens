@@ -170,9 +170,9 @@ class User{
             $valid = false;
             Session::add('inscription_feedback_negative', "Le nom de l'entreprise est obligatoire.");
             }
-            if (!($numSiret=filter_input(INPUT_POST,'numSiret', FILTER_VALIDATE_REGEXP,array("options"=>array("regexp"=>"/^[0-9]{14}/"))))){
+            if (!($numSiret=filter_input(INPUT_POST,'numSiret', FILTER_VALIDATE_REGEXP,array("options"=>array("regexp"=>"/^[0-9]{14}/"))))&&strlen($_POST['numSiret'])!==0){
             $valid = false;
-            Session::add('inscription_feedback_negative', "Le numéro de Siret est obligatoire et est composé de 14 chiffres.");
+            Session::add('inscription_feedback_negative', "Le numéro de Siret est composé de 14 chiffres.");
             }
             
 

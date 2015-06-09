@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="form-group" id="nom">
                     <div class="col-md-3 text-right">
-                        <label for="nom" class="control-label">Nom  : </label>
+                        <label for="nom" class="control-label">Nom de famille  : </label>
                     </div>
                     <div class="col-md-9">
                         <p id="nom"><?php echo $this->usr->nom ?></p>

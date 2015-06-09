@@ -16,7 +16,7 @@
                 		<label for="Nom" class="control-label">Nom de famille : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="nom">Grominet</p>
+                            <p id="nom"><?php echo $this->usr->getUtilisateur()->nom ?></p>
 			</div>
                         <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -31,7 +31,7 @@
 					<label for="Prénom" class="control-label">Prénom : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="prenom">Titi</p>
+                            <p id="prenom"><?php echo $this->usr->getUtilisateur()->prenom ?></p>
 			</div>
                     <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -47,7 +47,7 @@
 					<label for="naisssance" class="control-label">Date de naisssance : </label>
 			</div>
 			<div class="col-md-4">
-                                    <p id='birthdate'>10/02/1994</p>
+                                    <p id='birthdate'><?php echo $this->usr->getUtilisateur()->getBirthdate() ?></p>
 			</div>
                     <div class="col-md-4">
                         <a href="#">Modifier</a>
@@ -63,9 +63,9 @@
 					<label for="adresse" class="control-label">Adresse : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="adresse">14 rue des fleurs</p>
-                            <p id="compAddr1">Compartiment A</p>
-                            <p id="compAddr2">Appartement 12</p>
+                            <p id="adresse"><?php echo $this->usr->getUtilisateur()->adresse?$this->usr->getUtilisateur()->adresse:"Non indiquée" ?></p>
+                        <p id="compAddr1"><?php echo $this->usr->getUtilisateur()->compAddr1?$this->usr->getUtilisateur()->compAddr1:"" ?></p>
+                        <p id="compAddr2"><?php echo $this->usr->getUtilisateur()->compAddr2?$this->usr->getUtilisateur()->compAddr2:"" ?></p>
 			</div>
                         <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -81,7 +81,7 @@
 					<label for="CP" class="control-label">Code Postal : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="CP">62300</p>
+                            <p id="CP"><?php echo $this->usr->getUtilisateur()->CP?$this->usr->getUtilisateur()->CP:"Non indiqué" ?></p>
 			</div>
                         <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -97,7 +97,7 @@
 					<label for="Ville" class="control-label">Ville : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="ville">Lens</p>
+                            <div id='row'><p id="ville"><?php echo $this->usr->getUtilisateur()->ville?$this->usr->getUtilisateur()->ville:"Non indiquée" ?></p></div> 
 			</div>
                         <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -113,7 +113,7 @@
 					<label for="Pays" class="control-label">Pays : </label>
 			</div>
 			<div class="col-md-4">
-                            <p>France</p>
+                            <p id="nomPays"><?php echo $this->usr->getUtilisateur()->pays?$this->usr->getUtilisateur()->pays:"Non indiqué" ?></p>
 			</div>
                         <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -129,7 +129,7 @@
 					<label for="Tel" class="control-label">Téléphone : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="tel">0654782354</p>
+                            <p id="tel"><?php echo $this->usr->getUtilisateur()->tel?$this->usr->getUtilisateur()->tel:"Non indiqué" ?></p>
 			</div>
                         <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -145,7 +145,7 @@
 					<label for="profact" class="control-label">Profession ou études actuelles : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="profact">Non renseignée</p>
+                            <p id="profact"><?php echo $this->usr->getUtilisateur()->profession_ou_etudes_actuelle ?></p>
 			</div>
                         <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -162,7 +162,7 @@
 					<label for="profant" class="control-label">Profession ou études antérieures : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="profant">Non renseignée</p>
+                            <p id="formations"><?php echo $this->usr->getUtilisateur()->getFormation() ?></p>
 			</div>
                     <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -178,7 +178,7 @@
 					<label for="etudes" class="control-label">Formations suivies à l'IUT : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="profant">GEA,TC</p>
+                            <p id="formations"><?php echo $this->usr->getUtilisateur()->getFormation() ?></p>
 			</div>
                     <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -194,7 +194,7 @@
 					<label for="Entree" class="control-label">Année d'entrée à l'IUT : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="entree">2010</p>
+                            <p id="entree"><?php echo $this->usr->getUtilisateur()->entree ?></p>
 			</div>
                     <div class="col-md-4">
                                 <a href="#">Modifier</a>
@@ -210,7 +210,7 @@
 					<label for="Sortie" class="control-label">Année de sortie de l'IUT : </label>
 			</div>
 			<div class="col-md-4">
-                            <p id="sortie">2012</p>
+                            <p id="sortie"><?php echo $this->usr->getUtilisateur()->sortie?$this->usr->getUtilisateur()->sortie:"Non indiquée" ?></p>
 			</div>
                     <div class="col-md-4">
                                 <a href="#">Modifier</a>
