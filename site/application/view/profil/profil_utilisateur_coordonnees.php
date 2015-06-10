@@ -164,8 +164,6 @@
                         </div>
                         <div class="col-md-8">
                             <p id="nomPays"><?php echo $this->usr->getUtilisateur()->pays?$this->usr->getUtilisateur()->pays:"Non indiqué" ?></p>
-                            <a id='visualiserAdresse' href="https://www.google.fr/maps/place/61+Rue+Jean+Jaur%C3%A8s,+62260+Auchel/@50.5056316,2.4731509,573m/
-                               data=!3m1!1e3!4m2!3m1!1s0x47dd1a67d5bf88d1:0x8cd69992ed9e6b9f!6m1!1e1" target="_blank">Visualiser sur Google Maps</a>
                         </div>
 
                     </div>
