@@ -62,10 +62,10 @@
 		
 		<div class="row">
                     <hr>
-			<div class="col-md-4 col-sm-12">
+			<div class="col-md-5 col-sm-12">
 				<div class="row" id="entete_recherche">
-                                    <div class="col-md-4 col-sm-4">
-                                        <button type="button" class="btn departement_color mainpage-link" href="">Accueil</button>
+                                    <div class="col-md-3 col-sm-3">
+                                        <button type="button" class="btn departement_color mainpage-link btn-sm" href="">Accueil</button>
                                     </div>
                                                     <!--
                                                     <div class="col-md-7">
@@ -75,17 +75,26 @@
                                                             <button type="submit" class="btn btn-default btn-sm">Rechercher</button>
                                                     </div>
                                                 -->
-                                    <div class="col-md-8 col-sm-8">
+                                    <div class="col-md-5 col-sm-5">
 
-                                        Compteur des inscrits : 
+                                        Nombre inscrits : 
                                         <?php 
                                             $superUtilSQL = new Super_UtilSQL();
                                             echo $superUtilSQL->count();
                                         ?>
                                     </div>
+                                                
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                
+                                        <?php $this->renderWithoutHeaderAndFooter('recherche/input_recherche.php'); ?>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 			</div>
-			<div class="col-md-offset-2 col-md-6 col-sm-12" id="header_user">
+			<div class="col-md-offset-1 col-md-6 col-sm-12" id="header_user">
 
                                 <?php
                                 

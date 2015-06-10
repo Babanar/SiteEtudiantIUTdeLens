@@ -401,3 +401,52 @@ function initialiseDepartementColor(){
         });
 }
 initialiseDepartementColor();
+
+$(document).on('onchange',".input_recherche_champs", function(){
+    console.log("ok");
+});
+
+$(document).on('focusout',".input_recherche_champs", function(){
+    var result = findParentByClass(this,'input_recherche');
+    result = $(result).find('.resultat_recherche');
+    
+    result.stop();
+    result.hide(500);  
+      
+});
+
+$(document).on('focusin',".input_recherche_champs", function(){
+    var result = findParentByClass(this,'input_recherche');
+    result = $(result).find('.resultat_recherche');
+    
+    result.stop();
+    result.show(500);  
+}); 
+
+
+
+function findParentByClass(target,selector){
+    console.log(target.classList);
+   while(!target.classList.contains(selector)){
+       target=$(target).parent()[0];
+   }
+   return target;
+}
+
+$(document).on('keyup',".input_recherche_champs", function(){
+    var valInput = $(this).val();
+    var result = findParentByClass(this,'input_recherche');
+    result = $(result).find('.resultat_recherche');
+
+    $.post(
+       url+"recherche/result", 
+       {
+           ajax:true,
+           recheche_sujet:valInput
+       },
+       function(cs){
+                $(result).html(cs   );
+       },
+       'text'
+   ); 
+}); 

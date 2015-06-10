@@ -123,6 +123,15 @@ class Utilisateurs extends Table {
     public function getCallNamePresentation(){
         return $this->prenom . ' ' . $this->nom;
     }
+    
+    public function getIdSuper_Util(){
+        if(!$this->id){
+            return false;
+        }
+        $superUtilSQL=new Super_UtilSQL();
+        $user = $superUtilSQL->findWithCondition("idExt = ? AND boolEntreprise = 0",array($this->id))->execute();
+        return $user[0]->getId();
+    }
 
 
 }
