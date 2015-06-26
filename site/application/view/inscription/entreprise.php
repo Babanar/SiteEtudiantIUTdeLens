@@ -161,11 +161,13 @@
   
 <p><span id="req">*</span>Ces champs sont obligatoires</p>
 
-  
+<div class="g-recaptcha" data-sitekey="<?php echo CAPTCHA_PUBLIC; ?>"></div>  
   
   <div class="form-group">
       <button type="submit" class="col-md-offset-5 col-md-7 btn btn-default" id="inscription_btn">Inscription</button>
 
   </div>
 </form>
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
 </div>
