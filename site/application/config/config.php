@@ -37,6 +37,10 @@ ini_set("display_errors", 1);
  * then replace this line with full URL (and sub-folder) and a trailing slash.
  */
 
+ 
+define('CAPTCHA_PUBLIC', '6Lc15AgTAAAAANIDhWMAhC4KhmiKgAw3KxXwzZbI');
+define('CAPTCHA_PRIVATE', '6Lc15AgTAAAAANUSHvGvg_Zp0bj1JfTzHr1GxjC9');
+ 
 define('URL_PUBLIC_FOLDER', 'public');
 define('URL_PROTOCOL', 'http://');
 define('URL_DOMAIN', $_SERVER['HTTP_HOST']);
