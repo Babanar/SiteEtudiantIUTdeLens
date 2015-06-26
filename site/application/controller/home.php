@@ -53,5 +53,10 @@ class Home extends Controller
     {
          $this->view->render('_templates/mentions_legales.php');
     }
+    
+    public function contact()
+    {
+         $this->view->render('_templates/contact.php');
+    }
 
 }

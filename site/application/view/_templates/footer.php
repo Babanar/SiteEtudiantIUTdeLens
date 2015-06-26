@@ -7,7 +7,7 @@
             <div class="row">
 
                     <hr>
-                    Copyright 2015 - <a href="_templates/mentions_legales.php">Mentions légales</a> - <a href="#">Contact</a>
+                    Copyright 2015 - <a class="mainpage-link" href="home/mentions_legales">Mentions légales</a> - <a class="mainpage-link" href="home/contact">Contact</a>
                    
         </div>
  
