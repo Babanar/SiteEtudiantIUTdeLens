@@ -61,6 +61,10 @@ class Super_Util extends Table {
         return $this->exterieur->getCallNamePresentation();
 
     }
+    public function getEmail(){
+        return $this->email;
+
+    }
     
     
         

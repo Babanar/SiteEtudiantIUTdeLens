@@ -182,9 +182,9 @@ class User{
                 }
          
             
-            if (!($pays=$_POST['pays']=="France")){
+            if (!($pays=filter_input(INPUT_POST, 'pays', FILTER_SANITIZE_SPECIAL_CHARS))&&strlen($_POST['pays'])!==0){
             $valid = false;
-            Session::add('inscription_feedback_negative', "Le pays doit être égal à \"France\".");
+            Session::add('inscription_feedback_negative', "Le pays est invalide");
             }
             
 

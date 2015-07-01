@@ -732,3 +732,8 @@ padding-bottom: 2px;
 {
     padding-right: 210px;
 }
+
+#captcha
+{
+    padding: 15px;
+}

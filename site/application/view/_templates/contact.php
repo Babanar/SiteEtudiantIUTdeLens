@@ -1,4 +1,4 @@
-<form class="form-horizontal col-md-8 col-md-offset-2" id="form_conact" onsubmit="return false;">
+<form class="form-horizontal col-md-8 col-md-offset-2" id="form_conact" onsubmit="return false;" action="sendemail.php">
 
     <div class="form-group">
         <legend>Contact</legend>
@@ -23,7 +23,7 @@
                     <label for="message_contact" class="control-label">Message<span id="req">*</span> : </label>
                 </div>
                 <div class="col-md-6">
-                    <textarea class="col-md-12"  id="msgarea" cols="50"></textarea>
+                    <textarea class="col-md-12"  id="msgarea" cols="50" name="message"></textarea>
                 </div>
             </div>
         </div>
